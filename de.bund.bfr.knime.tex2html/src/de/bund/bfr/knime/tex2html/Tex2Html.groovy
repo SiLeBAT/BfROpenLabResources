@@ -29,31 +29,30 @@ class Tex2Html {
 	static String URL = "https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/foodchainlab_installation"
 	static String TEX_FILE = "installation.tex"
 
-	static main(args) {
-		def itemParsed = false
+	static main(args) {				
+		def data = [:]		
+		def text = []
+		def image = null
 
 		for (def s : new File("${LOCAL_FOLDER}/${TEX_FILE}").readLines()) {
-			s = s.trim()
+			s = s.trim()			
 
 			if (s.startsWith("\\includegraphics")) {
-				def image = s.substring(s.indexOf("{")+1, s.indexOf("}"))
-
-				if (itemParsed) {
-					println "</ul>"
-				}
-
-				println "<img class=\"aligncenter size-full\" src=\"${URL}/${image}\"/>"
-				itemParsed = false
+				image = s.substring(s.indexOf("{")+1, s.indexOf("}"))							
 			} else if (s.startsWith("\\item")) {
-				def text = s.replace("\\item", "").trim()
-
-				if (!itemParsed) {
-					println "<ul>"
-				}
-
-				println "<li>${text}</li>"
-				itemParsed = true
+				text.add(s.replace("\\item", "").trim())				
+			} else if (image != null && !text.empty) {				
+				data.put(image, text)
+				image = null
+				text = []				
 			}
+		}
+		
+		data.each{ img, txt -> 			
+			println "<ul>"			
+			txt.each { t -> println "<li>${t}</li>" }
+			println "</ul>"
+			println "<img class=\"aligncenter size-full\" src=\"${URL}/${img}\"/>"
 		}
 	}
 }

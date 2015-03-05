@@ -44,7 +44,8 @@ class Tex2Html {
 			} else if (currentImage != null && !currentText.empty) {
 				data.put(currentImage, currentText)
 				currentImage = null
-				currentText = []}
+				currentText = []
+			}
 		}
 
 		data.each { image, text ->
@@ -55,15 +56,15 @@ class Tex2Html {
 		}
 	}
 
-	static String toHtml(String s) {			
-		s = s.replace("\$", "")		
+	static String toHtml(String s) {
+		s = s.replace("\$", "")
 		s = s.replaceAll(/\\textbf\{[^}]*}/,
-			{ "<b>" + it.replace("\\textbf{","").replace("}", "") + "</b>" })
+				{ "<b>" + it.replace("\\textbf{","").replace("}", "") + "</b>" })
 		s = s.replaceAll(/\\textit\{[^}]*}/,
-			{ "<i>" + it.replace("\\textit{","").replace("}", "") + "</i>" })
+				{ "<i>" + it.replace("\\textit{","").replace("}", "") + "</i>" })
 		s = s.replaceAll(/\\url\{[^}]*}/, {
-			def url = it.replace("\\url{","").replace("}", "")			
+			def url = it.replace("\\url{","").replace("}", "")
 			"<a href=\"${url}\" target=\"_blank\">${url}</a>"
-		})				
+		})
 	}
 }

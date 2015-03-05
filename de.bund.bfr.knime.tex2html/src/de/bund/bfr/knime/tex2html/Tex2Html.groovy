@@ -29,30 +29,41 @@ class Tex2Html {
 	static String URL = "https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/foodchainlab_installation"
 	static String TEX_FILE = "installation.tex"
 
-	static main(args) {				
-		def data = [:]		
-		def text = []
-		def image = null
+	static main(args) {
+		def data = [:]
+		def currentText = []
+		def currentImage = null
 
 		for (def s : new File("${LOCAL_FOLDER}/${TEX_FILE}").readLines()) {
-			s = s.trim()			
+			s = s.trim()
 
 			if (s.startsWith("\\includegraphics")) {
-				image = s.substring(s.indexOf("{")+1, s.indexOf("}"))							
+				currentImage = s.substring(s.indexOf("{")+1, s.indexOf("}"))
 			} else if (s.startsWith("\\item")) {
-				text.add(s.replace("\\item", "").trim())				
-			} else if (image != null && !text.empty) {				
-				data.put(image, text)
-				image = null
-				text = []				
-			}
+				currentText.add(toHtml(s.replace("\\item", "").trim()))
+			} else if (currentImage != null && !currentText.empty) {
+				data.put(currentImage, currentText)
+				currentImage = null
+				currentText = []}
 		}
-		
-		data.each{ img, txt -> 			
-			println "<ul>"			
-			txt.each { t -> println "<li>${t}</li>" }
+
+		data.each { image, text ->
+			println "<ul>"
+			text.each { t -> println "<li>${t}</li>" }
 			println "</ul>"
-			println "<img class=\"aligncenter size-full\" src=\"${URL}/${img}\"/>"
+			println "<img class=\"aligncenter size-full\" src=\"${URL}/${image}\"/>"
 		}
+	}
+
+	static String toHtml(String s) {			
+		s = s.replace("\$", "")		
+		s = s.replaceAll(/\\textbf\{[^}]*}/,
+			{ "<b>" + it.replace("\\textbf{","").replace("}", "") + "</b>" })
+		s = s.replaceAll(/\\textit\{[^}]*}/,
+			{ "<i>" + it.replace("\\textit{","").replace("}", "") + "</i>" })
+		s = s.replaceAll(/\\url\{[^}]*}/, {
+			def url = it.replace("\\url{","").replace("}", "")			
+			"<a href=\"${url}\" target=\"_blank\">${url}</a>"
+		})				
 	}
 }

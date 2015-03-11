@@ -25,20 +25,19 @@ import javax.imageio.ImageIO
 
 class Tex2Html {
 
-	static String LOCAL_FOLDER = "../GitHubPages/documents/foodchainlab_overview"
-	static String URL = "https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/foodchainlab_overview"
-	static String TEX_FILE = "overview.tex"
+	static String TEX_FILE = "../GitHubPages/documents/foodchainlab_installation/installation.tex"
+	static String URL = "https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/foodchainlab_installation"
 
 	static main(args) {
 		def heading = null
 		def text = []
 		def image = null
 
-		for (def s : new File("${LOCAL_FOLDER}/${TEX_FILE}").readLines()) {
+		for (def s : new File(TEX_FILE).readLines()) {
 			s = s.trim()
 
 			if (s.startsWith("\\section") || s.startsWith("\\subsection")) {
-				s = s.substring(s.indexOf("{") + 1, s.indexOf("}")).trim()				
+				s = s.substring(s.indexOf("{") + 1, s.indexOf("}")).trim()
 				if (isWord(s)) heading = s
 			} else if (s.startsWith("\\item")) {
 				text.add(toHtml(s.replace("\\item", "").trim()))
@@ -50,7 +49,7 @@ class Tex2Html {
 				text.each { t -> println "<li>${t}</li>" }
 				println "</ul>"
 				if (image != null) println "<img class=\"aligncenter size-full\" src=\"${URL}/${image}\"/>"
-				
+
 				heading = null
 				text = []
 				image = null
@@ -69,13 +68,13 @@ class Tex2Html {
 			"<a href=\"${url}\" target=\"_blank\">${url}</a>"
 		})
 	}
-	
+
 	static boolean isWord(String s) {
 		if (s.empty) return false
-		
+
 		try {
 			Integer.parseInt(s)
-			return false	
+			return false
 		} catch (NumberFormatException e) {
 			return true
 		}

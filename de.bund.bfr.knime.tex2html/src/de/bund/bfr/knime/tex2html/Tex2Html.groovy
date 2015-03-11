@@ -25,34 +25,36 @@ import javax.imageio.ImageIO
 
 class Tex2Html {
 
-	static String LOCAL_FOLDER = "../GitHubPages/documents/foodchainlab_installation"
-	static String URL = "https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/foodchainlab_installation"
-	static String TEX_FILE = "installation.tex"
+	static String LOCAL_FOLDER = "../GitHubPages/documents/foodchainlab_overview"
+	static String URL = "https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/foodchainlab_overview"
+	static String TEX_FILE = "overview.tex"
 
 	static main(args) {
-		def data = [:]
-		def currentText = []
-		def currentImage = null
+		def heading = null
+		def text = []
+		def image = null
 
 		for (def s : new File("${LOCAL_FOLDER}/${TEX_FILE}").readLines()) {
 			s = s.trim()
 
-			if (s.startsWith("\\includegraphics")) {
-				currentImage = s.substring(s.indexOf("{")+1, s.indexOf("}"))
+			if (s.startsWith("\\section") || s.startsWith("\\subsection")) {
+				s = s.substring(s.indexOf("{") + 1, s.indexOf("}")).trim()				
+				if (isWord(s)) heading = s
 			} else if (s.startsWith("\\item")) {
-				currentText.add(toHtml(s.replace("\\item", "").trim()))
-			} else if (currentImage != null && !currentText.empty) {
-				data.put(currentImage, currentText)
-				currentImage = null
-				currentText = []
+				text.add(toHtml(s.replace("\\item", "").trim()))
+			} else if (s.startsWith("\\includegraphics")) {
+				image = s.substring(s.indexOf("{")+1, s.indexOf("}"))
+			} else if (s.startsWith("\\end{frame}")) {
+				if (heading != null) println "<h4>${heading}</h4>"
+				println "<ul>"
+				text.each { t -> println "<li>${t}</li>" }
+				println "</ul>"
+				if (image != null) println "<img class=\"aligncenter size-full\" src=\"${URL}/${image}\"/>"
+				
+				heading = null
+				text = []
+				image = null
 			}
-		}
-
-		data.each { image, text ->
-			println "<ul>"
-			text.each { t -> println "<li>${t}</li>" }
-			println "</ul>"
-			println "<img class=\"aligncenter size-full\" src=\"${URL}/${image}\"/>"
 		}
 	}
 
@@ -66,5 +68,16 @@ class Tex2Html {
 			def url = it.replace("\\url{","").replace("}", "")
 			"<a href=\"${url}\" target=\"_blank\">${url}</a>"
 		})
+	}
+	
+	static boolean isWord(String s) {
+		if (s.empty) return false
+		
+		try {
+			Integer.parseInt(s)
+			return false	
+		} catch (NumberFormatException e) {
+			return true
+		}
 	}
 }

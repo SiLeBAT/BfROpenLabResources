@@ -38,13 +38,14 @@ class Tex2Html {
 
 			if (s.startsWith("\\section") || s.startsWith("\\subsection")) {
 				s = s.substring(s.indexOf("{") + 1, s.indexOf("}")).trim()
-				if (isWord(s)) heading = s
+				if (!s.empty) heading = s
 			} else if (s.startsWith("\\item")) {
 				text.add(toHtml(s.replace("\\item", "").trim()))
 			} else if (s.startsWith("\\includegraphics")) {
 				image = s.substring(s.indexOf("{")+1, s.indexOf("}"))
 			} else if (s.startsWith("\\end{frame}")) {
-				if (heading != null) println "<h4>${heading}</h4>"
+				if (isNumber(heading)) println "<h5>${heading}</h5>"
+				else if (heading != null) println "<h4>${heading}</h4>"
 				println "<ul>"
 				text.each { t -> println "<li>${t}</li>" }
 				println "</ul>"
@@ -69,14 +70,12 @@ class Tex2Html {
 		})
 	}
 
-	static boolean isWord(String s) {
-		if (s.empty) return false
-
+	static boolean isNumber(String s) {		
 		try {
 			Integer.parseInt(s)
-			return false
-		} catch (NumberFormatException e) {
 			return true
+		} catch (Exception e) {
+			return false
 		}
 	}
 }

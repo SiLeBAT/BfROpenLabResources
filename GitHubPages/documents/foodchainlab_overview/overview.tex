@@ -26,6 +26,27 @@
 	\end{itemize}
 \end{frame}
 
+\section{FoodChain-Lab Concepts 1}
+
+\begin{frame}
+	\begin{itemize}
+		\item Delivery: Something send from A to B at a certain date; a delivery can have preceding and subsequent deliveries (e.g. strawberry-delivery -> strawberry-cake-delivery)
+		\item Station: Any food business operator, that sends and/or receives deliveries
+		\item Forward Trace: The forward trace of a certain station/delivery contains all stations and deliveries it directly or indirectly delivers to
+		\item Backward Trace: The other way around
+	\end{itemize}
+\end{frame}
+
+\section{FoodChain-Lab Concepts 2}
+
+\begin{frame}
+	\begin{itemize}
+		\item Weight: Weights are assigned to stations/deliveries, that are involved in an outbreak (e.g. a restaurant where customers got sick); different weights can be used to model differences between involved stations/deliveries (e.g. higher weight = higher likelihood that station is involved)
+		\item Cross Contamination: Can be used at stations to model that its deliveries cross contaminate each other
+		\item Score: Is computed based on given weights and cross contamination; should help to estimate the likelihood that a certain station is the origin of the outbreak (higher score = more/higher weighted stations on forward trace)
+	\end{itemize}
+\end{frame}
+
 \section{Available Nodes}
 \begin{frame}
 	\begin{center}

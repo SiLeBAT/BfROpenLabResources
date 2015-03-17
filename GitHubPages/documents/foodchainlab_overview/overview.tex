@@ -13,8 +13,38 @@
 \begin{document}
 \maketitle
 
-\section{Introduction to KNIME}
+\section{FoodChain-Lab Concepts 1}
+\begin{frame}
+	\begin{itemize}
+		\item \textbf{Delivery}: Something send from A to B at a certain date. A delivery can have preceding and subsequent deliveries (e.g. strawberry-delivery -$>$ strawberry-cake-delivery).
+		\item \textbf{Station}: Any food business operator, that sends and/or receives deliveries.
+		\item \textbf{Trace}: The path a contamination can take. A station/delivery "B" is on the \textbf{forward trace} of a station/delivery "A", if a contamination at "A" can spread to "B" via the food chain network. If "B" is on the \textbf{forward trace} of "A", then "A" is on the \textbf{backward trace} of "B".
+	\end{itemize}
+\end{frame}
 
+\section{FoodChain-Lab Concepts 2}
+\begin{frame}
+	\begin{itemize}
+		\item \textbf{Weight}: Weights are assigned to stations/deliveries, that are involved in an outbreak (e.g. a restaurant where customers got sick). Different weights can be used to model differences between involved stations/deliveries (e.g. higher weight = higher likelihood that station is involved)..
+		\item \textbf{Cross Contamination}: When it is applied at a station, its incoming deliveries contaminate its outgoing deliveries. When applied on delivery level, the selected incoming deliveries of station contaminate each others subsequent deliveries.
+		\item \textbf{Score}: Is computed based on given weights and cross contamination. Should help to estimate the likelihood that a certain station is the origin of the outbreak (higher score = more/higher weighted stations on forward trace).
+	\end{itemize}
+\end{frame}
+
+\section{FoodChain-Lab Score}
+\begin{frame}
+	\begin{center}
+  		\includegraphics[height=0.3\textheight]{score.png}
+	\end{center}
+	\begin{itemize}
+		\item $s_i$ is the i-th station or delivery
+		\item $w_j$ is the weight of the j-th station or delivery
+		\item $t_{ij}$  has a value of 1, if there is a trace from $s_i$ to $s_j$ and a value of 0 otherwise
+		\item $n$ is the total number of stations and deliveries
+	\end{itemize}
+\end{frame}
+
+\section{Introduction to KNIME}
 \begin{frame}
 	\begin{itemize}
 		\item KNIME is an open source data analytics platform, that allows users to assemble a data pipeline called "workflow".
@@ -23,27 +53,6 @@
 		\item Data is transferred over a connection from an out-port to the in-port of another node.
 		\item A comprehensive KNIME quickstart guide can be found at \url{https://tech.knime.org/files/KNIME_quickstart.pdf}.
 		\item An introduction video is available at \url{https://www.youtube.com/watch?v=ft7Ksgss3Tc}.
-	\end{itemize}
-\end{frame}
-
-\section{FoodChain-Lab Concepts 1}
-
-\begin{frame}
-	\begin{itemize}
-		\item Delivery: Something send from A to B at a certain date; a delivery can have preceding and subsequent deliveries (e.g. strawberry-delivery -> strawberry-cake-delivery)
-		\item Station: Any food business operator, that sends and/or receives deliveries
-		\item Forward Trace: The forward trace of a certain station/delivery contains all stations and deliveries it directly or indirectly delivers to
-		\item Backward Trace: The other way around
-	\end{itemize}
-\end{frame}
-
-\section{FoodChain-Lab Concepts 2}
-
-\begin{frame}
-	\begin{itemize}
-		\item Weight: Weights are assigned to stations/deliveries, that are involved in an outbreak (e.g. a restaurant where customers got sick); different weights can be used to model differences between involved stations/deliveries (e.g. higher weight = higher likelihood that station is involved)
-		\item Cross Contamination: Can be used at stations to model that its deliveries cross contaminate each other
-		\item Score: Is computed based on given weights and cross contamination; should help to estimate the likelihood that a certain station is the origin of the outbreak (higher score = more/higher weighted stations on forward trace)
 	\end{itemize}
 \end{frame}
 

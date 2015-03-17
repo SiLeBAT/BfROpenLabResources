@@ -14,6 +14,15 @@
 \maketitle
 
 \section{ }
+
+\subsection{Task}
+\begin{frame}
+	\begin{itemize}
+		\item Perform a geocoding by using the Geocoding workflow from \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/workflows/Geocoding.zip}.
+		\item Use "Street", "HouseNumber", "City" and "Country" as input parameters.
+		\item Do the geocoding by using the MapQuest Geocoding Service.
+	\end{itemize}
+\end{frame}
  
 \subsection{1}
 \begin{frame}
@@ -79,7 +88,7 @@
 	\end{center}
 	\begin{itemize}
 		\item In the dialog you can provide the name of the address column and an expression, that defines how the address column is created.
-		\item We want to change this expression, so that the zip code is not used anymore.		
+		\item We want to change this expression, so that the zip code is not used anymore.	
 	\end{itemize}
 \end{frame}
 
@@ -177,7 +186,7 @@
 	\end{center}
 	\begin{itemize}
 		\item For many request geocoding services return multiple results (e.g. when there are two streets with the same name).
-		\item To deal we have to decide if we just want to use the first or look at all choices and try to find the best.
+		\item To deal with this we have to decide if we just want to use the first or look at all choices and try to find the best.
 		\item Looking manually at all choices is a lot of work for large data sets, so just select \textbf{Use first} and press \textbf{OK}.
 	\end{itemize}
 \end{frame}

@@ -1,0 +1,246 @@
+\documentclass{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+
+\usetheme{Berkeley}
+\beamertemplatenavigationsymbolsempty
+\setbeamertemplate{headline}{}
+ 
+\title{Geocoding in FoodChain-Lab}
+\date{}
+ 
+\begin{document}
+\maketitle
+
+\section{ }
+
+\subsection{Task}
+\begin{frame}
+	\begin{itemize}
+		\item Führen sie ein Geocoding auf Basis folgenden Workflows durch: \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/workflows/Geocoding.zip}.
+		\item Nutzen "Street", "HouseNumber", "City" und "Country" als Eingabeparameter für das Geocoding.
+		\item Verwenden sie den MapQuest Geocoding Service.
+	\end{itemize}
+\end{frame}
+ 
+\subsection{1}
+\begin{frame}
+	\begin{center}
+  		\includegraphics[height=0.6\textheight]{1.png}
+	\end{center}
+	\begin{itemize}
+		\item Importieren sie den Geocoding Workflow von \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/workflows/Geocoding.zip}.
+	\end{itemize}
+\end{frame}
+
+\subsection{2}
+\begin{frame}
+	\begin{center}
+  		\includegraphics[height=0.6\textheight]{2.png}
+	\end{center}
+	\begin{itemize}		
+		\item Für MapQuest müssen sie sich registrieren und einen App-Key erstellen unter: \url{http://developer.mapquest.com/web/info/account/app-keys}
+		\item Dieser App-Key muss in den KNIME-Einstellungen eingegeben werden.
+		\item Wählen sie \textbf{File $<$ Preferences} in der Menüleiste.
+	\end{itemize}
+\end{frame}
+
+\subsection{3}
+\begin{frame}
+	\begin{center}
+  		\includegraphics[height=0.6\textheight]{3.png}
+	\end{center}
+	\begin{itemize}
+		\item Nun erscheint der Einstellungs-Dialog.
+		\item Hier können sie alle Einstellungen für KNIME und FoodChain-Lab vornehmen.
+	\end{itemize}
+\end{frame}
+
+\subsection{4}
+\begin{frame}
+	\begin{center}
+  		\includegraphics[height=0.6\textheight]{4.png}
+	\end{center}
+	\begin{itemize}
+		\item Wählen sie \textbf{KNIME $<$ Geocoding} im Navigations-Baum auf der linken Seite.
+		\item Geben sie ihren \textbf{MapQuest Application Key} ein und klicken sie \textbf{OK}.
+	\end{itemize}
+\end{frame}
+
+\subsection{5}
+\begin{frame}
+	\begin{center}
+  		\includegraphics[height=0.5\textheight]{5.png}
+	\end{center}
+	\begin{itemize}
+		\item Um das Geocoding auszuführen benötigen wir eine Spalte mit Adressen. Der \textbf{Supply Chain Reader} gibt allerdings alle Teile der Adresse (Straße, Stadt, ...) in verschiedenen Spalten aus.
+		\item Die Adress-Spalte wir mit dem \textbf{String Manipulation}-Knoten erstellt.
+		\item Machen sie einen Doppelklick auf diesen Knoten um den Konfigurationsdialog zu öffnen.
+	\end{itemize}
+\end{frame}
+
+\subsection{6}
+\begin{frame}
+	\begin{center}
+  		\includegraphics[height=0.6\textheight]{6.png}
+	\end{center}
+	\begin{itemize}
+		\item In diesem Dialog können sie den Namen der Adress-Spalte definieren und wie diese erzeugt wird.
+		\item Wir müssen den gelb hinterlegten Ausdruck ändern, da wir "Street", "HouseNumber", "City" und "Country" als Parameter nutzen wollen und nicht "Street", "HouseNumber", "Zip" und "City".
+	\end{itemize}
+\end{frame}
+
+\subsection{7}
+\begin{frame}
+	\begin{center}
+  		\includegraphics[height=0.6\textheight]{7.png}
+	\end{center}
+	\begin{itemize}
+		\item Um die Postleitzahl ("Zip") als Parameter zu entfernen müssen wir die lila hinterlegten Zeichen entfernen.
+		\item Diese Zeichen beinhalten die Postleitzahl selbst und das Leerzeichen zwischen Postleitzahl und "City".
+	\end{itemize}
+\end{frame}
+
+\subsection{8}
+\begin{frame}
+	\begin{center}
+  		\includegraphics[height=0.6\textheight]{8.png}
+	\end{center}
+	\begin{itemize}
+		\item Nun müssen wir "Country" als Parameter hinzufügen.
+		\item "Country" und alle weiteren Spalten können in der \textbf{Columm List} ganz links ausgewählt werden.
+	\end{itemize}
+\end{frame}
+
+\subsection{9}
+\begin{frame}
+	\begin{center}
+  		\includegraphics[height=0.6\textheight]{9.png}
+	\end{center}
+	\begin{itemize}
+		\item Hinter \textbf{\$City\$} geben sie das folgende ein: \textbf{+ ", " +}
+		\item Dann machen sie einen Doppelklick auf "Country" in der \textbf{Column List} and der Ausdruck sollte folgendermaßen aussehen.
+		\item Klicken sie \textbf{OK} um den Dialog zu schließen.
+	\end{itemize}
+\end{frame}
+
+\subsection{10}
+\begin{frame}
+	\begin{center}
+  		\includegraphics[width=0.9\textwidth]{10.png}
+	\end{center}
+	\begin{itemize}
+		\item Da wir die Einstellungen geändert haben, muss der Knoten resettet werden. 
+		\item Klicken sie \textbf{OK}.
+	\end{itemize}
+\end{frame}
+
+\subsection{11}
+\begin{frame}
+	\begin{center}
+  		\includegraphics[height=0.6\textheight]{11.png}
+	\end{center}
+	\begin{itemize}
+		\item Nun haben wir die Definition der Adress-Spalte angepasst und können den Knoten neu ausführen.
+	\end{itemize}
+\end{frame}
+
+\subsection{12}
+\begin{frame}
+	\begin{center}
+  		\includegraphics[height=0.6\textheight]{12.png}
+	\end{center}
+	\begin{itemize}
+		\item Machen sie einen Rechtsklick auf den \textbf{String Manipulation}-Knoten und wählen sie \textbf{Execute}.
+	\end{itemize}
+\end{frame}
+
+\subsection{13}
+\begin{frame}
+	\begin{center}
+  		\includegraphics[height=0.6\textheight]{13.png}
+	\end{center}
+	\begin{itemize}
+		\item Nun können wir das Geocoding konfigurieren.
+		\item Machen sie einen Doppelklick auf den \textbf{Geocoding}-Knoten um den Dialog zu öffnen.
+	\end{itemize}
+\end{frame}
+
+\subsection{14}
+\begin{frame}
+	\begin{center}
+  		\includegraphics[height=0.6\textheight]{14.png}
+	\end{center}
+	\begin{itemize}
+		\item Hier können sie welchen \textbf{Service Provider} sie nutzen möchten und welche Spalte die Adressen enthält.
+		\item Beide Einstellungen sind bereits korrekt, also brauchen wir hier nichts ändern.
+	\end{itemize}
+\end{frame}
+
+\subsection{15}
+\begin{frame}
+	\begin{center}
+  		\includegraphics[height=0.4\textheight]{15.png}
+	\end{center}
+	\begin{itemize}
+		\item Es passiert häufig, dass der Geocoding Service zu einer Anfrage mehrere Resultate liefert (z.B. wenn es mehrere Straßen mit demselben Name in einer Stadt gibt).
+		\item Wir müssen definieren was in diesem Fall passieren soll: kein Resultat nehmen, das erste Resultat nehmen oder das passende Resultat manuell auswählen.
+		\item Manuelles Auswählen ist bei großen Datenmengen sehr arbeitsaufwendig, deshalb wählen wir hier einfach \textbf{Use first} und klicken \textbf{OK}.
+	\end{itemize}
+\end{frame}
+
+\subsection{16}
+\begin{frame}
+	\begin{center}
+  		\includegraphics[height=0.6\textheight]{16.png}
+	\end{center}
+	\begin{itemize}
+		\item Machen sie einen Rechtsklick auf den \textbf{Geocoding}-Knoten und wählen sie \textbf{Execute}.
+	\end{itemize}
+\end{frame}
+
+\subsection{17}
+\begin{frame}
+	\begin{center}
+  		\includegraphics[height=0.6\textheight]{17.png}
+	\end{center}
+	\begin{itemize}
+		\item Die Ausführung kann eine Weile dauern.
+		\item Unter dem Knoten wird angezeigt welcher Prozentsatz der Daten bereits bearbeitet wurde.
+	\end{itemize}
+\end{frame}
+
+\subsection{18}
+\begin{frame}
+	\begin{center}
+  		\includegraphics[height=0.6\textheight]{18.png}
+	\end{center}
+	\begin{itemize}
+		\item Wenn die Ausführung beendet ist, können wir uns die Resultate anschauen.
+		\item Machen sie einen Rechtsklick auf den \textbf{Geocoding}-Knoten und wählen sie \textbf{Coordinates}.
+	\end{itemize}
+\end{frame}
+
+\subsection{19}
+\begin{frame}
+	\begin{center}
+  		\includegraphics[height=0.6\textheight]{19.png}
+	\end{center}
+	\begin{itemize}
+		\item In dem Dialog können sie sich die gesamte Datentabelle anschauen.
+	\end{itemize}
+\end{frame}
+
+\subsection{20}
+\begin{frame}
+	\begin{center}
+  		\includegraphics[height=0.6\textheight]{20.png}
+	\end{center}
+	\begin{itemize}
+		\item Scrollen sie ganz nach rechts um sich die Spalten mit geographischer Breite und Länge anzuschauen (die zwei Spalten ganz rechts).
+		\item Für alle Zeilen mit "?" war das Geocoding nicht erfolgreich.
+	\end{itemize}
+\end{frame}
+
+\end{document}

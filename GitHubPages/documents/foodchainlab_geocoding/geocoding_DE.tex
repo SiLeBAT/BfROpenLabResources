@@ -87,29 +87,30 @@
 	\end{center}
 	\begin{itemize}
 		\item In diesem Dialog können sie den Namen der Adress-Spalte definieren und wie diese erzeugt wird.
-		\item Wir müssen den gelb hinterlegten Ausdruck ändern, da wir "Street", "HouseNumber", "City" und "Country" als Parameter nutzen wollen und nicht "Street", "HouseNumber", "Zip" und "City".
+		\item Die Ausdrücke zwischen den \$-Zeichen sind Spalten aus der Eingabe-Tabelle.
+		\item Sie können weitere Spalten hinzufügen, indem oben links in der \textbf{Column List} auf die gewünschte Spalte klicken.
 	\end{itemize}
 \end{frame}
 
 \subsection{7}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[height=0.6\textheight]{7.png}
+  		\includegraphics[height=0.5\textheight]{7.png}
 	\end{center}
 	\begin{itemize}
-		\item Um die Postleitzahl ("Zip") als Parameter zu entfernen müssen wir die lila hinterlegten Zeichen entfernen.
-		\item Diese Zeichen beinhalten die Postleitzahl selbst und das Leerzeichen zwischen Postleitzahl und "City".
+		\item Da wir das Geocoding basierend auf "Street", "HouseNumber", "City" and "Country" durchführen wollen, müssen wir den gegebenen Ausdruch durch den folgenden ersetzen: \texttt{string(\$Street\$ + " " + \$HouseNumber\$ + ", " + \$City\$ + ", " + \$Country\$)}
+		\item Klicken sie \textbf{OK} um den Dialog zu schließen.
 	\end{itemize}
 \end{frame}
 
 \subsection{8}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[height=0.6\textheight]{8.png}
+  		\includegraphics[width=0.9\textwidth]{8.png}
 	\end{center}
 	\begin{itemize}
-		\item Nun müssen wir "Country" als Parameter hinzufügen.
-		\item "Country" und alle weiteren Spalten können in der \textbf{Columm List} ganz links ausgewählt werden.
+		\item Da wir die Einstellungen geändert haben, muss der Knoten resettet werden. 
+		\item Klicken sie \textbf{OK}.
 	\end{itemize}
 \end{frame}
 
@@ -119,20 +120,17 @@
   		\includegraphics[height=0.6\textheight]{9.png}
 	\end{center}
 	\begin{itemize}
-		\item Hinter \textbf{\$City\$} geben sie das folgende ein: \textbf{+ ", " +}
-		\item Dann machen sie einen Doppelklick auf "Country" in der \textbf{Column List} and der Ausdruck sollte folgendermaßen aussehen.
-		\item Klicken sie \textbf{OK} um den Dialog zu schließen.
+		\item Nun haben wir die Definition der Adress-Spalte angepasst und können den Knoten neu ausführen.
 	\end{itemize}
 \end{frame}
 
 \subsection{10}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[width=0.9\textwidth]{10.png}
+  		\includegraphics[height=0.6\textheight]{10.png}
 	\end{center}
 	\begin{itemize}
-		\item Da wir die Einstellungen geändert haben, muss der Knoten resettet werden. 
-		\item Klicken sie \textbf{OK}.
+		\item Machen sie einen Rechtsklick auf den \textbf{String Manipulation}-Knoten und wählen sie \textbf{Execute}.
 	\end{itemize}
 \end{frame}
 
@@ -142,7 +140,8 @@
   		\includegraphics[height=0.6\textheight]{11.png}
 	\end{center}
 	\begin{itemize}
-		\item Nun haben wir die Definition der Adress-Spalte angepasst und können den Knoten neu ausführen.
+		\item Nun können wir das Geocoding konfigurieren.
+		\item Machen sie einen Doppelklick auf den \textbf{Geocoding}-Knoten um den Dialog zu öffnen.
 	\end{itemize}
 \end{frame}
 
@@ -152,18 +151,20 @@
   		\includegraphics[height=0.6\textheight]{12.png}
 	\end{center}
 	\begin{itemize}
-		\item Machen sie einen Rechtsklick auf den \textbf{String Manipulation}-Knoten und wählen sie \textbf{Execute}.
+		\item Hier können sie welchen \textbf{Service Provider} sie nutzen möchten und welche Spalte die Adressen enthält.
+		\item Beide Einstellungen sind bereits korrekt, also brauchen wir hier nichts ändern.
 	\end{itemize}
 \end{frame}
 
 \subsection{13}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[height=0.6\textheight]{13.png}
+  		\includegraphics[height=0.4\textheight]{13.png}
 	\end{center}
 	\begin{itemize}
-		\item Nun können wir das Geocoding konfigurieren.
-		\item Machen sie einen Doppelklick auf den \textbf{Geocoding}-Knoten um den Dialog zu öffnen.
+		\item Es passiert häufig, dass der Geocoding Service zu einer Anfrage mehrere Resultate liefert (z.B. wenn es mehrere Straßen mit demselben Name in einer Stadt gibt).
+		\item Wir müssen definieren was in diesem Fall passieren soll: kein Resultat nehmen, das erste Resultat nehmen oder das passende Resultat manuell auswählen.
+		\item Manuelles Auswählen ist bei großen Datenmengen sehr arbeitsaufwendig, deshalb wählen wir hier einfach \textbf{Use first} und klicken \textbf{OK}.
 	\end{itemize}
 \end{frame}
 
@@ -173,20 +174,18 @@
   		\includegraphics[height=0.6\textheight]{14.png}
 	\end{center}
 	\begin{itemize}
-		\item Hier können sie welchen \textbf{Service Provider} sie nutzen möchten und welche Spalte die Adressen enthält.
-		\item Beide Einstellungen sind bereits korrekt, also brauchen wir hier nichts ändern.
+		\item Machen sie einen Rechtsklick auf den \textbf{Geocoding}-Knoten und wählen sie \textbf{Execute}.
 	\end{itemize}
 \end{frame}
 
 \subsection{15}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[height=0.4\textheight]{15.png}
+  		\includegraphics[height=0.6\textheight]{15.png}
 	\end{center}
 	\begin{itemize}
-		\item Es passiert häufig, dass der Geocoding Service zu einer Anfrage mehrere Resultate liefert (z.B. wenn es mehrere Straßen mit demselben Name in einer Stadt gibt).
-		\item Wir müssen definieren was in diesem Fall passieren soll: kein Resultat nehmen, das erste Resultat nehmen oder das passende Resultat manuell auswählen.
-		\item Manuelles Auswählen ist bei großen Datenmengen sehr arbeitsaufwendig, deshalb wählen wir hier einfach \textbf{Use first} und klicken \textbf{OK}.
+		\item Die Ausführung kann eine Weile dauern.
+		\item Unter dem Knoten wird angezeigt welcher Prozentsatz der Daten bereits bearbeitet wurde.
 	\end{itemize}
 \end{frame}
 
@@ -196,7 +195,8 @@
   		\includegraphics[height=0.6\textheight]{16.png}
 	\end{center}
 	\begin{itemize}
-		\item Machen sie einen Rechtsklick auf den \textbf{Geocoding}-Knoten und wählen sie \textbf{Execute}.
+		\item Wenn die Ausführung beendet ist, können wir uns die Resultate anschauen.
+		\item Machen sie einen Rechtsklick auf den \textbf{Geocoding}-Knoten und wählen sie \textbf{Coordinates}.
 	\end{itemize}
 \end{frame}
 
@@ -206,8 +206,7 @@
   		\includegraphics[height=0.6\textheight]{17.png}
 	\end{center}
 	\begin{itemize}
-		\item Die Ausführung kann eine Weile dauern.
-		\item Unter dem Knoten wird angezeigt welcher Prozentsatz der Daten bereits bearbeitet wurde.
+		\item In dem Dialog können sie sich die gesamte Datentabelle anschauen.
 	\end{itemize}
 \end{frame}
 
@@ -215,27 +214,6 @@
 \begin{frame}
 	\begin{center}
   		\includegraphics[height=0.6\textheight]{18.png}
-	\end{center}
-	\begin{itemize}
-		\item Wenn die Ausführung beendet ist, können wir uns die Resultate anschauen.
-		\item Machen sie einen Rechtsklick auf den \textbf{Geocoding}-Knoten und wählen sie \textbf{Coordinates}.
-	\end{itemize}
-\end{frame}
-
-\subsection{19}
-\begin{frame}
-	\begin{center}
-  		\includegraphics[height=0.6\textheight]{19.png}
-	\end{center}
-	\begin{itemize}
-		\item In dem Dialog können sie sich die gesamte Datentabelle anschauen.
-	\end{itemize}
-\end{frame}
-
-\subsection{20}
-\begin{frame}
-	\begin{center}
-  		\includegraphics[height=0.6\textheight]{20.png}
 	\end{center}
 	\begin{itemize}
 		\item Scrollen sie ganz nach rechts um sich die Spalten mit geographischer Breite und Länge anzuschauen (die zwei Spalten ganz rechts).

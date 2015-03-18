@@ -25,8 +25,8 @@ import javax.imageio.ImageIO
 
 class Tex2Html {
 
-	static String TEX_FILE = "../GitHubPages/documents/foodchainlab_overview/overview.tex"
-	static String URL = "https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/foodchainlab_overview"
+	static String TEX_FILE = "../GitHubPages/documents/foodchainlab_geocoding/geocoding.tex"
+	static String URL = "https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/foodchainlab_geocoding"
 
 	static main(args) {
 		def heading = null
@@ -67,11 +67,15 @@ class Tex2Html {
 				{ "<b>" + it.replace("\\textbf{","").replace("}", "") + "</b>" })
 		s = s.replaceAll(/\\textit\{[^}]*}/,
 				{ "<i>" + it.replace("\\textit{","").replace("}", "") + "</i>" })
+		s = s.replaceAll(/\\texttt\{[^}]*}/,
+			{ "<code>" + it.replace("\\texttt{","").replace("}", "") + "</code>" })
 		s = s.replaceAll(/\\url\{[^}]*}/, {
 			def url = it.replace("\\url{","").replace("}", "")
 			"<a href=\"${url}\" target=\"_blank\">${url}</a>"
 		})
-		s = s.replace("\$", "").replace("{", "").replace("}", "")
+		s = s.replaceAll(/[^\\]\$/, 
+			{ it.replace("\$", "") })
+		s = s.replace("\\\$", "\$").replace("{", "").replace("}", "")
 	}
 
 	static boolean isNumber(String s) {		

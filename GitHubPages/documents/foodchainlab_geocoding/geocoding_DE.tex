@@ -18,9 +18,9 @@
 \subsection{Aufgaben}
 \begin{frame}
 	\begin{itemize}
-		\item Führen sie ein Geocoding auf Basis folgenden Workflows durch: \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/workflows/Geocoding.zip}.
+		\item Führen Sie ein Geocoding auf Basis folgenden Workflows durch: \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/workflows/Geocoding.zip}.
 		\item Nutzen "Street", "HouseNumber", "City" und "Country" als Eingabeparameter für das Geocoding.
-		\item Verwenden sie den MapQuest Geocoding Service.
+		\item Verwenden Sie den MapQuest Geocoding Service.
 	\end{itemize}
 \end{frame}
  
@@ -30,7 +30,7 @@
   		\includegraphics[height=0.6\textheight]{1.png}
 	\end{center}
 	\begin{itemize}
-		\item Importieren sie den Geocoding Workflow von \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/workflows/Geocoding.zip}.
+		\item Importieren Sie den Geocoding Workflow von \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/workflows/Geocoding.zip}.
 	\end{itemize}
 \end{frame}
 
@@ -40,9 +40,9 @@
   		\includegraphics[height=0.6\textheight]{2.png}
 	\end{center}
 	\begin{itemize}		
-		\item Für MapQuest müssen sie sich registrieren und einen App-Key erstellen unter: \url{http://developer.mapquest.com/web/info/account/app-keys}
+		\item Für MapQuest müssen Sie sich registrieren und einen App-Key erstellen unter: \url{http://developer.mapquest.com/web/info/account/app-keys}
 		\item Dieser App-Key muss in den KNIME-Einstellungen eingegeben werden.
-		\item Wählen sie \textbf{File $<$ Preferences} in der Menüleiste.
+		\item Wählen Sie \textbf{File $<$ Preferences} in der Menüleiste.
 	\end{itemize}
 \end{frame}
 
@@ -53,7 +53,7 @@
 	\end{center}
 	\begin{itemize}
 		\item Nun erscheint der Einstellungs-Dialog.
-		\item Hier können sie alle Einstellungen für KNIME und FoodChain-Lab vornehmen.
+		\item Hier können Sie alle Einstellungen für KNIME und FoodChain-Lab vornehmen.
 	\end{itemize}
 \end{frame}
 
@@ -63,8 +63,8 @@
   		\includegraphics[height=0.6\textheight]{4.png}
 	\end{center}
 	\begin{itemize}
-		\item Wählen sie \textbf{KNIME $<$ Geocoding} im Navigations-Baum auf der linken Seite.
-		\item Geben sie ihren \textbf{MapQuest Application Key} ein und klicken sie \textbf{OK}.
+		\item Wählen Sie \textbf{KNIME $<$ Geocoding} im Navigations-Baum auf der linken Seite.
+		\item Geben Sie ihren \textbf{MapQuest Application Key} ein und klicken Sie \textbf{OK}.
 	\end{itemize}
 \end{frame}
 
@@ -76,7 +76,7 @@
 	\begin{itemize}
 		\item Um das Geocoding auszuführen benötigen wir eine Spalte mit Adressen. Der \textbf{Supply Chain Reader} gibt allerdings alle Teile der Adresse (Straße, Stadt, ...) in verschiedenen Spalten aus.
 		\item Die Adress-Spalte wir mit dem \textbf{String Manipulation}-Knoten erstellt.
-		\item Machen sie einen Doppelklick auf diesen Knoten um den Konfigurationsdialog zu öffnen.
+		\item Machen Sie einen Doppelklick auf diesen Knoten um den Konfigurationsdialog zu öffnen.
 	\end{itemize}
 \end{frame}
 
@@ -86,7 +86,7 @@
   		\includegraphics[height=0.6\textheight]{6.png}
 	\end{center}
 	\begin{itemize}
-		\item In diesem Dialog können sie den Namen der Adress-Spalte definieren und wie diese erzeugt wird.
+		\item In diesem Dialog können Sie den Namen der Adress-Spalte definieren und wie diese erzeugt wird.
 		\item Die Ausdrücke zwischen den \$-Zeichen sind Spalten aus der Eingabe-Tabelle.
 		\item Sie können weitere Spalten hinzufügen, indem oben links in der \textbf{Column List} auf die gewünschte Spalte klicken.
 	\end{itemize}
@@ -99,7 +99,7 @@
 	\end{center}
 	\begin{itemize}
 		\item Da wir das Geocoding basierend auf "Street", "HouseNumber", "City" and "Country" durchführen wollen, müssen wir den gegebenen Ausdruch durch den folgenden ersetzen: \texttt{string(\$Street\$ + " " + \$HouseNumber\$ + ", " + \$City\$ + ", " + \$Country\$)}
-		\item Klicken sie \textbf{OK} um den Dialog zu schließen.
+		\item Klicken Sie \textbf{OK} um den Dialog zu schließen.
 	\end{itemize}
 \end{frame}
 
@@ -110,7 +110,7 @@
 	\end{center}
 	\begin{itemize}
 		\item Da wir die Einstellungen geändert haben, muss der Knoten resettet werden. 
-		\item Klicken sie \textbf{OK}.
+		\item Klicken Sie \textbf{OK}.
 	\end{itemize}
 \end{frame}
 
@@ -130,7 +130,7 @@
   		\includegraphics[height=0.6\textheight]{10.png}
 	\end{center}
 	\begin{itemize}
-		\item Machen sie einen Rechtsklick auf den \textbf{String Manipulation}-Knoten und wählen sie \textbf{Execute}.
+		\item Machen Sie einen Rechtsklick auf den \textbf{String Manipulation}-Knoten und wählen Sie \textbf{Execute}.
 	\end{itemize}
 \end{frame}
 
@@ -141,7 +141,7 @@
 	\end{center}
 	\begin{itemize}
 		\item Nun können wir das Geocoding konfigurieren.
-		\item Machen sie einen Doppelklick auf den \textbf{Geocoding}-Knoten um den Dialog zu öffnen.
+		\item Machen Sie einen Doppelklick auf den \textbf{Geocoding}-Knoten um den Dialog zu öffnen.
 	\end{itemize}
 \end{frame}
 
@@ -151,7 +151,7 @@
   		\includegraphics[height=0.6\textheight]{12.png}
 	\end{center}
 	\begin{itemize}
-		\item Hier können sie welchen \textbf{Service Provider} sie nutzen möchten und welche Spalte die Adressen enthält.
+		\item Hier können Sie welchen \textbf{Service Provider} Sie nutzen möchten und welche Spalte die Adressen enthält.
 		\item Beide Einstellungen sind bereits korrekt, also brauchen wir hier nichts ändern.
 	\end{itemize}
 \end{frame}
@@ -174,7 +174,7 @@
   		\includegraphics[height=0.6\textheight]{14.png}
 	\end{center}
 	\begin{itemize}
-		\item Machen sie einen Rechtsklick auf den \textbf{Geocoding}-Knoten und wählen sie \textbf{Execute}.
+		\item Machen Sie einen Rechtsklick auf den \textbf{Geocoding}-Knoten und wählen Sie \textbf{Execute}.
 	\end{itemize}
 \end{frame}
 
@@ -196,7 +196,7 @@
 	\end{center}
 	\begin{itemize}
 		\item Wenn die Ausführung beendet ist, können wir uns die Resultate anschauen.
-		\item Machen sie einen Rechtsklick auf den \textbf{Geocoding}-Knoten und wählen sie \textbf{Coordinates}.
+		\item Machen Sie einen Rechtsklick auf den \textbf{Geocoding}-Knoten und wählen Sie \textbf{Coordinates}.
 	\end{itemize}
 \end{frame}
 
@@ -206,7 +206,7 @@
   		\includegraphics[height=0.6\textheight]{17.png}
 	\end{center}
 	\begin{itemize}
-		\item In dem Dialog können sie sich die gesamte Datentabelle anschauen.
+		\item In dem Dialog können Sie sich die gesamte Datentabelle anschauen.
 	\end{itemize}
 \end{frame}
 
@@ -216,7 +216,7 @@
   		\includegraphics[height=0.6\textheight]{18.png}
 	\end{center}
 	\begin{itemize}
-		\item Scrollen sie ganz nach rechts um sich die Spalten mit geographischer Breite und Länge anzuschauen (die zwei Spalten ganz rechts).
+		\item Scrollen Sie ganz nach rechts um sich die Spalten mit geographischer Breite und Länge anzuschauen (die zwei Spalten ganz rechts).
 		\item Für alle Zeilen mit "?" war das Geocoding nicht erfolgreich.
 	\end{itemize}
 \end{frame}

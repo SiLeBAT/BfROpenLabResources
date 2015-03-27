@@ -64,7 +64,7 @@ class Tex2Html {
 		s = s.replaceAll(/\$[^_\$]+_[^_\$]+\$/, {
 			def i = it.indexOf("_")
 			it.substring(1, i) + "<sub>" + it.substring(i+1, it.length()-1) + "</sub>" 
-		}) 		
+		})
 		s = s.replaceAll(/\\textbf\{[^}]*}/,
 				{ "<b>" + it.replace("\\textbf{","").replace("}", "") + "</b>" })
 		s = s.replaceAll(/\\textit\{[^}]*}/,
@@ -75,9 +75,8 @@ class Tex2Html {
 			def url = it.replace("\\url{","").replace("}", "")
 			"<a href=\"${url}\" target=\"_blank\">${url}</a>"
 		})
-		s = s.replaceAll(/[^\\]\$/, 
-			{ it.replace("\$", "") })
-		s = s.replace("\\\$", "\$").replace("{", "").replace("}", "")
+		s = s.replaceAll(/.\$/, {  it.charAt(0) == '\\' ? "\$" : it.charAt(0) })
+		s = s.replace("{", "").replace("}", "")
 		s = s.trim()
 	}
 

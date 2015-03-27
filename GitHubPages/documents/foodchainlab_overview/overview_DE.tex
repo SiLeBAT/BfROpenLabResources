@@ -18,16 +18,16 @@
 	\begin{itemize}
 		\item \textbf{Delivery (Lieferung)}: Wird von A nach B an einem bestimmten Datum versendet. Eine Lieferung kann Folgelieferungen und vorhergehende Lieferungen haben (z.B. Erdbeer-Lieferung -$>$ Erdbeerkuchen-Lieferung).
 		\item \textbf{Station}: Lebensmittelunternehmen oder Person, das/die Lieferungen empfängt und/oder versendet.
-		\item \textbf{Trace}: Pfad den eine Kontamination nehmen kann. Eine Station/Lieferung "B" ist auf dem \textbf{Forward Trace} von einer Station/Lieferung "A", falls sich eine Kontamination über das Liefernetz von "A" nach "B" ausbreiten kann. Wenn "B" auf dem \textbf{Forward Trace} von "A" ist, dann ist "A" auf dem \textbf{Backward Trace} von "B".
+		\item \textbf{Trace}: Pfad, den eine Kontamination nehmen kann. Eine Station/Lieferung "B" ist auf dem \textbf{Forward Trace} von einer Station/Lieferung "A", falls sich eine Kontamination über das Liefernetz von "A" nach "B" ausbreiten kann. Wenn "B" auf dem \textbf{Forward Trace} von "A" ist, dann ist "A" auf dem \textbf{Backward Trace} von "B".
 	\end{itemize}
 \end{frame}
 
 \section{FoodChain-Lab Konzepte 2}
 \begin{frame}
 	\begin{itemize}
-		\item \textbf{Weight (Gewicht)}: Gewichte werden an Stationen/Lieferungen vergeben, die in einen Ausbruch involviert sind (z.B. ein Restaurant in dem Kunden infiziert wurden). Verschiedene Gewichte können benutzt werden um Unterschiede zwischen den involvierten Stationen/Lieferungen zu modellieren (z.B. höheres Gewicht = größere Wahrscheinlichkeit, dass Station/Lieferung involviert ist).
-		\item \textbf{Cross Contamination (Kreuzkontamination)}: Bei Stationen werden ausgehende Lieferungen von eingehenden Lieferungen kontaminiert. Falls auf Lieferungen angewendet, kontaminieren die gewählten eingehenden Lieferungen einer Station ihre Folgelieferungen.
-		\item \textbf{Score}: Wird auf Basis der vergebenen Gewichte und Kreuzkontamination berechnet. Soll helfen die Wahrscheinlichkeit abzuschätzen, dass eine Station/Lieferung die Quelle des Ausbruchs ist (höherer Score = höhere Wahrscheinlichkeit, dass Quelle des Ausbruchs).
+		\item \textbf{Weight (Gewicht)}: Wird an Stationen/Lieferungen vergeben, die in einen Ausbruch involviert sind (z.B. ein Restaurant in dem Kunden infiziert wurden). Verschiedene Gewichte können benutzt werden, um Unterschiede zwischen den involvierten Stationen/Lieferungen zu modellieren (z.B. höheres Gewicht = größere Wahrscheinlichkeit, dass Station/Lieferung involviert ist).
+		\item \textbf{Cross Contamination (Kreuzkontamination)}: Kontamination ausgehender Lieferungen durch eingehende Lieferungen (bei Stationen). Wird Kreuzkontamination auf Lieferungen angewendet, bedeutet das, dass die gewählten eingehenden Lieferungen einer Station ihre Folgelieferungen kontaminieren.
+		\item \textbf{Score}: Wird auf Basis der vergebenen Gewichte und Kreuzkontamination berechnet. Soll helfen, die Wahrscheinlichkeit abzuschätzen, dass eine Station/Lieferung die Quelle des Ausbruchs ist (höherer Score = höhere Wahrscheinlichkeit, dass Quelle des Ausbruchs).
 	\end{itemize}
 \end{frame}
 

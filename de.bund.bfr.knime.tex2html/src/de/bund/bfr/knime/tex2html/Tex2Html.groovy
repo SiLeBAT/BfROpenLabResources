@@ -25,7 +25,7 @@ import javax.imageio.ImageIO
 
 class Tex2Html {
 
-	static String NAME = "cluster"
+	static String NAME = "overview"
 	static String TEX_FILE = "../GitHubPages/documents/foodchainlab_${NAME}/${NAME}.tex"
 	static String URL = "https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/foodchainlab_${NAME}"
 
@@ -59,7 +59,8 @@ class Tex2Html {
 		}
 	}
 
-	static String toHtml(String s) {		
+	static String toHtml(String s) {
+		s = " " + s + " "
 		s = s.replaceAll(/\$[^_\$]+_[^_\$]+\$/, {
 			def i = it.indexOf("_")
 			it.substring(1, i) + "<sub>" + it.substring(i+1, it.length()-1) + "</sub>" 
@@ -77,6 +78,7 @@ class Tex2Html {
 		s = s.replaceAll(/[^\\]\$/, 
 			{ it.replace("\$", "") })
 		s = s.replace("\\\$", "\$").replace("{", "").replace("}", "")
+		s = s.trim()
 	}
 
 	static boolean isNumber(String s) {		

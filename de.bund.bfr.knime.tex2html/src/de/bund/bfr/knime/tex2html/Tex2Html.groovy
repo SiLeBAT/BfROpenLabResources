@@ -77,14 +77,8 @@ class Tex2Html {
 		})
 		s = s.replaceAll(/.\$/, {  it.charAt(0) == '\\' ? "\$" : it.charAt(0) })
 		s = s.replace("{", "").replace("}", "")
-		
-		// DE-stuff
-		s = s.replace("\\\"u", "&uuml;").replace("\\\"a", "&auml;").replace("\\\"o", "&ouml;");
-		s = s.replace("\\\"U", "&Uuml;").replace("\\\"A", "&Auml;").replace("\\\"O", "&Ouml;");
-		s = s.replace("\\ss", "&szlig;");
 		s = s.replace("\\%", "%");
 		s = s.replace("\\textgreater", "&gt;");
-		
 		s = s.trim()
 	}
 

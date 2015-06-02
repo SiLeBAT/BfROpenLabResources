@@ -26,7 +26,7 @@ import javax.imageio.ImageIO
 class Tex2Html {
 
 	static String NAME = "datacollecting"
-	static String TEX_FILE = "../GitHubPages/documents/foodchainlab_${NAME}/${NAME}.tex"
+	static String TEX_FILE = "../GitHubPages/documents/foodchainlab_${NAME}/${NAME}_DE.tex"
 	static String URL = "https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/foodchainlab_${NAME}"
 
 	static main(args) {

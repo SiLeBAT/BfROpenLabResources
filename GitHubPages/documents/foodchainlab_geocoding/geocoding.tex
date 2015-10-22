@@ -41,7 +41,7 @@
   		\includegraphics[height=0.6\textheight]{2.png}
 	\end{center}
 	\begin{itemize}		
-		\item For using MapQuest you have to register and create a key at \url{http://developer.mapquest.com/web/info/account/app-keys}
+		\item For using MapQuest you have to register and create a key at \url{https://developer.mapquest.com}
 		\item This key has to be entered in the KNIME preferences.
 		\item Select \textbf{File $<$ Preferences} in the menu bar.
 	\end{itemize}
@@ -76,7 +76,7 @@
 	\end{center}
 	\begin{itemize}
 		\item To perform geocoding we need one column with addresses in our data table. The \textbf{Supply Chain Reader} puts out all parts of the address (street, city, ...) in different columns.
-		\item The address column is created in the \textbf{String Manipulation} node.
+		\item The address column is created via the \textbf{Address Creator} node.
 		\item Double click on this node to open its dialog.
 	\end{itemize}
 \end{frame}
@@ -87,9 +87,7 @@
   		\includegraphics[height=0.5\textheight]{6.png}
 	\end{center}
 	\begin{itemize}
-		\item In the dialog you can provide the name of the address column and an expression, that defines how the address column is created.
-		\item The terms between the \$-signs are columns from the input table.
-		\item You can add more columns to the expression by double clicking on the desired column in the \textbf{Column List} in the upper left corner.
+		\item In the dialog you can specify the columns that should used for creating the address column.		
 	\end{itemize}
 \end{frame}
 
@@ -99,7 +97,7 @@
   		\includegraphics[height=0.6\textheight]{7.png}
 	\end{center}
 	\begin{itemize}
-		\item Since we want to do the Geocoding based on "Street", "HouseNumber", "City" and "Country", we have to replace the expression by the following: \texttt{string(\$Street\$ + " " + \$HouseNumber\$ + ", " + \$City\$ + ", " + \$Country\$)}
+		\item Since we want to do the Geocoding based on "Street", "HouseNumber", "City" and "Country", we have to set the \textbf{Country Column} to "Country" and the \textbf{Postal Code Column} to "$<$none$>$".
 		\item Press \textbf{OK} to close the dialog.
 	\end{itemize}
 \end{frame}
@@ -121,7 +119,7 @@
   		\includegraphics[height=0.6\textheight]{9.png}
 	\end{center}
 	\begin{itemize}
-		\item The expression for the \textbf{Address} column has been updated in the \textbf{String Manipulation} node.
+		\item The configuration for the \textbf{Address Creator} has been updated.
 	\end{itemize}
 \end{frame}
 
@@ -131,7 +129,7 @@
   		\includegraphics[height=0.6\textheight]{10.png}
 	\end{center}
 	\begin{itemize}
-		\item Right click on the \textbf{String Manipulation} node and select \textbf{Execute}.
+		\item Right click on the \textbf{Address Creator} node and select \textbf{Execute}.
 	\end{itemize}
 \end{frame}
 
@@ -218,7 +216,7 @@
 	\end{center}
 	\begin{itemize}
 		\item Scroll to the right to look at the columns with latitude and longitude (the two rightmost columns).
-		\item For all rows with "?" the geocoding was unsuccessful.
+		\item Some geocoding request were not successful. MapQuest returned US coordinates, although all addresses are in Germany.
 	\end{itemize}
 \end{frame}
 

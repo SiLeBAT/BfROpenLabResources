@@ -31,6 +31,7 @@
 	\end{center}
 	\begin{itemize}
 		\item Importieren Sie den Geocoding Workflow von \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/workflows/Geocoding.zip}.
+		\item In diesem Tutorial benutzen wir den MapQuest Geocoding Service.
 	\end{itemize}
 \end{frame}
 
@@ -40,7 +41,7 @@
   		\includegraphics[height=0.6\textheight]{2.png}
 	\end{center}
 	\begin{itemize}		
-		\item Für MapQuest müssen Sie sich registrieren und einen App-Key erstellen unter: \url{http://developer.mapquest.com/web/info/account/app-keys}
+		\item Für MapQuest müssen Sie sich registrieren und einen App-Key erstellen unter: \url{https://developer.mapquest.com}
 		\item Dieser App-Key muss in den KNIME-Einstellungen eingegeben werden.
 		\item Wählen Sie \textbf{File $<$ Preferences} in der Menüleiste.
 	\end{itemize}
@@ -75,7 +76,7 @@
 	\end{center}
 	\begin{itemize}
 		\item Um das Geocoding auszuführen benötigen wir eine Spalte mit Adressen. Der \textbf{Supply Chain Reader} gibt allerdings alle Teile der Adresse (Straße, Stadt, ...) in verschiedenen Spalten aus.
-		\item Die Adress-Spalte wir mit dem \textbf{String Manipulation}-Knoten erstellt.
+		\item Die Adress-Spalte wir mit dem \textbf{Address Creator}-Knoten erstellt.
 		\item Machen Sie einen Doppelklick auf diesen Knoten um den Konfigurationsdialog zu öffnen.
 	\end{itemize}
 \end{frame}
@@ -86,9 +87,7 @@
   		\includegraphics[height=0.6\textheight]{6.png}
 	\end{center}
 	\begin{itemize}
-		\item In diesem Dialog können Sie den Namen der Adress-Spalte definieren und wie diese erzeugt wird.
-		\item Die Ausdrücke zwischen den \$-Zeichen sind Spalten aus der Eingabe-Tabelle.
-		\item Sie können weitere Spalten hinzufügen, indem oben links in der \textbf{Column List} auf die gewünschte Spalte klicken.
+		\item In diesem Dialog können Sie definieren welche Spalten für die Adress-Spalte benutzt werden sollen.		
 	\end{itemize}
 \end{frame}
 
@@ -98,7 +97,7 @@
   		\includegraphics[height=0.5\textheight]{7.png}
 	\end{center}
 	\begin{itemize}
-		\item Da wir das Geocoding basierend auf "Street", "HouseNumber", "City" and "Country" durchführen wollen, müssen wir den gegebenen Ausdruch durch den folgenden ersetzen: \texttt{string(\$Street\$ + " " + \$HouseNumber\$ + ", " + \$City\$ + ", " + \$Country\$)}
+		\item Da wir das Geocoding basierend auf "Street", "HouseNumber", "City" and "Country" durchführen wollen, müssen wir \textbf{Country Column} auf "Country" setzen und \textbf{Postal Code Column} auf "$<$none$>$"
 		\item Klicken Sie \textbf{OK} um den Dialog zu schließen.
 	\end{itemize}
 \end{frame}
@@ -120,7 +119,7 @@
   		\includegraphics[height=0.6\textheight]{9.png}
 	\end{center}
 	\begin{itemize}
-		\item Nun haben wir die Definition der Adress-Spalte angepasst und können den Knoten neu ausführen.
+		\item Wir haben den \textbf{Address Creator} nun passend konfiguriert und ihn neu ausführen.
 	\end{itemize}
 \end{frame}
 
@@ -130,7 +129,7 @@
   		\includegraphics[height=0.6\textheight]{10.png}
 	\end{center}
 	\begin{itemize}
-		\item Machen Sie einen Rechtsklick auf den \textbf{String Manipulation}-Knoten und wählen Sie \textbf{Execute}.
+		\item Machen Sie einen Rechtsklick auf den \textbf{Address Creator} und wählen Sie \textbf{Execute}.
 	\end{itemize}
 \end{frame}
 
@@ -217,7 +216,7 @@
 	\end{center}
 	\begin{itemize}
 		\item Scrollen Sie ganz nach rechts um sich die Spalten mit geographischer Breite und Länge anzuschauen (die zwei Spalten ganz rechts).
-		\item Für alle Zeilen mit "?" war das Geocoding nicht erfolgreich.
+		\item Bei mehrere Geocoding Anfragen haben wir falsche Ergebnisse. MapQuest hat Koordinaten für die USA geliefert, obwohl alle Addressen aus Deutschland sind.
 	\end{itemize}
 \end{frame}
 

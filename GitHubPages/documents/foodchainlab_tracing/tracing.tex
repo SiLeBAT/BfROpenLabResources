@@ -12,6 +12,15 @@
  
 \begin{document}
 \maketitle
+
+\section{Tasks}
+\begin{frame}
+	\begin{itemize}
+		\item Use the example workflow from \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/workflows/FCL_Example.zip}.
+		\item Visualize the forward and backward trace of a station via the \textbf{Tracing View}.
+		\item Deactivate "Cross Contamination" for the black station and see how the trace changes.
+	\end{itemize}
+\end{frame}
  
 \section{1}
 \begin{frame}
@@ -19,7 +28,7 @@
   		\includegraphics[height=0.6\textheight]{1.png}
 	\end{center}
 	\begin{itemize}
-		\item Import the Example Workflow from \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/workflows/Example_Workflow.zip}.
+		\item Import the Example Workflow from \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/workflows/FCL_Example.zip}.
 		\item Open the \textbf{Tracing View} by double-clicking on it.
 	\end{itemize}
 \end{frame}
@@ -30,7 +39,7 @@
   		\includegraphics[height=0.6\textheight]{2.png}
 	\end{center}
 	\begin{itemize}
-		\item In the delivery graph you can see three \textbf{Outbreak} stations (red) and two station where \textbf{Cross Contamination} is assumed.
+		\item In the delivery graph you can see 9 \textbf{Outbreak} stations (red) and one station where \textbf{Cross Contamination} is assumed (black).
 		\item The size of each station is based on its "Score", which depends on the \textbf{Outbreak} stations that can be reached from the station.
 	\end{itemize}
 \end{frame}
@@ -53,7 +62,7 @@
 	\end{center}
 	\begin{itemize}
 		\item A dialog will pop up, that all attributes of the station.
-		\item Additionally you can change "Weight", "Cross Contamination" and "Observed".		
+		\item Additionally you can change "Weight", "Cross Contamination", "Kill Contamination" and "Observed".		
 	\end{itemize}
 \end{frame}
 
@@ -74,7 +83,7 @@
 	\end{center}
 	\begin{itemize}
 		\item All stations/deliveries of the forward trace are orange-colored and the ones of the backward trace are purple.
-		\item Two of the three \textbf{Outbreak} stations are also orange striped now. That means they are also on the forward trace of the observed station.
+		\item Three \textbf{Outbreak} stations are also orange striped now. That means they are also on the forward trace of the observed station.
 	\end{itemize}
 \end{frame}
 
@@ -84,7 +93,7 @@
   		\includegraphics[height=0.6\textheight]{7.png}
 	\end{center}
 	\begin{itemize}
-		\item Let's see what happens if we deactivate cross contamination in station in the red circle.
+		\item Let's see what happens if we deactivate cross contamination in the station in the red circle.
 		\item So double click on it.
 	\end{itemize}
 \end{frame}
@@ -106,7 +115,7 @@
 	\end{center}
 	\begin{itemize}
 		\item Deactivating cross contamination changed the forward trace of the observed station.
-		\item Now the \textbf{Outbreak} station on the left cannot be reached anymore.
+		\item Now two of \textbf{Outbreak} stations, that were striped before, cannot be reached anymore.
 	\end{itemize}
 \end{frame}
 

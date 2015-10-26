@@ -16,9 +16,9 @@
 \section{Aufgaben}
 \begin{frame}
 	\begin{itemize}
-		\item Nutzen Sie den Beispiel Workflow von \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/workflows/Example_Workflow.zip}.
-		\item Lassen Sie sich im \textbf{Tracing View} den Forward- und Backward-Trace von der Station zeigen, die an die beiden schwarzen Stationen liefert.
-		\item Dann deaktivieren Sie in der unteren schwarzen Station die Kreuzkontamination und schauen Sie, wie sich der Forward Trace daraufhin ändert.
+		\item Nutzen Sie den Beispiel Workflow von \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/workflows/FCL_Example.zip}.
+		\item Lassen Sie sich im \textbf{Tracing View} den Forward- und Backward-Trace von einer Station zeigen.
+		\item Dann deaktivieren Sie in der schwarzen Station die Kreuzkontamination und schauen Sie, wie sich der Forward Trace daraufhin ändert.
 	\end{itemize}
 \end{frame}
  
@@ -28,7 +28,7 @@
   		\includegraphics[height=0.6\textheight]{1.png}
 	\end{center}
 	\begin{itemize}
-		\item Importieren Sie den Example Workflow von \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/workflows/Example_Workflow.zip}.
+		\item Importieren Sie den Example Workflow von \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/workflows/FCL_Example.zip}.
 		\item Öffnen Sie den \textbf{Tracing View} per Doppelklick.
 	\end{itemize}
 \end{frame}
@@ -39,7 +39,7 @@
   		\includegraphics[height=0.6\textheight]{2.png}
 	\end{center}
 	\begin{itemize}
-		\item Im Graphen sehen Sie drei Ausbruchs-Stationen (rot) and zwei Stationen, an den Kreuzkontamination angenommen wird (schwarz).
+		\item Im Graphen sehen Sie 9 Ausbruchs-Stationen (rot) and eine Station, an den Kreuzkontamination angenommen wird (schwarz).
 		\item Die Größe jeder Station basiert auf ihrem "Score", welcher davon abhängt welche Ausbruchs-Stationen erreicht werden können.
 	\end{itemize}
 \end{frame}
@@ -62,7 +62,7 @@
 	\end{center}
 	\begin{itemize}
 		\item Ein Dialog mit allen Attributen der ausgewählten Station erscheint.
-		\item Im oberen Bereich können Sie die Werte der Attribute "Weight", "CrossContamination" und "Observed" verändern.		
+		\item Im oberen Bereich können Sie die Werte der Attribute "Weight", "CrossContamination", "Kill Contamination" und "Observed" verändern.		
 	\end{itemize}
 \end{frame}
 
@@ -83,7 +83,7 @@
 	\end{center}
 	\begin{itemize}
 		\item Alle Stationen/Lieferungen vom Forward-Trace sind orange gefärbt and diejenigen vom Backward-Trace sind magenta.
-		\item Zwei der drei Ausbruchs-Stationen haben nun orange Streifen. Das bedeutet, dass Sie auch auf dem Forward-Trace sind.
+		\item Drei Ausbruchs-Stationen haben nun orange Streifen. Das bedeutet, dass Sie auch auf dem Forward-Trace sind.
 	\end{itemize}
 \end{frame}
 
@@ -115,7 +115,7 @@
 	\end{center}
 	\begin{itemize}
 		\item Das Deaktivieren der Kreuzkontamination hat den Forward-Trace der beobachteten Station ("Observed") verändert.
-		\item Nun kann die ganz linke Ausbruchs-Station nicht mehr erreicht werden (keine orangen Streifen mehr).
+		\item Nun können zwei Ausbruchs-Stations, die zuvor noch gestreift waren, nicht mehr erreicht werden.
 	\end{itemize}
 \end{frame}
 

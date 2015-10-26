@@ -26,7 +26,7 @@ import javax.imageio.ImageIO
 class Tex2Html {
 
 	static String NAME = "tracing"
-	static String TEX_FILE = "../GitHubPages/documents/foodchainlab_${NAME}/${NAME}.tex"
+	static String TEX_FILE = "../GitHubPages/documents/foodchainlab_${NAME}/${NAME}_DE.tex"
 	static String URL = "https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/foodchainlab_${NAME}"
 
 	static main(args) {
@@ -63,17 +63,17 @@ class Tex2Html {
 		s = " " + s + " "
 		s = s.replaceAll(/\$[^_\$]+_[^_\$]+\$/, {
 			def i = it.indexOf("_")
-			it.substring(1, i) + "<sub>" + it.substring(i+1, it.length()-1) + "</sub>" 
+			it.substring(1, i) + "<sub>" + it.substring(i+1, it.length()-1) + "</sub>"
 		})
 		s = s.replaceAll(/\\textbf\{[^}]*}/,
 				{ "<b>" + it.replace("\\textbf{","").replace("}", "") + "</b>" })
 		s = s.replaceAll(/\\textit\{[^}]*}/,
 				{ "<i>" + it.replace("\\textit{","").replace("}", "") + "</i>" })
 		s = s.replaceAll(/\\texttt\{[^}]*}/,
-			{ "<code>" + it.replace("\\texttt{","").replace("}", "") + "</code>" })
+				{ "<code>" + it.replace("\\texttt{","").replace("}", "") + "</code>" })
 		s = s.replaceAll(/\\url\{[^}]*}/, {
 			def url = it.replace("\\url{","").replace("}", "")
-			"<a href=\"${url}\" target=\"_blank\">${url}</a>"
+			"<a href=\"${url}\" target=\"_blank\">${getShortUrl(url)}</a>"
 		})
 		s = s.replaceAll(/.\$/, {  it.charAt(0) == '\\' ? "\$" : it.charAt(0) })
 		s = s.replace("{", "").replace("}", "")
@@ -82,12 +82,20 @@ class Tex2Html {
 		s = s.trim()
 	}
 
-	static boolean isNumber(String s) {		
+	static boolean isNumber(String s) {
 		try {
 			Integer.parseInt(s)
 			return true
 		} catch (Exception e) {
 			return false
 		}
+	}
+
+	static String getShortUrl(String url) {
+		if (url.length() > 40) {
+			return url.substring(0, 37) + "..."
+		}
+
+		return url
 	}
 }

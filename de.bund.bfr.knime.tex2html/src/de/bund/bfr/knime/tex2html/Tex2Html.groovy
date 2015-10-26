@@ -25,8 +25,8 @@ import javax.imageio.ImageIO
 
 class Tex2Html {
 
-	static String NAME = "datacollecting"
-	static String TEX_FILE = "../GitHubPages/documents/foodchainlab_${NAME}/${NAME}_DE.tex"
+	static String NAME = "tracing"
+	static String TEX_FILE = "../GitHubPages/documents/foodchainlab_${NAME}/${NAME}.tex"
 	static String URL = "https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/foodchainlab_${NAME}"
 
 	static main(args) {
@@ -50,7 +50,7 @@ class Tex2Html {
 				println "<ul>"
 				text.each { t -> println "<li>${t}</li>" }
 				println "</ul>"
-				if (image != null) println "<img class=\"aligncenter size-full\" src=\"${URL}/${image}\"/>"
+				if (image != null) println "<a href=\"${URL}/${image}\"><img class=\"aligncenter size-full\" src=\"${URL}/${image}\"/></a>"
 
 				heading = null
 				text = []

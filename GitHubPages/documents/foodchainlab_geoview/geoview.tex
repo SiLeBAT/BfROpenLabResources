@@ -12,6 +12,15 @@
  
 \begin{document}
 \maketitle
+
+\section{Tasks}
+\begin{frame}
+	\begin{itemize}
+		\item Use the following workflow: \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/workflows/FCL_Example.zip}.
+		\item Visualize the delivery network in the GIS mode of the \textbf{Tracing View}.
+		\item Select all stations in Poland und check out where these stations are located in the Graph mode.
+	\end{itemize}
+\end{frame}
  
 \section{1}
 \begin{frame}
@@ -19,7 +28,7 @@
   		\includegraphics[height=0.6\textheight]{1.png}
 	\end{center}
 	\begin{itemize}
-		\item Import the Example Workflow from \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/workflows/Example_Workflow.zip}.
+		\item Import the Example Workflow from \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/workflows/FCL_Example.zip}.
 		\item Open the \textbf{Tracing View} by double-clicking on it.
 	\end{itemize}
 \end{frame}
@@ -41,7 +50,9 @@
   		\includegraphics[height=0.6\textheight]{3.png}
 	\end{center}
 	\begin{itemize}
-		\item To zoom to a certain area of the graph select "TRANSFORMING" as \textbf{Editing Mode} and zoom/move the graph by using the mouse wheel and the left mouse button (works as in Google Maps).
+		\item The country borders, which where read from a shapefile, are used for geographical visualization.
+		\item To zoom to a certain area of the graph select "Transforming" as \textbf{Editing Mode} and zoom/move the graph by using the mouse wheel and the left mouse button (works as in Google Maps).
+		\it
 	\end{itemize}
 \end{frame}
 
@@ -51,7 +62,9 @@
   		\includegraphics[height=0.6\textheight]{4.png}
 	\end{center}
 	\begin{itemize}
-		\item Here you can see the deliveries in central Europe.
+		\item If you are online, you can change the type of visualization.
+		\item Select "Mapnik" as \textbf{GIS Type}.
+		\item Now you should see a visualization with OpenStreetMap data.
 	\end{itemize}
 \end{frame}
 
@@ -62,7 +75,7 @@
 	\end{center}
 	\begin{itemize}
 		\item We can now select certain stations based on geography.
-		\item Select "PICKING" as \textbf{Editing Mode} and select all stations in Poland by dragging a rect around the stations.
+		\item Select "Picking" as \textbf{Editing Mode} and select all stations in Poland by dragging a rect around the stations.
 		\item The selected stations are now colored blue.
 		\item Switch back to the graphical view by clicking \textbf{Switch to Graph} in the upper right corner.
 	\end{itemize}
@@ -86,7 +99,7 @@
 	\end{center}
 	\begin{itemize}
 		\item Lets now select a certain "cluster" in the graphical view and see where the stations are in the geographical view.
-		\item So select the "cluster" in the upper right corner and click \textbf{Switch to GIS}.
+		\item So select the "cluster" in the red circle and click \textbf{Switch to GIS}.
 	\end{itemize}
 \end{frame}
 

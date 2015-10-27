@@ -92,10 +92,6 @@ class Tex2Html {
 	}
 
 	static String getShortUrl(String url) {
-		if (url.length() > 40) {
-			return url.substring(0, 37) + "..."
-		}
-
-		return url
+		return url.length() > 40 ? url.substring(0, 37) + "..." : url
 	}
 }

@@ -18,8 +18,8 @@
 \subsection{Aufgaben}
 \begin{frame}
 	\begin{itemize}
-		\item Nutzen Sie folgenden Workflow: \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/workflows/Example_Workflow.zip}
-		\item Clusters Sie alle französischen Stationen mit Hilfe des \textbf{GIS Cluster}-Knotens.
+		\item Nutzen Sie folgenden Workflow: \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/workflows/FCL_Example.zip}
+		\item Clusters Sie alle französischen Primärproduzenten mit Hilfe des \textbf{GIS Cluster}-Knotens.
 		\item Nutzen Sie dabei eine \textbf{Max Neighborhood Distance} von 100km.
 		\item Das bedeutet, dass zwei Stationen in das selbe Cluster kommen, wenn Sie weniger als 100km voneinander entfernt sind.
 	\end{itemize}
@@ -31,7 +31,7 @@
   		\includegraphics[height=0.6\textheight]{1.png}
 	\end{center}
 	\begin{itemize}
-		\item Importieren Sie den Beispiel Workflow von \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/workflows/Example_Workflow.zip}.
+		\item Importieren Sie den Beispiel Workflow von \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/workflows/FCL_Example.zip}.
 	\end{itemize}
 \end{frame}
 
@@ -74,40 +74,40 @@
   		\includegraphics[width=0.9\textwidth]{5.png}
 	\end{center}
 	\begin{itemize}
-		\item Sie sollten jetzt folgenden Dialog sehen.
+		\item Sie sollten jetzt diesen Dialog sehen.
+		\item Klicken sie auf den rot markierten Button um für \textbf{Property} einen anderen Wert zu wählen.
 	\end{itemize}
 \end{frame}
 
 \subsection{6}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[width=0.9\textwidth]{6.png}
+  		\includegraphics[width=0.7\textwidth]{6.png}
 	\end{center}
 	\begin{itemize}
-		\item Wir wollen nur französische Stationen clustern, da sich die meisten Primärproduzenten unseres Datensatzes in Frankreich befinden.
-		\item Wählen Sie "Country" als \textbf{Property} und "FR" als \textbf{Value} und klicken Sie dann \textbf{OK}.
+		\item Wählen Sie "Country".
 	\end{itemize}
 \end{frame}
 
 \subsection{7}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[height=0.6\textheight]{7.png}
+  		\includegraphics[width=0.9\textwidth]{7.png}
 	\end{center}
 	\begin{itemize}
-		\item Setzen Sie die \textbf{Max Neighborhood Distance} auf 100km. Stationen mit einer Distanz von unter 100km landen also im selben Cluster.
-		\item Klicken Sie \textbf{OK}.
+		\item Nun wählen Sie "FR" als \textbf{Value}, da wir ja nur Stationen in Frankreich clustern wollen.
+		\item Klicken Sie danach auf \textbf{Add} um eine weitere Bedingung hinzuzufügen.
 	\end{itemize}
 \end{frame}
 
 \subsection{8}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[height=0.6\textheight]{8.png}
+  		\includegraphics[width=0.9\textwidth]{8.png}
 	\end{center}
 	\begin{itemize}
-		\item Machen Sie einen Rechtsklick auf den \textbf{GIS Cluster}-Knoten und wählen Sie \textbf{Execute} um den Knoten auszuführen.
-		\item Die Ergebnisse des Cluster-Algorithmus werden in der \textbf{ClusterID} Spalte gespeichert. Diese Spalte benutzen wir dann im \textbf{Tracing View}.
+		\item Für die neue Bedingung wählen sie "type of business" als \textbf{Property} und "Primary Producer" als \textbf{Value}, denn wir wollen ja nur Primärproduzenten clustern.
+		\item Nun klicken Sie auf \textbf{OK}.
 	\end{itemize}
 \end{frame}
 
@@ -117,7 +117,8 @@
   		\includegraphics[height=0.6\textheight]{9.png}
 	\end{center}
 	\begin{itemize}
-		\item Öffnen Sie den \textbf{Tracing View} per Doppelklick.
+		\item Setzen Sie die \textbf{Max Neighborhood Distance} auf 100km. Stationen mit einer Distanz von unter 100km landen also im selben Cluster.
+		\item Klicken Sie \textbf{OK}.
 	\end{itemize}
 \end{frame}
 
@@ -127,7 +128,8 @@
   		\includegraphics[height=0.6\textheight]{10.png}
 	\end{center}
 	\begin{itemize}
-		\item Sie sollten nun ein Fenster mit dem Liefernetz-Graphen sehen.
+		\item Machen Sie einen Rechtsklick auf den \textbf{GIS Cluster}-Knoten und wählen Sie \textbf{Execute} um den Knoten auszuführen.
+		\item Die Ergebnisse des Cluster-Algorithmus werden in der \textbf{ClusterID} Spalte gespeichert. Diese Spalte benutzen wir dann im \textbf{Tracing View}.
 	\end{itemize}
 \end{frame}
 
@@ -137,14 +139,34 @@
   		\includegraphics[height=0.6\textheight]{11.png}
 	\end{center}
 	\begin{itemize}
-		\item Machen Sie einen Rechtsklick in den Graphen und wählen Sie \textbf{Collapse by Property}.
+		\item Öffnen Sie den \textbf{Tracing View} per Doppelklick.
 	\end{itemize}
 \end{frame}
 
 \subsection{12}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[height=0.5\textheight]{12.png}
+  		\includegraphics[height=0.6\textheight]{12.png}
+	\end{center}
+	\begin{itemize}
+		\item Sie sollten nun ein Fenster mit dem Liefernetz-Graphen sehen.
+	\end{itemize}
+\end{frame}
+
+\subsection{13}
+\begin{frame}
+	\begin{center}
+  		\includegraphics[height=0.6\textheight]{13.png}
+	\end{center}
+	\begin{itemize}
+		\item Machen Sie einen Rechtsklick in den Graphen und wählen Sie \textbf{Collapse by Property}.
+	\end{itemize}
+\end{frame}
+
+\subsection{14}
+\begin{frame}
+	\begin{center}
+  		\includegraphics[height=0.5\textheight]{14.png}
 	\end{center}
 	\begin{itemize}
 		\item Hier benutzen wir die \textbf{ClusterID}-Spalte mit den Ergebnissen vom \textbf{GIS Cluster}-Knoten.
@@ -152,35 +174,13 @@
 	\end{itemize}
 \end{frame}
 
-\subsection{13}
-\begin{frame}
-	\begin{center}
-  		\includegraphics[height=0.5\textheight]{13.png}
-	\end{center}
-	\begin{itemize}
-		\item Klicken Sie einfach auf \textbf{OK}, da wir kein Cluster ausschließen wollen.
-	\end{itemize}
-\end{frame}
-
-\subsection{14}
-\begin{frame}
-	\begin{center}
-  		\includegraphics[height=0.6\textheight]{14.png}
-	\end{center}
-	\begin{itemize}
-		\item Alle französischen Stationen wurden nun zu Gebieten geclustert.
-		\item Jede selektierte Meta-Station (blue circle) ist ein Gebiet in Frankreich.		
-	\end{itemize}
-\end{frame}
-
 \subsection{15}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[height=0.6\textheight]{15.png}
+  		\includegraphics[height=0.5\textheight]{15.png}
 	\end{center}
 	\begin{itemize}
-		\item Wählen Sie "PICKING" als \textbf{Editing Mode} and klicken Sie an eine leere Stelle des Graphen um alle Station zu deselektieren.
-		\item Nun können Sie sehen, dass einige der Meta-Station gelb sind. Das bedeutet, dass diese französischen Gebiete eine Verbindung zu allen Ausbruchs-Stationen haben.
+		\item Klicken Sie einfach auf \textbf{OK}, da wir kein Cluster ausschließen wollen.
 	\end{itemize}
 \end{frame}
 
@@ -190,19 +190,20 @@
   		\includegraphics[height=0.6\textheight]{16.png}
 	\end{center}
 	\begin{itemize}
-		\item Da der Graph jetzt recht unübersichtlich aussieht, sollten einen Layout-Algorithmus anwenden.
-		\item Machen Sie einen Rechtsklick in den Graphen und wählen Sie \textbf{Apply Layout $>$ Fruchterman-Reingold}.
+		\item Alle französischen Primärproduzenten wurden nun zu Gebieten geclustert.
+		\item Jede selektierte Meta-Station (blue circle) ist ein Gebiet in Frankreich.		
 	\end{itemize}
 \end{frame}
 
 \subsection{17}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[height=0.6\textheight]{17.png}
+  		\includegraphics[height=0.5\textheight]{17.png}
 	\end{center}
 	\begin{itemize}
-		\item Der Graph sollte jetzt übersichtlicher angeordnet sein.
-		\item Der Algorithmus ist nicht deterministisch. Deshalb wird ihr Graph anders aussehen als der Screenshot hier.
+		\item Wählen Sie "Picking" als \textbf{Editing Mode} and klicken Sie an eine leere Stelle des Graphen um alle Station zu deselektieren.
+		\item Nun können Sie sehen, dass eine der Meta-Stationen gelb ist. Das bedeutet, dass dieses französische Gebiet eine Verbindung zu allen Ausbruchs-Stationen hat.
+		\item Klicken Sie \textbf{Switch to GIS} um zu schauen wo dieses Gebiet ist.
 	\end{itemize}
 \end{frame}
 
@@ -212,8 +213,7 @@
   		\includegraphics[height=0.6\textheight]{18.png}
 	\end{center}
 	\begin{itemize}
-		\item Nach Anwenden des Layout-Algorithmus sind einige Stationen nicht mehr im sichtbaren Bereich.
-		\item Um den ganzen Graphen zu sehen, wählen Sie "TRANSFORMING" als \textbf{Editing Mode} and zoomen Sie bis Sie den ganzen Graph sehen können (Zoomen funktioniert wie in Google Maps).
+		\item Das Gebiet befindet sich in Südfrankreich.
 	\end{itemize}
 \end{frame}
 

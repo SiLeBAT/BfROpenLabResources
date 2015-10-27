@@ -16,8 +16,8 @@
 \section{Aufgaben}
 \begin{frame}
 	\begin{itemize}
-		\item Nutzen Sie folgenden Workflow: \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/workflows/Example_Workflow.zip}
-		\item Clustern Sie alle französischen Station basierend auf dem Attribut "City".
+		\item Nutzen Sie folgenden Workflow: \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/workflows/FCL_Example.zip}
+		\item Clustern Sie alle französischen Primärproduzenten basierend auf dem Attribut "City".
 		\item Das bedeutet alle Stationen aus derselben Stadt werden in eine Meta-Station gepackt.
 	\end{itemize}
 \end{frame}
@@ -28,7 +28,7 @@
   		\includegraphics[height=0.6\textheight]{1.png}
 	\end{center}
 	\begin{itemize}
-		\item Importieren Sie den Beispiel-Workflow von \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/workflows/Example_Workflow.zip}.
+		\item Importieren Sie den Beispiel-Workflow von \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/workflows/FCL_Example.zip}.
 		\item Öffnen Sie den \textbf{Tracing View} per Doppelklick.
 	\end{itemize}
 \end{frame}
@@ -49,7 +49,7 @@
   		\includegraphics[height=0.6\textheight]{3.png}
 	\end{center}
 	\begin{itemize}
-		\item Machen Sie einen Rechtsklick in den Graphen und wählen Sie \textbf{Select Stations}.
+		\item Machen Sie einen Rechtsklick in den Graphen und wählen Sie \textbf{Set Selected Stations}.
 	\end{itemize}
 \end{frame}
 
@@ -60,89 +60,89 @@
 	\end{center}
 	\begin{itemize}
 		\item Sie sollten jetzt diesen Dialog sehen.
+		\item Klicken sie auf den rot markierten Button um für \textbf{Property} einen anderen Wert zu wählen.
 	\end{itemize}
 \end{frame}
 
 \section{5}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[width=0.9\textwidth]{5.png}
+  		\includegraphics[width=0.7\textwidth]{5.png}
 	\end{center}
 	\begin{itemize}
-		\item Wir möchten alle französischen Station clustern, da die meisten Primärproduzenten in diesem Datensatz aus Frankreich kommen.
-		\item Wählen "Country" als \textbf{Property} und "FR" als \textbf{Value} und klicken Sie \textbf{OK}.
+		\item Wählen Sie "Country".
 	\end{itemize}
 \end{frame}
 
 \section{6}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[height=0.6\textheight]{6.png}
+  		\includegraphics[width=0.9\textwidth]{6.png}
 	\end{center}
 	\begin{itemize}
-		\item Alle französischen Stationen sind jetzt selektiert (blau markiert).
+		\item Nun wählen Sie "FR" als \textbf{Value}, da wir ja nur Stationen in Frankreich clustern wollen.
+		\item Klicken Sie danach auf \textbf{Add} um eine weitere Bedingung hinzuzufügen.
 	\end{itemize}
 \end{frame}
 
 \section{7}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[height=0.6\textheight]{7.png}
+  		\includegraphics[width=0.9\textwidth]{7.png}
 	\end{center}
 	\begin{itemize}
-		\item Machen Sie einen Rechtsklick in den Graphen und wählen Sie \textbf{Collapse by Property} um die selektierten Stationen zu clustern.
+		\item Für die neue Bedingung wählen sie "type of business" als \textbf{Property} und "Primary Producer" als \textbf{Value}, denn wir wollen ja nur Primärproduzenten clustern.
+		\item Nun klicken Sie auf \textbf{OK}.
 	\end{itemize}
 \end{frame}
 
 \section{8}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[width=0.7\textwidth]{8.png}
+  		\includegraphics[height=0.6\textheight]{8.png}
 	\end{center}
 	\begin{itemize}
-		\item Wählen Sie \textbf{Yes} um nur die selektierten Stationen fürs Clustern zu nutzen.
+		\item Alle französischen Primärproduzenten sind jetzt selektiert (blau markiert).
 	\end{itemize}
 \end{frame}
 
 \section{9}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[height=0.5\textheight]{9.png}
+  		\includegraphics[height=0.6\textheight]{9.png}
 	\end{center}
 	\begin{itemize}
-		\item Da wir auf Basis des Attributs "City" clustern wollen, wählen Sie dieses und klicken Sie \textbf{OK}.
+		\item Machen Sie einen Rechtsklick in den Graphen und wählen Sie \textbf{Collapse by Property} um die selektierten Stationen zu clustern.
 	\end{itemize}
 \end{frame}
 
 \section{10}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[height=0.5\textheight]{10.png}
+  		\includegraphics[width=0.6\textwidth]{10.png}
 	\end{center}
 	\begin{itemize}
-		\item Klicken Sie einfach nur \textbf{OK}, da wir keine Städte ausschließen wollen.
+		\item Wählen Sie \textbf{Yes} um nur die selektierten Stationen fürs Clustern zu nutzen.
 	\end{itemize}
 \end{frame}
 
 \section{11}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[height=0.6\textheight]{11.png}
+  		\includegraphics[height=0.5\textheight]{11.png}
 	\end{center}
 	\begin{itemize}
-		\item Alle französischen Station sind nun nach "City" geclustert.
-		\item Jede selektierte Meta-Station (blue circle) ist eine französische Stadt.
+		\item Da wir auf Basis des Attributs "City" clustern wollen, wählen Sie dieses und klicken Sie \textbf{OK}.
 	\end{itemize}
 \end{frame}
 
 \section{12}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[height=0.6\textheight]{12.png}
+  		\includegraphics[height=0.5\textheight]{12.png}
 	\end{center}
 	\begin{itemize}
-		\item Wählen Sie "PICKING" als \textbf{Editing Mode} and klicken Sie an eine leere Stelle des Graphen um alle Station zu deselektieren.
-		\item Nun können Sie sehen, dass einige der Meta-Station gelb sind. Das bedeutet, dass diese französischen Städte eine Verbindung zu allen Ausbruchs-Stationen haben.
+		\item Klicken Sie einfach nur \textbf{OK}, da wir keine Städte ausschließen wollen.
 	\end{itemize}
 \end{frame}
 
@@ -152,8 +152,8 @@
   		\includegraphics[height=0.6\textheight]{13.png}
 	\end{center}
 	\begin{itemize}
-		\item Da der Graph jetzt recht unübersichtlich aussieht, sollten einen Layout-Algorithmus anwenden.
-		\item Machen Sie einen Rechtsklick in den Graphen und wählen Sie \textbf{Apply Layout $>$ Fruchterman-Reingold}.
+		\item Alle französischen Station sind nun nach "City" geclustert.
+		\item Jede selektierte Meta-Station (blau) ist eine französische Stadt.
 	\end{itemize}
 \end{frame}
 
@@ -163,8 +163,8 @@
   		\includegraphics[height=0.6\textheight]{14.png}
 	\end{center}
 	\begin{itemize}
-		\item Der Graph sollte jetzt übersichtlicher angeordnet sein.
-		\item Der Algorithmus ist nicht deterministisch. Deshalb wird ihr Graph anders aussehen als der Screenshot hier.
+		\item Wählen Sie "Picking" als \textbf{Editing Mode} and klicken Sie an eine leere Stelle des Graphen um alle Station zu deselektieren.
+		\item Nun können Sie sehen, dass eine der Meta-Station gelb ist. Das bedeutet, dass diese französische Stadt eine Verbindung zu allen Ausbruchs-Stationen hat.
 	\end{itemize}
 \end{frame}
 
@@ -174,8 +174,30 @@
   		\includegraphics[height=0.6\textheight]{15.png}
 	\end{center}
 	\begin{itemize}
-		\item Nach Anwenden des Layout-Algorithmus sind einige Stationen nicht mehr im sichtbaren Bereich.
-		\item Um den ganzen Graphen zu sehen, wählen Sie "TRANSFORMING" als \textbf{Editing Mode} and zoomen Sie bis Sie den ganzen Graph sehen können (Zoomen funktioniert wie in Google Maps).
+		\item Da der Graph jetzt recht unübersichtlich aussieht, sollten einen Layout-Algorithmus anwenden.
+		\item Machen Sie einen Rechtsklick in den Graphen und wählen Sie \textbf{Apply Layout $>$ Fruchterman-Reingold}.
+	\end{itemize}
+\end{frame}
+
+\section{16}
+\begin{frame}
+	\begin{center}
+  		\includegraphics[height=0.6\textheight]{16.png}
+	\end{center}
+	\begin{itemize}
+		\item Der Graph sollte jetzt übersichtlicher angeordnet sein.
+		\item Der Algorithmus ist nicht deterministisch. Deshalb wird ihr Graph anders aussehen als der Screenshot hier.
+		\item Um zu schauen welche französische Stadt eine Verbindung zu allen Ausbruchsorten hat, machen sie einen Doppelklick auf die gelbe Station.
+	\end{itemize}
+\end{frame}
+
+\section{17}
+\begin{frame}
+	\begin{center}
+  		\includegraphics[height=0.6\textheight]{17.png}
+	\end{center}
+	\begin{itemize}		
+		\item Wie im Dialog zu sehen, handelt es sich um die Stadt "Perpignan".
 	\end{itemize}
 \end{frame}
 

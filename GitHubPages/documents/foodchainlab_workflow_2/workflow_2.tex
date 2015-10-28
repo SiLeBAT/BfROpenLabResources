@@ -29,7 +29,7 @@
 	\end{center}
 	\begin{itemize}
 		\item This is the second part of the tutorial.
-		\item You can either do the first part to create this workflow or download it from \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/workflows/My_First_Workflow.zip}.
+		\item You can either do the first part to create this workflow or download it from \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/workflows/MyFirstWorkflow.zip}.
 		\item Double click on the \textbf{Tracing View} to open its dialog.
 	\end{itemize}
 \end{frame}
@@ -40,7 +40,7 @@
   		\includegraphics[height=0.6\textheight]{2.png}
 	\end{center}
 	\begin{itemize}
-		\item When you open the \textbf{Tracing View} for the first time, you will notice that the layout process is taking place (stations are moving).
+		\item In the \textbf{Tracing View} you can see the imported delivery network.
 	\end{itemize}
 \end{frame}
 
@@ -50,7 +50,7 @@
   		\includegraphics[height=0.6\textheight]{3.png}
 	\end{center}
 	\begin{itemize}
-		\item After the layouting is done, select "TRANSFORMING" as \textbf{Editing Mode} and zoom out till you can see the whole graph (zooming works as in Google Maps).
+		\item To arrange the network in a better way right click in the graph and select \textbf{Apply Layout $>$ Fruchterman-Reingold}.
 	\end{itemize}
 \end{frame}
 
@@ -60,18 +60,19 @@
   		\includegraphics[height=0.6\textheight]{4.png}
 	\end{center}
 	\begin{itemize}
-		\item Right click in the graph to open the context menu and select \textbf{Set default Highlighting}.
-		\item Highlighting uses colors and sizes to visualize certain properties of stations/deliveries.
+		\item This layout prozess is not deterministic. That means you will get a different result each time.
+		\item You can apply the layout again, if you are not satisied with the current result.
 	\end{itemize}
 \end{frame}
 
 \section{5}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[width=0.9\textwidth]{5.png}
+  		\includegraphics[height=0.6\textheight]{5.png}
 	\end{center}
 	\begin{itemize}
-		\item In the confirm dialog select \textbf{Yes}.
+		\item Right click in the graph to open the context menu and select \textbf{Set default Highlighting}.
+		\item Highlighting uses colors and sizes to visualize certain properties of stations/deliveries.
 	\end{itemize}
 \end{frame}
 
@@ -81,7 +82,7 @@
   		\includegraphics[height=0.6\textheight]{6.png}
 	\end{center}
 	\begin{itemize}
-		\item You will notice, that three stations are colored red now and some stations increased in size.
+		\item You will notice, that 4 stations are colored red now and some stations increased in size.
 		\item The red stations are the supermarkets, where set the weight to "1".
 		\item The size of each station is based on its "Score".
 	\end{itemize}
@@ -104,7 +105,7 @@
 	\end{center}
 	\begin{itemize}
 		\item Now we can observe a station to see its delivery trace.
-		\item Set "PICKING" as \textbf{Editing Mode} and double click on any station.
+		\item Set "Picking" as \textbf{Editing Mode} and double click on any station.
 		\item We clicked on the station in the red circle.
 	\end{itemize}
 \end{frame}
@@ -116,7 +117,7 @@
 	\end{center}
 	\begin{itemize}
 		\item A dialog will pop up, that all attributes of the station.
-		\item Additionally you can change "Weight", "Cross Contamination" and "Observed".		
+		\item Additionally you can change "Weight", "Cross Contamination", "Kill Contamination" and "Observed".		
 	\end{itemize}
 \end{frame}
 
@@ -136,8 +137,7 @@
   		\includegraphics[height=0.6\textheight]{11.png}
 	\end{center}
 	\begin{itemize}
-		\item All stations of the forward trace are orange-colored and the ones of the backward trace are purple.
-		\item The deliveries are not colored, since the option \textbf{Join Deliveries} is activated.
+		\item All stations/deliveries of the forward trace are orange-colored and the ones of the backward trace are purple.		
 	\end{itemize}
 \end{frame}
 
@@ -147,8 +147,9 @@
   		\includegraphics[height=0.6\textheight]{12.png}
 	\end{center}
 	\begin{itemize}
-		\item Deactivate \textbf{Join Deliveries} to see each delivery as a single arrow.
-		\item The single deliveries are also colored now, if they are on the forward or backward trace.
+		\item Click at an empty area of the graph to unselect all stations.
+		\item Now you can see, that the "Observed" station is green.
+		\item Then activate "Join Deliveries" to simplify the graph. Deliveries with the same supplier and recipient are joined now.
 	\end{itemize}
 \end{frame}
 

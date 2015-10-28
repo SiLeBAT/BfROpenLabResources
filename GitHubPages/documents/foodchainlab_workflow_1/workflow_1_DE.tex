@@ -18,8 +18,8 @@
 \subsection{Aufgaben}
 \begin{frame}
 	\begin{itemize}
-		\item Importieren Sie das Beispiel-Excel-Template von: \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/fake_data.xls}
-		\item Vergeben mit Hilfe des \textbf{Tracing}-Knotens ein Gewicht ("Weight") von "1" an die Supermärkte in Hamburg, Ingolstadt und Münster um diese als Ausbruchsorte zu markieren.
+		\item Importieren Sie das Beispiel-Excel-Template von: \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Example.xlsx}
+		\item Vergeben mit Hilfe des \textbf{Tracing}-Knotens ein Gewicht ("Weight") von "1" an die Supermärkte in Hamburg, Karlsruhe, Ingolstadt und Hanover um diese als Ausbruchsorte zu markieren.
 		\item Nutzen Sie den \textbf{Tracing View} um das Liefernetz zu visualisieren.
 	\end{itemize}
 \end{frame}
@@ -60,7 +60,7 @@
   		\includegraphics[height=0.6\textheight]{4.png}
 	\end{center}
 	\begin{itemize}
-		\item Es öffnet sich nun ein Dateidialog, in dem *.xls Dateien im FoodChain-Lab Format ausgewählt werden können.
+		\item Es öffnet sich nun ein Dateidialog, in dem *.xlsx Dateien im FoodChain-Lab Format ausgewählt werden können.
 	\end{itemize}
 \end{frame}
 
@@ -70,7 +70,7 @@
   		\includegraphics[height=0.6\textheight]{5.png}
 	\end{center}
 	\begin{itemize}
-		\item Laden Sie die Beispieldatei von \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/fake_data.xls}.
+		\item Laden Sie die Beispieldatei von \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Example.xlsx}.
 		\item Wählen Sie diese Datei im Dialog aus und drücken Sie \textbf{Open}.
 	\end{itemize}
 \end{frame}
@@ -78,7 +78,7 @@
 \subsection{6}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[height=0.6\textheight]{6.png}
+  		\includegraphics[width=0.5\textwidth]{6.png}
 	\end{center}
 	\begin{itemize}
 		\item When der Import beendet ist, werden Sie einen Dialog mit Fehlern/Warnungen sehen, die beim Importieren aufgetreten sind.
@@ -114,7 +114,7 @@
   		\includegraphics[height=0.6\textheight]{9.png}
 	\end{center}
 	\begin{itemize}
-		\item Im erscheinenden Dialog wählen Sie als Name "My First Workflow" and klicken Sie \textbf{Finish}.		
+		\item Im erscheinenden Dialog wählen Sie als Name "MyFirstWorkflow" and klicken Sie \textbf{Finish}.		
 	\end{itemize}
 \end{frame}
 
@@ -156,7 +156,7 @@
 	\end{center}
 	\begin{itemize}
 		\item Der \textbf{Supply Chain Reader} hat nun alle Daten aus der internen Datenbank gelesen.
-		\item Selektieren Sie den \textbf{Supply Chain Reader} im Workflow (sodass ein Rechteck um den Knoten erscheint) machen Sie einen Doppelklick auf den \textbf{Tracing}-Knoten im \textbf{Node Repository}.
+		\item Selektieren Sie den \textbf{Supply Chain Reader} im Workflow (sodass ein Rechteck um den Knoten erscheint) und machen Sie einen Doppelklick auf den \textbf{Tracing}-Knoten im \textbf{Node Repository}.
 	\end{itemize}
 \end{frame}
 
@@ -177,10 +177,10 @@
   		\includegraphics[height=0.5\textheight]{15.png}
 	\end{center}
 	\begin{itemize}
-		\item Im oberen Bereich des Dialogs sehen Sie die Tabs für die einzelnen Parameter.
-		\item "Weight" und "Cross Contamination" können für Stationen/Lieferungen gesetzt werden. Basierend darauf wird für jede Station/Lieferung ein "Score" berechnet.
+		\item Im oberen Bereich des Dialogs sehen Sie die Tabs für die "Station/Delivery Properties".
+		\item Es können jeweils "Weight", "Cross Contamination" und "Kill Contamination" gesetzt werden. Basierend darauf wird für jede Station/Lieferung ein "Score" berechnet.
 		\item Zusätzlich können Stationen/Lieferungen mit dem Attribut "Observed" versehen werden.
-		\item Wählen Sie den \textbf{Station Weights}-Tab.
+		\item Wählen Sie \textbf{Station Properties} und dann \textbf{Weight}.
 	\end{itemize}
 \end{frame}
 
@@ -193,7 +193,7 @@
 		\item Eine Tabelle mit allen verfügbaren Stationen erscheint.
 		\item Das Gewicht ("Weight") kann in der ganz linken Spalte vergeben werden.
 		\item Da es sehr ineffizient ist durch eine so große Anzahl von Station zu scrollen, können wir einen Filter setzen um nur die gewünschten Station anzeigen zu lassen.
-		\item Klicken Sie auf \textbf{Filter}.
+		\item Klicken Sie auf \textbf{Set Filter}.
 	\end{itemize}
 \end{frame}
 
@@ -204,28 +204,28 @@
 	\end{center}
 	\begin{itemize}
 		\item In diesem Dialog können Sie festlegen, welche Stationen in der Tabelle erscheinen sollen.
+		\item Klicken Sie auf den rot markierten Button und den Wert für \textbf{Property} zu ändern.
 	\end{itemize}
 \end{frame}
 
 \subsection{18}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[width=0.9\textwidth]{18.png}
+  		\includegraphics[width=0.4\textwidth]{18.png}
 	\end{center}
 	\begin{itemize}
-		\item Wir wollen nur für Supermärkte Gewichte vergeben, da dort kontaminierte Produkte gefunden wurden.
-		\item Wählen Sie "type of business" bei \textbf{Property} und "Supermarket" bei \textbf{Value}.
-		\item Klicken Sie \textbf{OK}.
+		\item Wählen Sie "type of business".		
 	\end{itemize}
 \end{frame}
 
 \subsection{19}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[height=0.6\textheight]{19.png}
+  		\includegraphics[width=0.7\textwidth]{19.png}
 	\end{center}
 	\begin{itemize}
-		\item Nun sehen Sie nur Supermärkte in der Tabelle.
+		\item Wir wollen nur für Supermärkte Gewichte vergeben, da dort kontaminierte Produkte gefunden wurden.
+		\item Wählen Sie "Supermarket" bei \textbf{Value} und klicken Sie \textbf{OK}.		
 	\end{itemize}
 \end{frame}
 
@@ -235,7 +235,8 @@
   		\includegraphics[height=0.6\textheight]{20.png}
 	\end{center}
 	\begin{itemize}
-		\item Vergeben Sie ein Gewicht von "1" an die Supermärkte in "Hamburg", "Ingolstadt" und "Münster", da dort kontaminierte Produkte gefunden wurden.
+		\item Nun sehen Sie nur Supermärkte in der Tabelle.
+		\item Vergeben Sie ein Gewicht von "1" an die Supermärkte in "Hamburg", "Karlsruhe", "Ingolstadt" und "Hanover", da dort kontaminierte Produkte gefunden wurden.
 		\item Klicken Sie auf \textbf{OK} um die Eingabe zu beenden.
 	\end{itemize}
 \end{frame}

@@ -15,12 +15,12 @@
 
 \section{ }
 
-\subsection{Task}
+\subsection{Tasks}
 \begin{frame}
 	\begin{itemize}
 		\item Import the Example XLS template to FoodChain-Lab.
-		\item You can download it from here: \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/fake_data.xls}
-		\item Via the \textbf{Tracing} node assign weights of "1" to the supermarkets in Hamburg, Ingolstadt and Münster to mark them as outbreak locations.
+		\item You can download it from here: \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Example.xlsx}
+		\item Via the \textbf{Tracing} node assign weights of "1" to the supermarkets in Hamburg, Karlsruhe, Ingolstadt and Hanover to mark them as outbreak locations.
 		\item Use the \textbf{Tracing View} to look at the delivery network.
 	\end{itemize}
 \end{frame}
@@ -62,7 +62,7 @@
 	\end{center}
 	\begin{itemize}
 		\item Now a file dialog will pop up.
-		\item *.xls files in FoodChain-Lab format can be selected here.
+		\item *.xlsx files in FoodChain-Lab format can be selected here.
 	\end{itemize}
 \end{frame}
 
@@ -72,7 +72,7 @@
   		\includegraphics[height=0.6\textheight]{5.png}
 	\end{center}
 	\begin{itemize}
-		\item Download the example file from \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/fake_data.xls}.
+		\item Download the example file from \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Example.xlsx}.
 		\item Select the file in the dialog and press \textbf{Open}.
 	\end{itemize}
 \end{frame}
@@ -80,7 +80,7 @@
 \subsection{6}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[height=0.6\textheight]{6.png}
+  		\includegraphics[width=0.5\textwidth]{6.png}
 	\end{center}
 	\begin{itemize}
 		\item When the importing is finished you see a dialog with errors/warnings, that occurred in the import process.
@@ -116,7 +116,7 @@
   		\includegraphics[height=0.6\textheight]{9.png}
 	\end{center}
 	\begin{itemize}
-		\item In the dialog set the name of the workflow to "My First Workflow" and click \textbf{Finish}.		
+		\item In the dialog set the name of the workflow to "MyFirstWorkflow" and click \textbf{Finish}.		
 	\end{itemize}
 \end{frame}
 
@@ -176,13 +176,13 @@
 \subsection{15}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[height=0.6\textheight]{15.png}
+  		\includegraphics[height=0.5\textheight]{15.png}
 	\end{center}
 	\begin{itemize}
-		\item You will notice several tabs for different parameters.
-		\item "Weight" and "Cross Contamination" can be set for stations/deliveries. Based on these attributes a "Score" is computed for each station/delivery.
+		\item You will notice tabs for "Station/Delivery Properties".
+		\item "Weight", "Cross Contamination" and "Kill Contamination" can be set there. Based on these properties a "Score" is computed for each station/delivery.
 		\item Addtionally you can set "Observed" stations/deliveries.
-		\item Select the \textbf{Station Weights} tab.
+		\item Select the \textbf{Station Properties} and \textbf{Weight}.
 	\end{itemize}
 \end{frame}
 
@@ -192,10 +192,10 @@
   		\includegraphics[height=0.6\textheight]{16.png}
 	\end{center}
 	\begin{itemize}
-		\item A table with all available stations will pop up.
+		\item A table with all available stations will show up.
 		\item The weight can be set in the left column.
 		\item Since scrolling through all stations is very inefficient, we can filter out all desired stations.
-		\item Click on \textbf{Filter}.
+		\item Click on \textbf{Set Filter}.
 	\end{itemize}
 \end{frame}
 
@@ -206,28 +206,28 @@
 	\end{center}
 	\begin{itemize}
 		\item In this dialog you can specify which stations should appear in the table.
+		\item Press the button in the red circle to change the value for \textbf{Property}.
 	\end{itemize}
 \end{frame}
 
 \subsection{18}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[width=0.9\textwidth]{18.png}
+  		\includegraphics[width=0.4\textwidth]{18.png}
 	\end{center}
 	\begin{itemize}
-		\item We only want to specify weights for supermarkts, since that is where contaminated products were found.
-		\item Set \textbf{Property} to "type of business" and \textbf{Value} to "Supermarket".
-		\item Press \textbf{OK}.
+		\item Select "type of business".	
 	\end{itemize}
 \end{frame}
 
 \subsection{19}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[height=0.6\textheight]{19.png}
+  		\includegraphics[width=0.7\textwidth]{19.png}
 	\end{center}
 	\begin{itemize}
-		\item Now you only see supermarkets in the dialog.
+		\item We only want to specify weights for supermarkts, since that is where contaminated products were found.
+		\item Set \textbf{Value} to "Supermarket" and press \textbf{OK}.
 	\end{itemize}
 \end{frame}
 
@@ -237,7 +237,8 @@
   		\includegraphics[height=0.6\textheight]{20.png}
 	\end{center}
 	\begin{itemize}
-		\item Set a weight of "1" to the supermarkets in "Hamburg", "Ingolstadt" and "Münster" to indicate that contaminated products were found there.
+		\item Now you only see supermarkets in the dialog.
+		\item Set a weight of "1" to the supermarkets in "Hamburg", "Karlsruhe", "Ingolstadt" und "Hanover" to indicate that contaminated products were found there.
 		\item Click \textbf{OK} apply the settings and close the dialog.
 	\end{itemize}
 \end{frame}

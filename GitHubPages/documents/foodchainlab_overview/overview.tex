@@ -27,11 +27,12 @@
 	\begin{itemize}
 		\item \textbf{Weight}: Weights are assigned to stations/deliveries, that are involved in an outbreak (e.g. a restaurant where customers got sick). Different weights can be used to model differences between involved stations/deliveries (e.g. higher weight = higher likelihood that station is involved)..
 		\item \textbf{Cross Contamination}: When it is applied at a station, its incoming deliveries contaminate its outgoing deliveries. When applied on delivery level, the selected incoming deliveries of station contaminate each others subsequent deliveries.
+		\item \textbf{Kill Contamination}: When it is applied at a station/delivery, the contamination is killed there. That means it does not spread to subsequent stations/deliveries.
 		\item \textbf{Score}: Is computed based on given weights and cross contamination. Should help to estimate the likelihood that a certain station is the origin of the outbreak (higher score = more/higher weighted stations on forward trace).
 	\end{itemize}
 \end{frame}
 
-\section{FoodChain-Lab Score Computation}
+\section{FoodChain-Lab Score Computation 1}
 \begin{frame}
 	\begin{center}
   		\includegraphics[height=0.3\textheight]{score.png}
@@ -41,6 +42,18 @@
 		\item $w_j$ is the weight of the j-th station or delivery
 		\item $t_{ij}$ has a value of 1, if there is a trace from $s_i$ to $s_j$ and a value of 0 otherwise
 		\item $n$ is the total number of stations and deliveries
+	\end{itemize}
+\end{frame}
+
+\section{FoodChain-Lab Score Computation 2}
+\begin{frame}
+	\begin{center}
+  		\includegraphics[width=0.9\textwidth]{new_score.png}
+	\end{center}
+	\begin{itemize}
+		\item FoodChain-Lab also allows to assign negative weights to stations/deliveries.
+		\item A negative weight should indicate, that a station/delivery is not involved in the outbreak.
+		\item When negative weights are used, the score computation changes to this formula.
 	\end{itemize}
 \end{frame}
 

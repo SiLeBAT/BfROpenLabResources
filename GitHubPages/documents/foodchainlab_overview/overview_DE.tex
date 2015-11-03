@@ -24,14 +24,16 @@
 
 \section{FoodChain-Lab Konzepte 2}
 \begin{frame}
+	\small
 	\begin{itemize}
 		\item \textbf{Weight (Gewicht)}: Wird an Stationen/Lieferungen vergeben, die in einen Ausbruch involviert sind (z.B. ein Restaurant in dem Kunden infiziert wurden). Verschiedene Gewichte können benutzt werden, um Unterschiede zwischen den involvierten Stationen/Lieferungen zu modellieren (z.B. höheres Gewicht = größere Wahrscheinlichkeit, dass Station/Lieferung involviert ist).
 		\item \textbf{Cross Contamination (Kreuzkontamination)}: Kontamination ausgehender Lieferungen durch eingehende Lieferungen (bei Stationen). Wird Kreuzkontamination auf Lieferungen angewendet, bedeutet das, dass die gewählten eingehenden Lieferungen einer Station ihre Folgelieferungen kontaminieren.
+		\item \textbf{Kill Contamination}: Wenn auf Station/Lieferung angewendet, wird jede Kontamination dort entfernt, sodass diese nicht auf Nachfolgelieferungen und -stationen überspringen kann.
 		\item \textbf{Score}: Wird auf Basis der vergebenen Gewichte und Kreuzkontamination berechnet. Soll helfen, die Wahrscheinlichkeit abzuschätzen, dass eine Station/Lieferung die Quelle des Ausbruchs ist (höherer Score = höhere Wahrscheinlichkeit, dass Quelle des Ausbruchs).
 	\end{itemize}
 \end{frame}
 
-\section{FoodChain-Lab Score Berechnung}
+\section{FoodChain-Lab Score Berechnung 1}
 \begin{frame}
 	\begin{center}
   		\includegraphics[height=0.3\textheight]{score.png}
@@ -41,6 +43,18 @@
 		\item $w_j$: Gewicht ("Weight") der j-ten Station oder Lieferung
 		\item $t_{ij}$: hat einen Wert von 1, falls es einen Trace von $s_i$ nach $s_j$ gibt, ansonsten 0
 		\item $n$: Anzahl aller Stationen und Lieferungen
+	\end{itemize}
+\end{frame}
+
+\section{FoodChain-Lab Score Berechnung 2}
+\begin{frame}
+	\begin{center}
+  		\includegraphics[width=0.9\textwidth]{new_score.png}
+	\end{center}
+	\begin{itemize}
+		\item FoodChain-Lab erlaubt auch negative Gewichte an Station/Lieferungen zu vergeben.
+		\item Ein negatives Gewicht soll andeuten, dass eine Station/Lieferung nicht an einem Ausbruch beteiligt ist.
+		\item Wenn negative Gewichte verwendet werden, erfolgt die Score-Berechnung wie hier zu sehen.
 	\end{itemize}
 \end{frame}
 

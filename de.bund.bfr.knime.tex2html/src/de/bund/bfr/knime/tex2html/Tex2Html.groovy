@@ -45,7 +45,7 @@ class Tex2Html {
 			} else if (s.startsWith("\\includegraphics")) {
 				image = s.substring(s.indexOf("{")+1, s.indexOf("}"))
 			} else if (s.startsWith("\\end{frame}")) {
-				if (isNumber(heading)) println "<h5>${heading}</h5>"
+				if (heading.isInteger()) println "<h5>${heading}</h5>"
 				else if (heading != null) println "<h4>${heading}</h4>"
 				println "<ul>"
 				text.each { t -> println "<li>${t}</li>" }
@@ -73,25 +73,13 @@ class Tex2Html {
 				{ "<code>" + it.replace("\\texttt{","").replace("}", "") + "</code>" })
 		s = s.replaceAll(/\\url\{[^}]*}/, {
 			def url = it.replace("\\url{","").replace("}", "")
-			"<a href=\"${url}\" target=\"_blank\">${getShortUrl(url)}</a>"
+			def shortUrl = url.length() > 40 ? url.substring(0, 37) + "..." : url
+			"<a href=\"${url}\" target=\"_blank\">${shortUrl}</a>"
 		})
 		s = s.replaceAll(/.\$/, {  it.charAt(0) == '\\' ? "\$" : it.charAt(0) })
 		s = s.replace("{", "").replace("}", "")
 		s = s.replace("\\%", "%");
 		s = s.replace("\\_", "_");
 		s = s.trim()
-	}
-
-	static boolean isNumber(String s) {
-		try {
-			Integer.parseInt(s)
-			return true
-		} catch (Exception e) {
-			return false
-		}
-	}
-
-	static String getShortUrl(String url) {
-		return url.length() > 40 ? url.substring(0, 37) + "..." : url
-	}
+	}	
 }

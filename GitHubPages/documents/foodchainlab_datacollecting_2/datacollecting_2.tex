@@ -18,7 +18,11 @@
 \subsection{Tasks}
 \begin{frame}
 	\begin{itemize}
-		\item
+		\item In this part of the tutorial we will do a back- and forward-tracing from the "Frozen Fruit Sales" station.
+		\item You can either complete part 1 of the tutorial or directly import the following files before starting this tutorial.
+		\item Start Template: \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/Start_Tracing_Caterers.xlsx}
+		\item Caterer 1 Template: \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/Backtrace_request_Caterer 1.xlsx}
+		\item Caterer 2 Template: \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/Backtrace_request_Caterer 2.xlsx}
 	\end{itemize}
 \end{frame}
  
@@ -28,7 +32,8 @@
   		\includegraphics[height=0.6\textheight]{1.png}
 	\end{center}
 	\begin{itemize}
-		\item Select \textbf{Food-Lab $>$ Open DB Gui...} in the menu bar to open the database dialog.
+		\item You should have the database dialog open.
+		\item Press the button for generating backtracing templates, which is marked by the red circle.
 	\end{itemize}
 \end{frame}
 
@@ -38,7 +43,7 @@
   		\includegraphics[width=0.4\textwidth]{2.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item Since we want to do the backtracing for the supplier "Frozen Fruit Sales", select \textbf{Supplier} only and press \textbf{OK}.
 	\end{itemize}
 \end{frame}
 
@@ -48,7 +53,8 @@
   		\includegraphics[height=0.5\textheight]{3.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item In the file dialog that appears, you can specify the where the generated templates should be saved.
+		\item Select the desired folder and press \textbf{Save}.
 	\end{itemize}
 \end{frame}
 
@@ -58,7 +64,8 @@
   		\includegraphics[width=0.8\textwidth]{4.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item You'll be noticed, that one template was generated in the folder you specified.
+		\item Press \textbf{OK}.
 	\end{itemize}
 \end{frame}
 
@@ -68,7 +75,9 @@
   		\includegraphics[width=0.95\textwidth]{5.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item Open the generated template "Backtrace\_request\_Frozen Fruit Sales.xlsx".
+		\item Add the stations from the screenshot to the \textbf{Stations} sheet.
+		\item These station include 3 strawberry suppliers that delivered strawberries to "Frozen Fruit Sales" and also a caterer that received strawberries.
 	\end{itemize}
 \end{frame}
 
@@ -78,7 +87,8 @@
   		\includegraphics[width=0.95\textwidth]{6.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item In the \textbf{BackTracing} sheet you can see the three outgoing deliveries of "Frozen Fruit Sales".
+		\item These deliveries belong to lots "108" and "139".
 	\end{itemize}
 \end{frame}
 
@@ -88,7 +98,8 @@
   		\includegraphics[width=0.95\textwidth]{7.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item Now scroll to the \textbf{Ingredients for Lot(s)} table.
+		\item Enter the 3 deliveries, that were used as ingredients for lot "108", from the screenshot.
 	\end{itemize}
 \end{frame}
 
@@ -98,7 +109,9 @@
   		\includegraphics[width=0.95\textwidth]{8.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item Lot "108" was not only delivered to "Caterer 1" and "Caterer 2", but also to a third caterer.
+		\item We can add this information in the \textbf{ForwardTracing\_Opt} sheet.
+		\item Enter the delivery to "Caterer 3" from the screenshot.
 	\end{itemize}
 \end{frame}
 
@@ -108,7 +121,7 @@
   		\includegraphics[height=0.6\textheight]{9.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item To import this file click on the \textbf{Table import} button in the upper left corner of the database dialog.
 	\end{itemize}
 \end{frame}
 
@@ -118,7 +131,7 @@
   		\includegraphics[height=0.5\textheight]{10.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item In the file dialog that appears, select "Backtrace\_request\_Frozen Fruit Sales.xlsx" and press \textbf{Open}.
 	\end{itemize}
 \end{frame}
 
@@ -128,7 +141,8 @@
   		\includegraphics[width=0.7\textwidth]{11.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item You'll be notified, that some warnings occurred during import.
+		\item Press \textbf{Show Details} to have at look at the warnings.
 	\end{itemize}
 \end{frame}
 

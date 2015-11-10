@@ -152,7 +152,9 @@
   		\includegraphics[width=0.95\textwidth]{12.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item 730kg of strawberries went into lot "108", but all the deliveries of frozen strawberries from lot "108" just add up to 99.75kg.
+		\item Warnings like these are supposed to help finding errors in the data.
+		\item In this tutorial we just ignore the warning. So press \textbf{OK}.
 	\end{itemize}
 \end{frame}
 
@@ -162,7 +164,9 @@
   		\includegraphics[height=0.6\textheight]{13.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item We now know that lot "108" was also delivered to "Caterer 3" and we have imported this delivery into the database.
+		\item Let's do a forward tracing from "Caterer 3".
+		\item Press the button for generating the forward template for a specific station marked by the red circle.
 	\end{itemize}
 \end{frame}
 
@@ -172,7 +176,9 @@
   		\includegraphics[width=0.95\textwidth]{14.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item In the dialog that appears, you must select the station for which the template should be generated.
+		\item Enter "cate" in the field after \textbf{Enter Search Query} and you will see that the table below only shows the caterers now.
+		\item Press the \textbf{Select} button for "Caterer 3".
 	\end{itemize}
 \end{frame}
 
@@ -182,7 +188,8 @@
   		\includegraphics[height=0.5\textheight]{15.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item In the file dialog that appears, you can specify the where the generated templates should be saved.
+		\item Select the desired folder and press \textbf{Save}.
 	\end{itemize}
 \end{frame}
 
@@ -192,7 +199,8 @@
   		\includegraphics[width=0.8\textwidth]{16.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item You'll be noticed, that one template was generated in the folder you specified.
+		\item Press \textbf{OK}.
 	\end{itemize}
 \end{frame}
 
@@ -202,17 +210,19 @@
   		\includegraphics[width=0.95\textwidth]{17.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item Open "StationFwdtrace\_request\_Caterer 3.xlsx".
+		\item Enter the station from the screenshot in the \textbf{Stations} sheet.
 	\end{itemize}
 \end{frame}
 
 \subsection{18}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[width=0.95\textwidth]{18.png}
+  		\includegraphics[width=0.9\textwidth]{18.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item In the \textbf{FwdTracing} sheet you first have to enter all relevant outgoing lots of "Caterer 3". So add lot "C3M1" to the \textbf{Lot Information} table as shown on the screenshot (red rectangle).
+		\item Now you can specify, that the delivery of "Frozen Strawberries" was used as an ingredient in this lot (red circle).
 	\end{itemize}
 \end{frame}
 
@@ -222,7 +232,8 @@
   		\includegraphics[width=0.95\textwidth]{19.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item Scroll down to the \textbf{Products Out} table to specify the outgoing deliveries from lot "C3M1".
+		\item Add the deliveries as shown on the screenshot.
 	\end{itemize}
 \end{frame}
 
@@ -232,7 +243,7 @@
   		\includegraphics[height=0.6\textheight]{20.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item To import this file click on the \textbf{Table import} button in the upper left corner of the database dialog.
 	\end{itemize}
 \end{frame}
 
@@ -242,7 +253,7 @@
   		\includegraphics[height=0.5\textheight]{21.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item In the file dialog that appears, select "StationFwdtrace\_request\_Caterer 3.xlsx" and press \textbf{Open}.
 	\end{itemize}
 \end{frame}
 
@@ -252,7 +263,8 @@
   		\includegraphics[width=0.4\textwidth]{22.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item You'll see a message that the import was successful.
+		\item Press \textbf{OK}.
 	\end{itemize}
 \end{frame}
 

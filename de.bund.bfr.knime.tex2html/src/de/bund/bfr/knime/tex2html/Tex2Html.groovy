@@ -25,7 +25,7 @@ import javax.imageio.ImageIO
 
 class Tex2Html {
 
-	static String NAME = "cluster"
+	static String NAME = "datacollecting_1"
 	static String TEX_FILE = "../GitHubPages/documents/foodchainlab_${NAME}/${NAME}.tex"
 	static String URL = "https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/foodchainlab_${NAME}"
 
@@ -78,7 +78,7 @@ class Tex2Html {
 		s = s.replaceAll(/.\$/, {  it.charAt(0) == '\\' ? "\$" : it.charAt(0) })
 		s = s.replace("{", "").replace("}", "")
 		s = s.replace("\\%", "%");
-		s = s.replace("\\textgreater", "&gt;");
+		s = s.replace("\\_", "_");
 		s = s.trim()
 	}
 

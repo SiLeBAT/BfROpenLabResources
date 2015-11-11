@@ -18,10 +18,10 @@
 \subsection{Tasks}
 \begin{frame}
 	\begin{itemize}
-		\item Perform a clustering base the following workflow: \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/workflows/FCL_Example.zip}
+		\item Perform a clustering using the following workflow: \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/workflows/FCL_Example.zip}
 		\item Cluster all French primary producers by using the \textbf{GIS Cluster} node.
 		\item Use a \textbf{Max Neighborhood Distance} of 100km.
-		\item That means two stations are put into the same cluster if their distance if less than 100km.
+		\item That means two stations are put into the same cluster if their distance is less than 100km.
 	\end{itemize}
 \end{frame}
  
@@ -63,7 +63,7 @@
   		\includegraphics[height=0.6\textheight]{4.png}
 	\end{center}
 	\begin{itemize}
-		\item In this dialog you can set up an algorithm for geographical clustering based latitude and longitude.
+		\item In this dialog you can set up an algorithm for geographical clustering based on latitude and longitude.
 		\item Click on \textbf{Set Filter} to define which stations should be clustered.
 	\end{itemize}
 \end{frame}
@@ -117,7 +117,7 @@
   		\includegraphics[height=0.6\textheight]{9.png}
 	\end{center}
 	\begin{itemize}
-		\item Set the \textbf{Max Neighborhood Distance} to 100km. That means two stations with distance of less than 100km are put into the same area.
+		\item Set the \textbf{Max Neighborhood Distance} to 100km. That means that stations with distance of less than 100km are put into the same cluster. For details on the algorithm look here: \url{https://en.wikipedia.org/wiki/DBSCAN}
 		\item Press \textbf{OK}.
 	\end{itemize}
 \end{frame}
@@ -129,7 +129,7 @@
 	\end{center}
 	\begin{itemize}
 		\item Right click on \textbf{GIS Cluster} to open its context menu and select \textbf{Execute} to execute the node.
-		\item The results of the clustering are put into the \textbf{ClusterID} column. This column will be used in the \textbf{Tracing View}.
+		\item The results of the clustering are put into the new column \textbf{ClusterID}. This column will now be used in the \textbf{Tracing View}.
 	\end{itemize}
 \end{frame}
 
@@ -201,9 +201,9 @@
   		\includegraphics[height=0.6\textheight]{17.png}
 	\end{center}
 	\begin{itemize}
-		\item Select "Picking" as \textbf{Editing Mode} and click in the graph to unselect all stations.
+		\item Select "Picking" as \textbf{Editing Mode} and click in the graph to deselect all stations.
 		\item You can now see, that one of the stations is yellow. That means, that this stations (French area) is connected to all outbreak spots (red circles).
-		\item Press \textbf{Switch to GIS} to see where this are is.
+		\item Press \textbf{Switch to GIS} to see where this area is.
 	\end{itemize}
 \end{frame}
 

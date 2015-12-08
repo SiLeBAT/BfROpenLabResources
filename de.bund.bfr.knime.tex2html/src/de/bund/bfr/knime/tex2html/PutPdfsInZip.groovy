@@ -25,7 +25,7 @@ import java.util.zip.ZipOutputStream
 
 class PutPdfsInZip {
 
-	static String FOLDER = "../GitHubPages/documents"
+	static String FOLDER = "."
 	static String FILE_EN = "tutorials.zip"
 	static String FILE_DE = "tutorials_DE.zip"
 
@@ -44,7 +44,7 @@ class PutPdfsInZip {
 						zip << new FileInputStream(f)
 						zip.closeEntry()
 					}		
-
+		
 		zipEN.close()
 		zipDE.close()
 	}

@@ -19,32 +19,27 @@
  *******************************************************************************/
 package de.bund.bfr.knime.tex2html
 
-import java.util.zip.ZipEntry
-import java.util.zip.ZipFile
-import java.util.zip.ZipOutputStream
-
-class PutPdfsInZip {
+class BuildPdfs {
 
 	static String FOLDER = "../GitHubPages/documents"
-	static String FILE_EN = "tutorials.zip"
-	static String FILE_DE = "tutorials_DE.zip"
+	static String PDF_LATEX = "\"C:/Program Files (x86)/User/miktex29/miktex/bin/pdflatex.exe\""
 
-	static main(args) {		
-		def zipEN = new ZipOutputStream(new FileOutputStream(FILE_EN))
-		def zipDE = new ZipOutputStream(new FileOutputStream(FILE_DE))
-
+	static main(args) {
 		for (File d : new File(FOLDER).listFiles())
 			if (d.isDirectory())
 				for (File f : d.listFiles())
-					if (f.name.endsWith(".pdf")) {
-						def zip = f.name.endsWith("_DE.pdf") ? zipDE : zipEN
+					if (f.name.endsWith(".tex")) {
+						println PDF_LATEX + " " + f.getName()
 
-						zip.putNextEntry(new ZipEntry(f.name))
-						zip << new FileInputStream(f)
-						zip.closeEntry()
-					}		
-		
-		zipEN.close()
-		zipDE.close()
+						ProcessBuilder builder = new ProcessBuilder(PDF_LATEX, f.getName())
+
+						builder.directory(d)
+
+						Process process = builder.start()
+
+						process.getInputStream().eachLine() { println it }
+						process.waitFor()
+						println ""
+					}
 	}
 }

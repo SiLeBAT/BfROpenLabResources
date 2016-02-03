@@ -18,7 +18,9 @@
 \subsection{Aufgaben}
 \begin{frame}
 	\begin{itemize}
-		\item
+		\item In diesem Tutorial werden wir zeigen, wie man mit unseren Excel-Templates Lieferdaten in FoodChain-Lab importiert.
+		\item Wir werden zunächst die initialen Daten der Ausbruchsorte importieren und dann sukzessive Daten von Caterern und anderen Lieferanten mit Hilfe von autogenerieten Rückwärts- und Vorwärts-Tracing-Templates hinzufügen.
+		\item In FoodChain-Lab ist es auch möglich das gesamte Liefernetz aus einer Excel-Datei zu importieren, aber dieses Feature wird hier nicht beschrieben. Das zugrundeliegende "All In One Template" kann heruntergeladen werden von: \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/templates/All_In_One_Template.xlsx}.
 	\end{itemize}
 \end{frame}
  
@@ -28,17 +30,20 @@
   		\includegraphics[height=0.6\textheight]{1.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item Wählen Sie \textbf{Food-Lab $>$ Open DB Gui...} in der Menüleiste um die Datenbank-Oberfläche zu öffnen.
 	\end{itemize}
 \end{frame}
 
 \subsection{2}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[height=0.6\textheight]{2.png}
+  		\includegraphics[height=0.45\textheight]{2.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item Die Datenbank-Oberfläche erscheint nun.
+		\item Hier können Sie Lieferdaten importieren, editieren und validieren.
+		\item Um den Import zu starten, müssen Sie das "Start Tracing Template" herunterladen, ausfüllen und importieren.
+		\item Das Template kann heruntergeladen werden unter: \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/templates/Start_Tracing_Template.xlsx}.
 	\end{itemize}
 \end{frame}
 
@@ -48,7 +53,9 @@
   		\includegraphics[width=0.95\textwidth]{3.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item Für dieses Tutorial haben wir bereits ein ausgefülltes  "Start Tracing Template" vorbereitet.
+		\item Downloaden sie es von \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/Start_Tracing_Caterers.xlsx}.
+		\item Im \textbf{Stations}-Blatt dieser Datei sind mehrere \textbf{Educational Institutions} und zwei \textbf{Caterer} definiert.
 	\end{itemize}
 \end{frame}
 
@@ -58,7 +65,8 @@
   		\includegraphics[width=0.95\textwidth]{4.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item Cases of a disease were reported at the \textbf{Educational Institutions}, which received their menus from the \textbf{Caterers}.
+		\item The deliveries from the \textbf{Caterers} to the \textbf{Educational Institutions} are defined in the \textbf{Deliveries} sheet.
 	\end{itemize}
 \end{frame}
 
@@ -68,7 +76,7 @@
   		\includegraphics[height=0.6\textheight]{5.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item To import this file click on the \textbf{Table import} button in the upper left corner of the database interface.
 	\end{itemize}
 \end{frame}
 
@@ -78,7 +86,7 @@
   		\includegraphics[height=0.5\textheight]{6.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item In the file dialog that appears, select "StartTracing\_Caterers.xlsx" and press \textbf{Open}.
 	\end{itemize}
 \end{frame}
 
@@ -88,17 +96,20 @@
   		\includegraphics[width=0.4\textwidth]{7.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item You'll see a message that the import was successful.
+		\item Press \textbf{OK}.
 	\end{itemize}
 \end{frame}
 
 \subsection{8}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[height=0.6\textheight]{8.png}
+  		\includegraphics[height=0.5\textheight]{8.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item In the database interface you'll notice, that there is now data in the tables.
+		\item Now we want to do a backtracing starting from the caterers to see where they got the ingredient of the meals from.
+		\item Press the button for generating backtracing templates, which is marked by the red circle.
 	\end{itemize}
 \end{frame}
 
@@ -108,7 +119,7 @@
   		\includegraphics[width=0.4\textwidth]{9.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item Since we want to do the backtracing for the caterers, select \textbf{Caterer} only and press \textbf{OK}.
 	\end{itemize}
 \end{frame}
 
@@ -118,7 +129,8 @@
   		\includegraphics[height=0.5\textheight]{10.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item In the file dialog that appears, you can specify the folder where the generated templates should be saved.
+		\item Select or create the desired folder and press \textbf{Save}.
 	\end{itemize}
 \end{frame}
 
@@ -128,7 +140,8 @@
   		\includegraphics[width=0.8\textwidth]{11.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item You'll be noticed, that 2 templates were generated in the folder you specified.
+		\item Press \textbf{OK}.
 	\end{itemize}
 \end{frame}
 
@@ -138,7 +151,8 @@
   		\includegraphics[width=0.95\textwidth]{12.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item To keep this tutorial short, we will only enter the deliveries from one supplier, "Frozen Fruit Sales".
+		\item Enter all the information of "Frozen Fruit Sales" in the \textbf{Stations} sheet of "Backtrace\_request\_Caterer 1.xlsx" as you can see in the screenshot.
 	\end{itemize}
 \end{frame}
 
@@ -148,17 +162,23 @@
   		\includegraphics[width=0.95\textwidth]{13.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item Now switch to the \textbf{BackTracing} sheet.
+		\item In the \textbf{Products Out} section all deliveries to "Caterer 1" are listed.
+		\item These are the deliveries, that we imported from "StartTracing\_Caterers.xlsx".
+		\item The deliveries belong to two lots, "C1M1" and "C1M2".
 	\end{itemize}
 \end{frame}
 
 \subsection{14}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[width=0.95\textwidth]{14.png}
+  		\includegraphics[width=0.8\textwidth]{14.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item Now scroll to the \textbf{Ingredients for Lot(s)} section.
+		\item Here you can enter the deliveries received by "Caterer 1" and their associated lots where these deliveries went in as ingredients.
+		\item Enter all information for the delivery of "Frozen Strawberries" from "Frozen Fruit Sales" which you can see in the screenshot.
+		\item Save the document ("Backtrace\_request\_Caterer 1.xlsx").
 	\end{itemize}
 \end{frame}
 
@@ -168,7 +188,8 @@
   		\includegraphics[width=0.95\textwidth]{15.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item Now open the other generated template: "Backtrace\_request\_Caterer 2.xlsx".
+		\item Add "Frozen Fruit Sales" to the \textbf{Stations} sheet as we did for the first template.
 	\end{itemize}
 \end{frame}
 
@@ -178,7 +199,9 @@
   		\includegraphics[width=0.95\textwidth]{16.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item Now switch to the \textbf{BackTracing} sheet.
+		\item Enter the two deliveries from the screenshot into the \textbf{Ingredients for Lot(s)} section.
+		\item Save the document ("Backtrace\_request\_Caterer 2.xlsx").
 	\end{itemize}
 \end{frame}
 
@@ -188,7 +211,7 @@
   		\includegraphics[height=0.6\textheight]{17.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item To import the two files into the database click on the \textbf{Table import} button in the upper left corner of the database interface.
 	\end{itemize}
 \end{frame}
 
@@ -198,7 +221,8 @@
   		\includegraphics[height=0.5\textheight]{18.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item In the file dialog that appears, select "Backtrace\_request\_Caterer 1.xlsx" and "Backtrace\_request\_Caterer 2.xlsx".
+		\item Then press \textbf{Open}.
 	\end{itemize}
 \end{frame}
 
@@ -208,7 +232,8 @@
   		\includegraphics[width=0.4\textwidth]{19.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item You'll see a message that the import was successful.
+		\item Press \textbf{OK}.
 	\end{itemize}
 \end{frame}
 

@@ -45,12 +45,12 @@ class Tex2Markdown {
 			} else if (s.startsWith("\\includegraphics")) {
 				image = s.substring(s.indexOf("{")+1, s.indexOf("}"))
 			} else if (s.startsWith("\\end{frame}")) {
-				if (heading.isInteger()) println "<h2 class=\"tutorial-heading\">Step ${heading}</h2>"
-				else if (heading != null) println "<h2 class=\"tutorial-heading\">${heading}</h2>"
+				if (heading.isInteger()) println "{% include heading.html text=\"Step ${heading}\" %}"
+				else if (heading != null) println "{% include heading.html text=\"${heading}\" %}"
 				println ""
 				text.each { t -> println " * ${t}" }
 				println ""
-				if (image != null) println "<a href=\"${URL}/${image}\"><img class=\"aligncenter\" src=\"${URL}/${image}\"/></a>\n"
+				if (image != null) println "{% include screenshot.html img=\"${URL}/${image}\" %}\n"
 
 				heading = null
 				text = []

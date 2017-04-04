@@ -45,13 +45,13 @@ class Tex2Markdown {
 			} else if (s.startsWith("\\includegraphics")) {
 				image = s.substring(s.indexOf("{")+1, s.indexOf("}"))
 			} else if (s.startsWith("\\end{frame}")) {
-				if (heading.isInteger()) println "<h2 class=\"tutorial\">Step ${heading}</h2>"
-				else if (heading != null) println "<h2 class=\"tutorial\">${heading}</h2>"
+				if (heading.isInteger()) println "<h2 class=\"tutorial-heading\">Step ${heading}</h2>"
+				else if (heading != null) println "<h2 class=\"tutorial-heading\">${heading}</h2>"
 				println ""
 				text.each { t -> println " * ${t}" }
 				println ""
-				if (image != null) println "![${URL}/${image}](${URL}/${image})\n"				
-				
+				if (image != null) println "<a href=\"${URL}/${image}\"><img class=\"aligncenter\" src=\"${URL}/${image}\"/></a>\n"
+
 				heading = null
 				text = []
 				image = null
@@ -66,20 +66,18 @@ class Tex2Markdown {
 			it.substring(1, i) + "<sub>" + it.substring(i+1, it.length()-1) + "</sub>"
 		})
 		s = s.replaceAll(/\\textbf\{[^}]*}/,
-				{ "<b>" + it.replace("\\textbf{","").replace("}", "") + "</b>" })
+				{ "**" + it.replace("\\textbf{","").replace("}", "") + "**" })
 		s = s.replaceAll(/\\textit\{[^}]*}/,
-				{ "<i>" + it.replace("\\textit{","").replace("}", "") + "</i>" })
-		s = s.replaceAll(/\\texttt\{[^}]*}/,
-				{ "<code>" + it.replace("\\texttt{","").replace("}", "") + "</code>" })
+				{ "*" + it.replace("\\textit{","").replace("}", "") + "*" })
 		s = s.replaceAll(/\\url\{[^}]*}/, {
 			def url = it.replace("\\url{","").replace("}", "")
 			def shortUrl = url.length() > 40 ? url.substring(0, 37) + "..." : url
-			"<a href=\"${url}\" target=\"_blank\">${shortUrl}</a>"
+			"[${shortUrl}](${url})"
 		})
 		s = s.replaceAll(/.\$/, {  it.charAt(0) == '\\' ? "\$" : it.charAt(0) })
 		s = s.replace("{", "").replace("}", "")
 		s = s.replace("\\%", "%");
 		s = s.replace("\\_", "_");
 		s = s.trim()
-	}	
+	}
 }

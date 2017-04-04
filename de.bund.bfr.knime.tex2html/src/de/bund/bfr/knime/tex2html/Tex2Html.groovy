@@ -69,8 +69,6 @@ class Tex2Html {
 				{ "<b>" + it.replace("\\textbf{","").replace("}", "") + "</b>" })
 		s = s.replaceAll(/\\textit\{[^}]*}/,
 				{ "<i>" + it.replace("\\textit{","").replace("}", "") + "</i>" })
-		s = s.replaceAll(/\\texttt\{[^}]*}/,
-				{ "<code>" + it.replace("\\texttt{","").replace("}", "") + "</code>" })
 		s = s.replaceAll(/\\url\{[^}]*}/, {
 			def url = it.replace("\\url{","").replace("}", "")
 			def shortUrl = url.length() > 40 ? url.substring(0, 37) + "..." : url
@@ -81,5 +79,5 @@ class Tex2Html {
 		s = s.replace("\\%", "%");
 		s = s.replace("\\_", "_");
 		s = s.trim()
-	}	
+	}
 }

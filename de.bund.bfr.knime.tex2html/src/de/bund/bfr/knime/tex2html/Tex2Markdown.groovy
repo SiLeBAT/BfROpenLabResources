@@ -25,7 +25,7 @@ import javax.imageio.ImageIO
 
 class Tex2Markdown {
 
-	static String NAME = "datacollecting_1"
+	static String NAME = "overview"
 	static String TEX_FILE = "../GitHubPages/documents/foodchainlab_${NAME}/${NAME}.tex"
 	static String URL = "https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/foodchainlab_${NAME}"
 

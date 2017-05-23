@@ -27,9 +27,9 @@ import org.codehaus.groovy.runtime.StringGroovyMethods
 
 class Tex2Html {
 
-	static String NAME = "overview"
-	static String TEX_FILE = "../GitHubPages/documents/foodchainlab_${NAME}/${NAME}.tex"
-	static String URL = "https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/foodchainlab_${NAME}"
+	static NAME = "overview"
+	static TEX_FILE = "../GitHubPages/documents/foodchainlab_${NAME}/${NAME}.tex"
+	static URL = "https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/foodchainlab_${NAME}"
 
 	static main(args) {
 		String heading = null

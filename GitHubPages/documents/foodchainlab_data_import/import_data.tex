@@ -12,6 +12,16 @@
  
 \begin{document}
 \maketitle
+
+\section{Content}
+\begin{frame}
+	\begin{itemize}
+		\item This tutorial shows how data can imported into FoodChain-Lab without using the Excel templates.
+		\item Therefore the external data has to read into KNIME tables.
+		\item KNIME provides a multitude of reader nodes for various data formats (e.g. csv, SQL databases, ...).
+		\item Here we just show which tables are needed by FoodChain-Lab and which columns they must contain. To do so the we have created these tables with \textbf{Table Creator} nodes.
+	\end{itemize}
+\end{frame}
  
 \section{1}
 \begin{frame}
@@ -19,7 +29,7 @@
   		\includegraphics[height=0.6\textheight]{1.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item Import the workflow from \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/workflows/FCL_Import.knwf}.
 	\end{itemize}
 \end{frame}
 
@@ -29,7 +39,8 @@
   		\includegraphics[height=0.6\textheight]{2.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item FoodChain-Lab needs three tables to perform a tracing analysis: \textbf{Stations}, \textbf{Deliveries} and \textbf{Delivery Relations}.
+		\item The \textbf{Table Creator} nodes on the left show all mandatory columns for these three tables.
 	\end{itemize}
 \end{frame}
 
@@ -39,7 +50,7 @@
   		\includegraphics[height=0.6\textheight]{3.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item Double click on the \textbf{Table Creator} for the \textbf{Stations} table to open its dialog.
 	\end{itemize}
 \end{frame}
 
@@ -49,7 +60,7 @@
   		\includegraphics[height=0.6\textheight]{4.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item As you can see the only mandatory column in the \textbf{Stations} table is the column \textbf{ID} of type string.
 	\end{itemize}
 \end{frame}
 
@@ -59,7 +70,7 @@
   		\includegraphics[height=0.6\textheight]{5.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item Double click on the \textbf{Table Creator} for the \textbf{Deliveries} table to open its dialog.
 	\end{itemize}
 \end{frame}
 
@@ -79,7 +90,7 @@
   		\includegraphics[height=0.6\textheight]{7.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item Double click on the \textbf{Table Creator} for the \textbf{Delivery Relations} table to open its dialog.
 	\end{itemize}
 \end{frame}
 
@@ -109,7 +120,7 @@
   		\includegraphics[height=0.6\textheight]{10.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item Double click on the \textbf{Table Creator} for the \textbf{Stations} table to open its dialog.
 	\end{itemize}
 \end{frame}
 
@@ -139,7 +150,7 @@
   		\includegraphics[height=0.6\textheight]{13.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item Double click on the \textbf{Table Creator} for the \textbf{Deliveries} table to open its dialog.
 	\end{itemize}
 \end{frame}
 
@@ -159,7 +170,7 @@
   		\includegraphics[height=0.6\textheight]{15.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item Double click on the \textbf{Table Creator} for the \textbf{Deliveries Relations} table to open its dialog.
 	\end{itemize}
 \end{frame}
 

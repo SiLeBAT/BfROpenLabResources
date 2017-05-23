@@ -21,8 +21,8 @@ package de.bund.bfr.knime.tex2html
 
 class BuildPdfs {
 
-	static String FOLDER = "../GitHubPages/documents"
-	static String PDF_LATEX = "\"C:/Program Files (x86)/User/miktex29/miktex/bin/pdflatex.exe\""
+	static FOLDER = "../GitHubPages/documents"
+	static PDF_LATEX = "\"C:/Program Files (x86)/User/miktex29/miktex/bin/pdflatex.exe\""
 
 	static main(args) {
 		for (def d : new File(FOLDER).listFiles())

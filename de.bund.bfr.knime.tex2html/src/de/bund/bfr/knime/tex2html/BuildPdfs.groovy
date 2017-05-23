@@ -25,9 +25,9 @@ class BuildPdfs {
 	static String PDF_LATEX = "\"C:/Program Files (x86)/User/miktex29/miktex/bin/pdflatex.exe\""
 
 	static main(args) {
-		for (File d : new File(FOLDER).listFiles())
+		for (def d : new File(FOLDER).listFiles())
 			if (d.isDirectory())
-				for (File f : d.listFiles())
+				for (def f : d.listFiles())
 					if (f.name.endsWith(".tex")) {
 						println PDF_LATEX + " " + f.getName()
 

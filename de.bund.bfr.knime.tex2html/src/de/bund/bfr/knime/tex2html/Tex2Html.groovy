@@ -23,16 +23,18 @@ import java.awt.image.BufferedImage
 
 import javax.imageio.ImageIO
 
+import org.codehaus.groovy.runtime.StringGroovyMethods
+
 class Tex2Html {
 
-	static String NAME = "datacollecting_1"
+	static String NAME = "overview"
 	static String TEX_FILE = "../GitHubPages/documents/foodchainlab_${NAME}/${NAME}.tex"
 	static String URL = "https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/foodchainlab_${NAME}"
 
 	static main(args) {
-		def heading = null
-		def text = []
-		def image = null
+		String heading = null
+		List<String> text = []
+		String image = null
 
 		for (def s : new File(TEX_FILE).readLines()) {
 			s = s.trim()
@@ -45,7 +47,7 @@ class Tex2Html {
 			} else if (s.startsWith("\\includegraphics")) {
 				image = s.substring(s.indexOf("{")+1, s.indexOf("}"))
 			} else if (s.startsWith("\\end{frame}")) {
-				if (heading.isInteger()) println "<h5>${heading}</h5>"
+				if (((CharSequence)heading).isInteger()) println "<h5>${heading}</h5>"
 				else if (heading != null) println "<h4>${heading}</h4>"
 				println "<ul>"
 				text.each { t -> println "<li>${t}</li>" }
@@ -61,23 +63,15 @@ class Tex2Html {
 
 	static String toHtml(String s) {
 		s = " " + s + " "
-		s = s.replaceAll(/\$[^_\$]+_[^_\$]+\$/, {
-			def i = it.indexOf("_")
-			it.substring(1, i) + "<sub>" + it.substring(i+1, it.length()-1) + "</sub>"
-		})
-		s = s.replaceAll(/\\textbf\{[^}]*}/,
-				{ "<b>" + it.replace("\\textbf{","").replace("}", "") + "</b>" })
-		s = s.replaceAll(/\\textit\{[^}]*}/,
-				{ "<i>" + it.replace("\\textit{","").replace("}", "") + "</i>" })
-		s = s.replaceAll(/\\url\{[^}]*}/, {
-			def url = it.replace("\\url{","").replace("}", "")
-			def shortUrl = url.length() > 40 ? url.substring(0, 37) + "..." : url
-			"<a href=\"${url}\" target=\"_blank\">${shortUrl}</a>"
-		})
+		s = s.replaceAll(/\$[^_\$]+_[^_\$]+\$/, { String o -> "${o.split('_')[0][1..-1]}<sub>${o.split('_')[1][0..-2]}</sub>"})
+		s = s.replaceAll(/\\textbf\{[^}]*}/, { String o -> "<b>${o[8..-2]}</b>" })
+		s = s.replaceAll(/\\textit\{[^}]*}/, { String o -> "<i>${o[8..-2]}</i>" })
+		s = s.replaceAll(/\\url\{[^}]*}/, { String o ->	"<a href=\"${o[4..-2]}\" target=\"_blank\">${o.length() > 45 ? o[4..40] + "..." : o[4..-2]}</a>"})
 		s = s.replaceAll(/.\$/, {  it.charAt(0) == '\\' ? "\$" : it.charAt(0) })
 		s = s.replace("{", "").replace("}", "")
 		s = s.replace("\\%", "%");
 		s = s.replace("\\_", "_");
-		s = s.trim()
+
+		return s.trim()
 	}
 }

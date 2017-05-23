@@ -30,9 +30,9 @@ class Tex2Markdown {
 	static String URL = "https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/foodchainlab_${NAME}"
 
 	static main(args) {
-		def heading = null
-		def text = []
-		def image = null
+		String heading = null
+		List<String> text = []
+		String image = null
 
 		for (def s : new File(TEX_FILE).readLines()) {
 			s = s.trim()
@@ -45,7 +45,7 @@ class Tex2Markdown {
 			} else if (s.startsWith("\\includegraphics")) {
 				image = s.substring(s.indexOf("{")+1, s.indexOf("}"))
 			} else if (s.startsWith("\\end{frame}")) {
-				if (heading.isInteger()) println "{% include heading.html text=\"Step ${heading}\" %}"
+				if (((CharSequence)heading).isInteger()) println "{% include heading.html text=\"Step ${heading}\" %}"
 				else if (heading != null) println "{% include heading.html text=\"${heading}\" %}"
 				println ""
 				text.each { t -> println " * ${t}" }
@@ -61,23 +61,15 @@ class Tex2Markdown {
 
 	static String toHtml(String s) {
 		s = " " + s + " "
-		s = s.replaceAll(/\$[^_\$]+_[^_\$]+\$/, {
-			def i = it.indexOf("_")
-			it.substring(1, i) + "<sub>" + it.substring(i+1, it.length()-1) + "</sub>"
-		})
-		s = s.replaceAll(/\\textbf\{[^}]*}/,
-				{ "**" + it.replace("\\textbf{","").replace("}", "") + "**" })
-		s = s.replaceAll(/\\textit\{[^}]*}/,
-				{ "*" + it.replace("\\textit{","").replace("}", "") + "*" })
-		s = s.replaceAll(/\\url\{[^}]*}/, {
-			def url = it.replace("\\url{","").replace("}", "")
-			def shortUrl = url.length() > 40 ? url.substring(0, 37) + "..." : url
-			"[${shortUrl}](${url})"
-		})
-		s = s.replaceAll(/.\$/, {  it.charAt(0) == '\\' ? "\$" : it.charAt(0) })
+		s = s.replaceAll(/\$[^_\$]+_[^_\$]+\$/, { String o -> "${o.split('_')[0][1..-1]}<sub>${o.split('_')[1][0..-2]}</sub>"})
+		s = s.replaceAll(/\\textbf\{[^}]*}/, { String o -> "**${o[8..-2]}**" })
+		s = s.replaceAll(/\\textit\{[^}]*}/, { String o -> "*${o[8..-2]}*" })
+		s = s.replaceAll(/\\url\{[^}]*}/, { String o ->	"[${o.length() > 45 ? o[4..40] + "..." : o[4..-2]}](${o[4..-2]})"})
+		s = s.replaceAll(/.\$/, { String o -> o.charAt(0) == '\\' ? "\$" : o.charAt(0) })
 		s = s.replace("{", "").replace("}", "")
 		s = s.replace("\\%", "%");
 		s = s.replace("\\_", "_");
-		s = s.trim()
+		
+		return s.trim()		
 	}
 }

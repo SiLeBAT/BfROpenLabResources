@@ -80,7 +80,8 @@
   		\includegraphics[height=0.6\textheight]{6.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item The \textbf{Deliveries} table has three mandatory columns: \textbf{ID}, \textbf{from} and \textbf{to} (all of type string)
+		\item The \textbf{from} and \textbf{to} columns contain the source station and target station \textbf{IDs}.
 	\end{itemize}
 \end{frame}
 
@@ -100,7 +101,9 @@
   		\includegraphics[height=0.6\textheight]{8.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item The \textbf{Delivery Relations} table has the columns \textbf{from} and \textbf{to} of type string.
+		\item These columns contain \textbf{IDs} from the \textbf{Delivery} table and are meant to connect two deliveries.
+		\item The \textbf{from}-delivery is a part/ingredient of the \textbf{to}-delivery. A contamination can spread from "\textbf{from}" to "\textbf{to}".
 	\end{itemize}
 \end{frame}
 
@@ -110,7 +113,7 @@
   		\includegraphics[height=0.6\textheight]{9.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item Now we will look the \textbf{Table Creator} nodes on the right which show the optional columns for the three tables.
 	\end{itemize}
 \end{frame}
 

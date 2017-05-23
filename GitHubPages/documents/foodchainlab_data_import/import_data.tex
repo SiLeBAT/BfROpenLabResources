@@ -130,10 +130,12 @@
 \section{11}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[height=0.6\textheight]{11.png}
+  		\includegraphics[height=0.5\textheight]{11.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item The optional columns for the \textbf{Stations} table are \textbf{Address}, \textbf{Country}, \textbf{Latitude} and \textbf{Longitude}.
+		\item \textbf{Latitude} and \textbf{Longitude} are used for the geographical visualization in the \textbf{Tracing View} and \textbf{Address} and \textbf{Country} can be used for geocoding, if \textbf{Latitude} and \textbf{Longitude} are not known yet.
+		\item Any other arbitrary columns of this table can also be used in the \textbf{Tracing View} for highlighting etc.
 	\end{itemize}
 \end{frame}
 
@@ -143,7 +145,7 @@
   		\includegraphics[height=0.6\textheight]{12.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item The \textbf{Geocoding} node in the upper right corner shows how \textbf{Address} and \textbf{Country} can be used for geocoding to compute \textbf{Latitude} and \textbf{Longitude}.
 	\end{itemize}
 \end{frame}
 
@@ -160,10 +162,14 @@
 \section{14}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[height=0.6\textheight]{14.png}
+  		\includegraphics[height=0.45\textheight]{14.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item The optional columns are \textbf{Date Delivery}, \textbf{Date Delivery Arrival}, \textbf{Lot ID}, \textbf{Amount} and \textbf{Amount Unit}.
+		\item The date columns are of type string and in YYYY-MM-DD format. They used for computing cross contamination.
+		\item If the \textbf{Lot ID} column (of type string) is provided, lot-based scores are computed.
+		\item The amount columns are just used for plausibility checks.
+		\item Any other arbitrary columns of this table can also be used in the \textbf{Tracing View} for highlighting etc.
 	\end{itemize}
 \end{frame}
 
@@ -183,7 +189,8 @@
   		\includegraphics[height=0.6\textheight]{16.png}
 	\end{center}
 	\begin{itemize}
-		\item
+		\item The \textbf{Delivery Relations} table does not have any optional columns.
+		\item All columns other than \textbf{from} and \textbf{to} are ignored.
 	\end{itemize}
 \end{frame}
 

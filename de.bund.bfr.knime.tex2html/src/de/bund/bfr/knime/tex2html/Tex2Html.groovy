@@ -63,11 +63,11 @@ class Tex2Html {
 
 	static String toHtml(String s) {
 		s = " " + s + " "
-		s = s.replaceAll(/\$[^_\$]+_[^_\$]+\$/, { String o -> "${o.split('_')[0][1..-1]}<sub>${o.split('_')[1][0..-2]}</sub>"})
+		s = s.replaceAll(/\$[^_\$]+_[^_\$]+\$/, { String o -> "${o.split('_')[0][1..-1]}<sub>${o.split('_')[1][0..-2]}</sub>" })
 		s = s.replaceAll(/\\textbf\{[^}]*}/, { String o -> "<b>${o[8..-2]}</b>" })
 		s = s.replaceAll(/\\textit\{[^}]*}/, { String o -> "<i>${o[8..-2]}</i>" })
-		s = s.replaceAll(/\\url\{[^}]*}/, { String o ->	"<a href=\"${o[4..-2]}\" target=\"_blank\">${o.length() > 45 ? o[4..40] + "..." : o[4..-2]}</a>"})
-		s = s.replaceAll(/.\$/, {  it.charAt(0) == '\\' ? "\$" : it.charAt(0) })
+		s = s.replaceAll(/\\url\{[^}]*}/, { String o ->	"<a href=\"${o[4..-2]}\" target=\"_blank\">${o.length() > 45 ? o[4..40] + "..." : o[4..-2]}</a>" })
+		s = s.replaceAll(/.\$/, { String o -> o.charAt(0) == '\\' ? "\$" : o.charAt(0) })
 		s = s.replace("{", "").replace("}", "")
 		s = s.replace("\\%", "%");
 		s = s.replace("\\_", "_");

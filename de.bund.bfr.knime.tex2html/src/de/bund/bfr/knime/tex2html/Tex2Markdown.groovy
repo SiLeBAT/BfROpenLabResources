@@ -61,10 +61,10 @@ class Tex2Markdown {
 
 	static String toHtml(String s) {
 		s = " " + s + " "
-		s = s.replaceAll(/\$[^_\$]+_[^_\$]+\$/, { String o -> "${o.split('_')[0][1..-1]}<sub>${o.split('_')[1][0..-2]}</sub>"})
+		s = s.replaceAll(/\$[^_\$]+_[^_\$]+\$/, { String o -> "${o.split('_')[0][1..-1]}<sub>${o.split('_')[1][0..-2]}</sub>" })
 		s = s.replaceAll(/\\textbf\{[^}]*}/, { String o -> "**${o[8..-2]}**" })
 		s = s.replaceAll(/\\textit\{[^}]*}/, { String o -> "*${o[8..-2]}*" })
-		s = s.replaceAll(/\\url\{[^}]*}/, { String o ->	"[${o.length() > 45 ? o[4..40] + "..." : o[4..-2]}](${o[4..-2]})"})
+		s = s.replaceAll(/\\url\{[^}]*}/, { String o ->	"[${o.length() > 45 ? o[4..40] + "..." : o[4..-2]}](${o[4..-2]})" })
 		s = s.replaceAll(/.\$/, { String o -> o.charAt(0) == '\\' ? "\$" : o.charAt(0) })
 		s = s.replace("{", "").replace("}", "")
 		s = s.replace("\\%", "%");

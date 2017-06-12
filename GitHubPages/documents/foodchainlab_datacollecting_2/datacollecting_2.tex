@@ -20,9 +20,10 @@
 	\begin{itemize}
 		\item In this part of the tutorial we will do a back- and forward-tracing from the "Frozen Fruit Sales" station.
 		\item You can either complete part 1 of the tutorial or directly import the following files into an empty database before starting this tutorial.
-		\item Start Template: \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/Start_Tracing_Caterers.xlsx}
-		\item Caterer 1 Template: \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/Backtrace_request_Caterer 1.xlsx}
-		\item Caterer 2 Template: \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/Backtrace_request_Caterer 2.xlsx}
+		\item Caterer 1 Start: \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/Start_Tracing_Forward_Caterer1.xlsx}
+		\item Caterer 2 Start: \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/Start_Tracing_Forward_Caterer2.xlsx}
+		\item Caterer 1 Backward: \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/StationBacktrace_request_Caterer 1_-1839649003.xlsx}
+		\item Caterer 2 Backward: \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/StationBacktrace_request_Caterer 2_-530502898.xlsx}
 	\end{itemize}
 \end{frame}
  
@@ -33,17 +34,17 @@
 	\end{center}
 	\begin{itemize}
 		\item You should have the database interface open.
-		\item Press the button for generating backtracing templates, which is marked by the red circle.
+		\item Press the button for generating a backtracing template for one station, which is marked by the red circle.
 	\end{itemize}
 \end{frame}
 
 \subsection{2}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[width=0.4\textwidth]{2.png}
+  		\includegraphics[height=0.5\textheight]{2.png}
 	\end{center}
 	\begin{itemize}
-		\item Since we want to do the backtracing for the supplier "Frozen Fruit Sales", select \textbf{Supplier} only and press \textbf{OK}.
+		\item In the dialog that appears, you can see a table with all stations from the database.
 	\end{itemize}
 \end{frame}
 
@@ -53,8 +54,8 @@
   		\includegraphics[height=0.5\textheight]{3.png}
 	\end{center}
 	\begin{itemize}
-		\item In the file dialog that appears, you can specify the folder where the generated templates should be saved.
-		\item Select the desired folder and press \textbf{Save}.
+		\item Type the first letters of "Frozen Fruit Sales" in the search box to search for it.
+		\item After typing some letters all other stations should have disappeared. Click on the \textbf{Select} button for "Frozen Fruit Sales".
 	\end{itemize}
 \end{frame}
 
@@ -64,8 +65,8 @@
   		\includegraphics[width=0.8\textwidth]{4.png}
 	\end{center}
 	\begin{itemize}
-		\item You'll be noticed, that one template was generated in the folder you specified.
-		\item Press \textbf{OK}.
+		\item In the file dialog that appears, you can specify the folder where the generated template should be saved.
+		\item Select the desired folder and press \textbf{Save}.
 	\end{itemize}
 \end{frame}
 
@@ -75,9 +76,8 @@
   		\includegraphics[width=0.95\textwidth]{5.png}
 	\end{center}
 	\begin{itemize}
-		\item Open the generated template "Backtrace\_request\_Frozen Fruit Sales.xlsx".
-		\item Add the stations from the screenshot to the \textbf{Stations} sheet.
-		\item These station include 3 strawberry suppliers that delivered strawberries to "Frozen Fruit Sales" and also a caterer that received strawberries.
+		\item You'll be noticed, that one template was generated in the folder you specified.
+		\item Press \textbf{OK}.
 	\end{itemize}
 \end{frame}
 
@@ -87,8 +87,8 @@
   		\includegraphics[width=0.95\textwidth]{6.png}
 	\end{center}
 	\begin{itemize}
-		\item In the \textbf{BackTracing} sheet you can see the three outgoing deliveries of "Frozen Fruit Sales".
-		\item These deliveries belong to lots "108" and "139".
+		\item Open the generated template "StationBacktrace\_request\_Frozen Fruit Sales\_725897958...".
+		\item In the upper part of the sheet you can see the three outgoing deliveries from to "Caterer 1" and "Caterer 2".
 	\end{itemize}
 \end{frame}
 
@@ -98,8 +98,9 @@
   		\includegraphics[width=0.95\textwidth]{7.png}
 	\end{center}
 	\begin{itemize}
-		\item Now scroll to the \textbf{Ingredients for Lot(s)} section.
-		\item Enter the 3 deliveries, that were used as ingredients for lot "108", from the screenshot.
+		\item Now scroll down to the section where you can enter the ingredients.
+		\item Enter the 3 deliveries, that were used as ingredients for lot "108" (marked by the red box).
+		\item Save and close the document.
 	\end{itemize}
 \end{frame}
 
@@ -109,10 +110,7 @@
   		\includegraphics[width=0.95\textwidth]{8.png}
 	\end{center}
 	\begin{itemize}
-		\item Lot "108" was not only delivered to "Caterer 1" and "Caterer 2", but also to a third caterer.
-		\item We can add this information in the \textbf{ForwardTracing\_Opt} sheet.
-		\item Enter the delivery to "Caterer 3" from the screenshot.
-		\item Save the completed document ("Backtrace\_request\_Frozen Fruit Sales.xlsx").
+		\item To import this file click on the \textbf{Table import} button in the upper left corner of the database interface.
 	\end{itemize}
 \end{frame}
 
@@ -122,28 +120,30 @@
   		\includegraphics[height=0.6\textheight]{9.png}
 	\end{center}
 	\begin{itemize}
-		\item To import this file click on the \textbf{Table import} button in the upper left corner of the database interface.
+		\item In the file dialog that appears, select "StationBacktrace\_request\_Frozen Fruit Sales\_725897958..." and press \textbf{Open}.
 	\end{itemize}
 \end{frame}
 
 \subsection{10}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[height=0.5\textheight]{10.png}
+  		\includegraphics[height=0.2\textheight]{10.png}
 	\end{center}
 	\begin{itemize}
-		\item In the file dialog that appears, select "Backtrace\_request\_Frozen Fruit Sales.xlsx" and press \textbf{Open}.
+		\item You'll see a message that the import was successful.
+		\item Press \textbf{OK}.
 	\end{itemize}
 \end{frame}
 
 \subsection{11}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[width=0.7\textwidth]{11.png}
+  		\includegraphics[height=0.4\textheight]{11.png}
 	\end{center}
 	\begin{itemize}
-		\item You'll be notified, that some warnings occurred during import.
-		\item Press \textbf{Show Details} to have at look at the warnings.
+		\item The frozen strawberries from lot "108" were not only delivered to "Caterer 1" and "Caterer 2", but also to a third caterer.
+		\item To get this information into the database we have to create a forward tracing template for "Frozen Fruit Sales".
+		\item First we have to uncheck \textbf{Generate only the missing data}. Otherwise no template would be generated, since FoodChain-Lab assumes that no data is missing for lot "108" as its ingredients and the deliveries of the lot to "Caterer 1" and "Caterer 2" are already in the database.
 	\end{itemize}
 \end{frame}
 
@@ -153,9 +153,7 @@
   		\includegraphics[width=0.95\textwidth]{12.png}
 	\end{center}
 	\begin{itemize}
-		\item 730kg of strawberries went into lot "108", but all the deliveries of frozen strawberries from lot "108" just add up to 99.75kg.
-		\item Warnings like these are supposed to help finding errors in the data.
-		\item In this tutorial we just ignore the warning. So press \textbf{OK}.
+		\item Press the button for generating a forward tracing template for one station, which is marked by the red circle.
 	\end{itemize}
 \end{frame}
 
@@ -165,32 +163,29 @@
   		\includegraphics[height=0.6\textheight]{13.png}
 	\end{center}
 	\begin{itemize}
-		\item We now know that lot "108" was also delivered to "Caterer 3" and we have imported this delivery into the database.
-		\item Let's do a forward tracing from "Caterer 3".
-		\item Press the button for generating the forward template for a specific station marked by the red circle.
+		\item In the dialog that appears search for "Frozen Fruit Sales" and click its \textbf{Select} button.
 	\end{itemize}
 \end{frame}
 
 \subsection{14}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[width=0.95\textwidth]{14.png}
+  		\includegraphics[height=0.6\textheight]{14.png}
 	\end{center}
 	\begin{itemize}
-		\item In the dialog that appears, you must select the station for which the template should be generated.
-		\item Enter "cate" in the field after \textbf{Enter Search Query} and you will see that the table below only shows the caterers now.
-		\item Press the \textbf{Select} button for "Caterer 3".
+		\item In the file dialog that appears, you can specify the folder where the generated templates should be saved.
+		\item Select the desired folder and press \textbf{Save}.
 	\end{itemize}
 \end{frame}
 
 \subsection{15}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[height=0.5\textheight]{15.png}
+  		\includegraphics[height=0.2\textheight]{15.png}
 	\end{center}
 	\begin{itemize}
-		\item In the file dialog that appears, you can specify the folder where the generated templates should be saved.
-		\item Select the desired folder and press \textbf{Save}.
+		\item You'll be noticed, that one template was generated in the folder you specified.
+		\item Press \textbf{OK}.
 	\end{itemize}
 \end{frame}
 
@@ -200,19 +195,21 @@
   		\includegraphics[width=0.8\textwidth]{16.png}
 	\end{center}
 	\begin{itemize}
-		\item You'll be noticed, that one template was generated in the folder you specified.
-		\item Press \textbf{OK}.
+		\item Open the generated template ("StationFwdtrace\_request\_Frozen Fruit Sales...").
+		\item In the upper part you can see all incoming deliveries (ingredients) of "Frozen Fruit Sales".
 	\end{itemize}
 \end{frame}
 
 \subsection{17}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[width=0.95\textwidth]{17.png}
+  		\includegraphics[height=0.55\textheight]{17.png}
 	\end{center}
 	\begin{itemize}
-		\item Open "StationFwdtrace\_request\_Caterer 3.xlsx".
-		\item Enter the station from the screenshot in the \textbf{Stations} sheet.
+		\item Scroll down to the section where you can enter the outgoing deliveries.
+		\item There was one delivery of "Frozen Strawberries" of lot "108" to "Caterer 3".
+		\item Since lot "108" has three ingredients, we have to enter the delivery three times as shown on the screenshot (red box).
+		\item After entering the data save and close the document.
 	\end{itemize}
 \end{frame}
 
@@ -222,47 +219,24 @@
   		\includegraphics[width=0.9\textwidth]{18.png}
 	\end{center}
 	\begin{itemize}
-		\item In the \textbf{FwdTracing} sheet you first have to enter all relevant outgoing lots of "Caterer 3". So add lot "C3M1" to the \textbf{Lot Information} section as shown on the screenshot (red rectangle).
-		\item Now you can specify, that the delivery of "Frozen Strawberries" was used as an ingredient in this lot (red circle).
+		\item To import this file click on the \textbf{Table import} button in the upper left corner of the database interface.
 	\end{itemize}
 \end{frame}
 
 \subsection{19}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[width=0.95\textwidth]{19.png}
+  		\includegraphics[height=0.5\textheight]{19.png}
 	\end{center}
 	\begin{itemize}
-		\item Scroll down to the \textbf{Products Out} section to specify the outgoing deliveries from lot "C3M1".
-		\item Add the deliveries as shown on the screenshot.
-		\item Save the completed document ("StationFwdtrace\_request\_Caterer 3.xlsx").
+		\item In the file dialog that appears, select "StationFwdtrace\_request\_Frozen Fruit Sales..." and press \textbf{Open}.	
 	\end{itemize}
 \end{frame}
 
 \subsection{20}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[height=0.6\textheight]{20.png}
-	\end{center}
-	\begin{itemize}
-		\item To import this file click on the \textbf{Table import} button in the upper left corner of the database interface.
-	\end{itemize}
-\end{frame}
-
-\subsection{21}
-\begin{frame}
-	\begin{center}
-  		\includegraphics[height=0.5\textheight]{21.png}
-	\end{center}
-	\begin{itemize}
-		\item In the file dialog that appears, select "StationFwdtrace\_request\_Caterer 3.xlsx" and press \textbf{Open}.
-	\end{itemize}
-\end{frame}
-
-\subsection{22}
-\begin{frame}
-	\begin{center}
-  		\includegraphics[width=0.4\textwidth]{22.png}
+  		\includegraphics[height=0.2\textheight]{20.png}
 	\end{center}
 	\begin{itemize}
 		\item You'll see a message that the import was successful.

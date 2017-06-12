@@ -36,36 +36,38 @@
 \subsection{2}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[height=0.5\textheight]{2.png}
+  		\includegraphics[height=0.35\textheight]{2.png}
 	\end{center}
 	\begin{itemize}
 		\item The FoodChain-Lab database interface now pops up.
 		\item Here you can import, edit and validate food delivery data.
-		\item To start the data import you must download, fill out and import the "Start Tracing Template".
-		\item It can be downloaded from here: \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/templates/Start_Tracing_Template.xlsx}.
+		\item To start the data import you must download, fill out and import the "Start Tracing Backward" or  the "Start Tracing Forward" template.
+		\item Backward: \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/templates/Start_Tracing_Backward.xlsx}.
+		\item Forward: \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/templates/Start_Tracing_Forward.xlsx}.
 	\end{itemize}
 \end{frame}
 
 \subsection{3}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[width=0.95\textwidth]{3.png}
+  		\includegraphics[height=0.5\textwidth]{3.png}
 	\end{center}
 	\begin{itemize}
-		\item For this tutorial we have already pre-prepared a "Start Tracing Template".
-		\item Download it from \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/Start_Tracing_Caterers.xlsx}.
-		\item In the \textbf{Stations} sheet of this file several \textbf{Educational Institutions} and two \textbf{Caterers} are defined.
+		\item For this tutorial we have already pre-prepared "Start Tracing Forward" templates for two \textbf{Caterers}, at which some contaminated food products were detected.
+		\item These templates contain deliveries from the \textbf{Caterers} to several \textbf{Educational Institutions}.
+		\item Here we start with "Forward" instead of "Backward" templates, since we first want to know the recipients of the \textbf{Caterers'} menus and not the suppliers of the ingredients.
 	\end{itemize}
 \end{frame}
 
 \subsection{4}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[width=0.95\textwidth]{4.png}
+  		\includegraphics[height=0.55\textwidth]{4.png}
 	\end{center}
 	\begin{itemize}
-		\item Cases of a disease were reported at the \textbf{Educational Institutions}, which received their menus from the \textbf{Caterers}.
-		\item The deliveries from the \textbf{Caterers} to the \textbf{Educational Institutions} are defined in the \textbf{Deliveries} sheet.
+		\item Download the pre-prepared templates.
+		\item Caterer 1: \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/Start_Tracing_Forward_Caterer1.xlsx}
+		\item Caterer 2: \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/Start_Tracing_Forward_Caterer2.xlsx}
 	\end{itemize}
 \end{frame}
 
@@ -75,7 +77,7 @@
   		\includegraphics[height=0.6\textheight]{5.png}
 	\end{center}
 	\begin{itemize}
-		\item To import this file click on the \textbf{Table import} button in the upper left corner of the database interface.
+		\item To import the files click on the \textbf{Table import} button in the upper left corner of the database interface.
 	\end{itemize}
 \end{frame}
 
@@ -85,7 +87,8 @@
   		\includegraphics[height=0.5\textheight]{6.png}
 	\end{center}
 	\begin{itemize}
-		\item In the file dialog that appears, select "StartTracing\_Caterers.xlsx" and press \textbf{Open}.
+		\item In the file dialog that appears, select "Start\_Tracing\_Forward\_Caterer1.xlsx" and "Start\_Tracing\_Forward\_Caterer2.xlsx".
+		\item Then press \textbf{Open}.
 	\end{itemize}
 \end{frame}
 
@@ -147,24 +150,25 @@
 \subsection{12}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[width=0.95\textwidth]{12.png}
+  		\includegraphics[height=0.55\textwidth]{12.png}
 	\end{center}
 	\begin{itemize}
-		\item To keep this tutorial short, we will only enter the deliveries from one supplier, "Frozen Fruit Sales".
-		\item Enter all the information of "Frozen Fruit Sales" in the \textbf{Stations} sheet of "Backtrace\_request\_Caterer 1.xlsx" as you can see in the screenshot.
+		\item Open the generated template for \textbf{Caterer 1}.
+		\item In the upper part of the sheet you can see all the outgoing deliveries of \textbf{Caterer 1}, that were imported with the "Start Forward Template". These deliveries belong to two different lots: "C1M1" and "C1M2".
+		\item The cells here have grey background. That means that you should not edit them.
 	\end{itemize}
 \end{frame}
 
 \subsection{13}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[width=0.95\textwidth]{13.png}
+  		\includegraphics[height=0.5\textwidth]{13.png}
 	\end{center}
 	\begin{itemize}
-		\item Now switch to the \textbf{BackTracing} sheet.
-		\item In the \textbf{Products Out} section all deliveries to "Caterer 1" are listed.
-		\item These are the deliveries, that we imported from "StartTracing\_Caterers.xlsx".
-		\item The deliveries belong to two lots, "C1M1" and "C1M2".
+		\item Scroll down to the section where you can enter the ingredient for the two lots.
+		\item A delivery of "Frozen Strawberries" from "Frozen Fruit Sales" was used as an ingredient in lot "C1M1".
+		\item So lets enter this delivery here (marked by the red box).
+		\item Save and close the document.
 	\end{itemize}
 \end{frame}
 
@@ -174,21 +178,21 @@
   		\includegraphics[width=0.8\textwidth]{14.png}
 	\end{center}
 	\begin{itemize}
-		\item Now scroll to the \textbf{Ingredients for Lot(s)} section.
-		\item Here you can enter the deliveries received by "Caterer 1" and their associated lots where these deliveries went in as ingredients.
-		\item Enter all information for the delivery of "Frozen Strawberries" from "Frozen Fruit Sales" which you can see in the screenshot.
-		\item Save the document ("Backtrace\_request\_Caterer 1.xlsx").
+		\item Now open the generated template for \textbf{Caterer 2}.
+		\item Analogously to the previous template you can see all the outgoing deliveries of \textbf{Caterer 2}.
 	\end{itemize}
 \end{frame}
 
 \subsection{15}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[width=0.95\textwidth]{15.png}
+ 		\includegraphics[width=0.95\textwidth]{15.png}
 	\end{center}
 	\begin{itemize}
-		\item Now open the other generated template: "Backtrace\_request\_Caterer 2.xlsx".
-		\item Add "Frozen Fruit Sales" to the \textbf{Stations} sheet as we did for the first template.
+		\item Scroll down to the section where you can enter the ingredient for the two lots.
+		\item Two deliveries of "Frozen Strawberries" from "Frozen Fruit Sales" were used as ingredients in lot "C2M1".
+		\item Enter the deliveries here (marked by the red box).
+		\item Then save and close the document.
 	\end{itemize}
 \end{frame}
 
@@ -198,9 +202,7 @@
   		\includegraphics[width=0.95\textwidth]{16.png}
 	\end{center}
 	\begin{itemize}
-		\item Now switch to the \textbf{BackTracing} sheet.
-		\item Enter the two deliveries from the screenshot into the \textbf{Ingredients for Lot(s)} section.
-		\item Save the document ("Backtrace\_request\_Caterer 2.xlsx").
+		\item To import the two files into the database click on the \textbf{Table import} button in the upper left corner of the database interface.
 	\end{itemize}
 \end{frame}
 
@@ -210,25 +212,15 @@
   		\includegraphics[height=0.6\textheight]{17.png}
 	\end{center}
 	\begin{itemize}
-		\item To import the two files into the database click on the \textbf{Table import} button in the upper left corner of the database interface.
+		\item In the file dialog that appears, select both backtracing templates.
+		\item Then press \textbf{Open}.
 	\end{itemize}
 \end{frame}
 
 \subsection{18}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[height=0.5\textheight]{18.png}
-	\end{center}
-	\begin{itemize}
-		\item In the file dialog that appears, select "Backtrace\_request\_Caterer 1.xlsx" and "Backtrace\_request\_Caterer 2.xlsx".
-		\item Then press \textbf{Open}.
-	\end{itemize}
-\end{frame}
-
-\subsection{19}
-\begin{frame}
-	\begin{center}
-  		\includegraphics[width=0.4\textwidth]{19.png}
+  		\includegraphics[height=0.2\textheight]{18.png}
 	\end{center}
 	\begin{itemize}
 		\item You'll see a message that the import was successful.

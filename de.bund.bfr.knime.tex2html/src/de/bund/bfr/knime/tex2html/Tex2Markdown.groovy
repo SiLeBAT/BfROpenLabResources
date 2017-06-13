@@ -33,11 +33,20 @@ class Tex2Markdown {
 		String heading = null
 		List<String> text = []
 		String image = null
+		
+		println "---"
 
 		for (def s : new File(TEX_FILE).readLines()) {
 			s = s.trim()
 
-			if (s.startsWith("\\section") || s.startsWith("\\subsection")) {
+			if (s.startsWith("\\title")) {
+				println "title: ${s.substring(s.indexOf("{") + 1, s.indexOf("}")).trim()}"
+				println "sidebar: fcl_sidebar"
+				println "permalink: fcl_${NAME}.html"
+				println "folder: fcl"
+				println "---"
+				println ""
+			} else if (s.startsWith("\\section") || s.startsWith("\\subsection")) {
 				s = s.substring(s.indexOf("{") + 1, s.indexOf("}")).trim()
 				if (!s.empty) heading = s
 			} else if (s.startsWith("\\item")) {

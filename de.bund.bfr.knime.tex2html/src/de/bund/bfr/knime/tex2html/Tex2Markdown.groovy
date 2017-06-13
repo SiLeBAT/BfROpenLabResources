@@ -25,27 +25,35 @@ import javax.imageio.ImageIO
 
 class Tex2Markdown {
 
-	static NAME = "overview"
-	static TEX_FILE = "../GitHubPages/documents/foodchainlab_${NAME}/${NAME}.tex"
-	static URL = "https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/foodchainlab_${NAME}"
+	static FOLDER = "../GitHubPages/documents"
+	static URL = "https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents"
 
 	static main(args) {
+		for (File d : new File(FOLDER).listFiles())
+			if (d.isDirectory())
+				for (File f : d.listFiles())
+					if (f.name.endsWith(".tex") && !f.name.endsWith("_DE.tex")) {				
+						createFile(f, "${URL}/${d.name}");
+					}
+	}
+
+	static createFile(File f, String url) {
+		String name = f.name[0..-5]
+		File out = new File("${name}.md")
 		String heading = null
 		List<String> text = []
-		String image = null
-		
-		println "---"
+		String image = null		
 
-		for (def s : new File(TEX_FILE).readLines()) {
+		for (def s : f.readLines()) {
 			s = s.trim()
 
 			if (s.startsWith("\\title")) {
-				println "title: ${s.substring(s.indexOf("{") + 1, s.indexOf("}")).trim()}"
-				println "sidebar: fcl_sidebar"
-				println "permalink: fcl_${NAME}.html"
-				println "folder: fcl"
-				println "---"
-				println ""
+				out << "---\n"
+				out << "title: ${s.substring(s.indexOf("{") + 1, s.indexOf("}")).trim()}\n"
+				out << "sidebar: fcl_sidebar\n"
+				out << "permalink: fcl_${name}.html\n"
+				out << "folder: fcl\n"
+				out << "---\n\n"		
 			} else if (s.startsWith("\\section") || s.startsWith("\\subsection")) {
 				s = s.substring(s.indexOf("{") + 1, s.indexOf("}")).trim()
 				if (!s.empty) heading = s
@@ -54,12 +62,12 @@ class Tex2Markdown {
 			} else if (s.startsWith("\\includegraphics")) {
 				image = s.substring(s.indexOf("{")+1, s.indexOf("}"))
 			} else if (s.startsWith("\\end{frame}")) {
-				if (((CharSequence)heading).isInteger()) println "{% include heading.html text=\"Step ${heading}\" %}"
-				else if (heading != null) println "{% include heading.html text=\"${heading}\" %}"
-				println ""
-				text.each { t -> println " * ${t}" }
-				println ""
-				if (image != null) println "{% include screenshot.html img=\"${URL}/${image}\" %}\n"
+				if (((CharSequence)heading).isInteger()) out << "{% include heading.html text=\"Step ${heading}\" %}\n"
+				else if (heading != null) out << "{% include heading.html text=\"${heading}\" %}\n"
+				out << "\n"
+				text.each { t -> out << " * ${t}\n" }
+				out << "\n"
+				if (image != null) out << "{% include screenshot.html img=\"${url}/${image}\" %}\n\n"
 
 				heading = null
 				text = []
@@ -78,7 +86,7 @@ class Tex2Markdown {
 		s = s.replace("{", "").replace("}", "")
 		s = s.replace("\\%", "%");
 		s = s.replace("\\_", "_");
-		
-		return s.trim()		
+
+		return s.trim()
 	}
 }

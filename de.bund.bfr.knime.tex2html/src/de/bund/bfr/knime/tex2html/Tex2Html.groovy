@@ -28,15 +28,17 @@ import org.codehaus.groovy.runtime.StringGroovyMethods
 class Tex2Html {
 
 	static NAME = "overview"
-	static TEX_FILE = "../GitHubPages/documents/foodchainlab_${NAME}/${NAME}.tex"
-	static URL = "https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/foodchainlab_${NAME}"
+	static GERMAN = false
 
 	static main(args) {
+		def texFile = "../GitHubPages/documents/foodchainlab_${NAME}/${NAME + (GERMAN ? '_DE' : '')}.tex"
+		def url = "https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/foodchainlab_${NAME}"
+
 		String heading = null
 		List<String> text = []
 		String image = null
 
-		for (def s : new File(TEX_FILE).readLines()) {
+		for (def s : new File(texFile).readLines()) {
 			s = s.trim()
 
 			if (s.startsWith("\\section") || s.startsWith("\\subsection")) {
@@ -52,7 +54,7 @@ class Tex2Html {
 				println "<ul>"
 				text.each { t -> println "<li>${t}</li>" }
 				println "</ul>"
-				if (image != null) println "<a href=\"${URL}/${image}\"><img class=\"aligncenter size-full\" src=\"${URL}/${image}\"/></a>"
+				if (image != null) println "<a href=\"${url}/${image}\"><img class=\"aligncenter size-full\" src=\"${url}/${image}\"/></a>"
 
 				heading = null
 				text = []

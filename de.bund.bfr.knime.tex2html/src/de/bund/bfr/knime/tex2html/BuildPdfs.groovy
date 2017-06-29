@@ -28,18 +28,19 @@ class BuildPdfs {
 		for (def d : new File(FOLDER).listFiles())
 			if (d.isDirectory())
 				for (def f : d.listFiles())
-					if (f.name.endsWith(".tex")) {
-						println PDF_LATEX + " " + f.getName()
+					if (f.name.endsWith(".tex"))
+						for (int i = 0; i < 2; i++) {
+							println PDF_LATEX + " " + f.getName()
 
-						ProcessBuilder builder = new ProcessBuilder(PDF_LATEX, f.getName())
+							ProcessBuilder builder = new ProcessBuilder(PDF_LATEX, f.getName())
 
-						builder.directory(d)
+							builder.directory(d)
 
-						Process process = builder.start()
+							Process process = builder.start()
 
-						process.getInputStream().eachLine() { println it }
-						process.waitFor()
-						println ""
-					}
+							process.getInputStream().eachLine() { println it }
+							process.waitFor()
+							println ""
+						}
 	}
 }

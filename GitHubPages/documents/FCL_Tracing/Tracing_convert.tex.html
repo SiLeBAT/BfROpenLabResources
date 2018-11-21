@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Tracing Backward Template</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header>
+<h1 class="title">Tracing Backward Template</h1>
+</header>
+<h1 id="topics">Topics</h1>
+<p>1em<strong>Learn</strong></p>
+<ul>
+<li><p>to visualise forward and backward traces of a station in the Tracing View</p></li>
+<li><p>to deactivate “Cross Contamination” and how this changes the trace</p></li>
+</ul>
+<h1 id="a">1a</h1>
+<p><img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Tracing/1a.png" alt="image" /></p>
+<ul>
+<li><p>Import the <a href="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/workflows/FCL_Tracing_Tutorial.knwf">“FCL_Tracing_Tutorial”</a> Example Workflow.</p></li>
+<li><p>Open the <strong>Tracing View</strong> by double-clicking on it.</p></li>
+</ul>
+<h1 id="b">1b</h1>
+<p><img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Tracing/1b.png" alt="image" /></p>
+<ul>
+<li><p>In the delivery graph you can see 12 outbreak stations (red), six stations which are connected to outbreak stations and are thus a common link (yellow) and one station (the <em>Bakersfield Bakery</em>) which is both a common link (yellow) and in which also cross contamination is assumed (black).</p></li>
+</ul>
+<h1 id="c">1c</h1>
+<ul>
+<li><p>To show two properties, stations are striped. Here, the <em>Bakersfield Bakery</em> is striped black and yellow.</p></li>
+<li><p>The size of each station is based on its “score”, which depends on the outbreak stations that are connected to each station.</p></li>
+<li><p>In this scenario, the outbreak stations are people. They have bought a product which was contaminated and they became ill. We want to find out, where the source of the contamination is. But do we already know enough to solve the riddle <em>in silico</em>?</p></li>
+</ul>
+<h1 id="section">2</h1>
+<p><img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Tracing/2.png" alt="image" /></p>
+<ul>
+<li><p>There is a suspicion that <em>All-Year-Fruits Plc</em> has supplied contaminated products. We will now observe the trace of this station in detail. We would like to see whether the company’s forward trace reaches the outbreak stations.</p></li>
+<li><p>Double click on the station <em>All-Year-Fruits Plc</em> in the red circle.</p></li>
+</ul>
+<h1 id="a-1">3a</h1>
+<p><img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Tracing/3a.png" alt="image" /></p>
+<ul>
+<li><p>A dialog will pop up, showing all attributes of the station.</p></li>
+<li><p>Additionally, it is possible to change “Weight”, “Cross Contamination”, “Kill Contamination” and “Observed”.</p></li>
+<li><p>Select “Observed” and press OK.</p></li>
+</ul>
+<h1 id="b-1">3b</h1>
+<p><img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Tracing/3b.png" alt="image" /></p>
+<ul>
+<li><p>Stations and deliveries on the forward trace are orange and the ones of the backward trace are purple. The observed station is green.</p></li>
+<li><p>The outbreak stations (here: patients) are striped red and orange now. This means they really are on the forward trace of the observed station.</p></li>
+</ul>
+<h1 id="section-1">4</h1>
+<p><img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Tracing/4.png" alt="image" /></p>
+<ul>
+<li><p>However, also stations for which no outbreak was confirmed are on the forward trace (here: customers).</p></li>
+<li><p>Perhaps there was one assumption to many. What happens if we deactivate “cross contamination” in the station in the red circle? Double click this station.</p></li>
+</ul>
+<h1 id="a-2">5a</h1>
+<p><img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Tracing/5a.png" alt="image" /></p>
+<ul>
+<li><p>Uncheck “CrossContamination”. This means we assume that even if contaminated products were used by the bakery the contamination coming from one ingredient did not spread to all of the bakery’s products but only to those that contain this ingredient. Press OK.</p></li>
+</ul>
+<h1 id="b-2">5b</h1>
+<p><img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Tracing/5b.png" alt="image" /></p>
+<ul>
+<li><p>Deactivating cross contamination changed the forward trace of the observed station.</p></li>
+<li><p>Now, only the outbreak stations belong to the forward trace.</p></li>
+</ul>
+<h1 id="c-1">5c</h1>
+<ul>
+<li><p>But is <em>All-Year-Fruits Plc</em> the only possible source for contaminated products? Deselect “Observed” in this station and try one of the other common links.</p></li>
+<li><p>Also other companies might be the source of the contamination. Thus, it is not yet proven that <em>All-Year-Fruits Plc</em> delivered contaminated products.</p></li>
+<li><p>Perhaps it is time to take samples in these companies…</p></li>
+<li><p>Some days later you get the results from the laboratory. There was a high bacterial count in a milk pasteurizing machine from <em>Dairy Products Ltd.</em> as well as in milk cartons filled by this company with “pasteurized” milk. The outbreak strain and the strain found in the milk pasteurizer are identical.</p></li>
+</ul>
+<h1 id="section-2">6</h1>
+<p><img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Tracing/6.png" alt="image" /></p>
+<ul>
+<li><p>Uncheck “Observed” in the stations. The <strong>Tracing View</strong> should look like the screenshot above.</p></li>
+<li><p>Double click the delivery arrow of the milk (see red oval).</p></li>
+</ul>
+<h1 id="a-3">7a</h1>
+<p><img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Tracing/7a.png" alt="image" /></p>
+<ul>
+<li><p>Check “Observed” to see the backward and forward traces of the milk which is an ingredient of the Summer Cake consumed by all patients. Press OK.</p></li>
+</ul>
+<h1 id="b-3">7b</h1>
+<p><img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Tracing/7b.png" alt="image" /></p>
+<ul>
+<li><p>All of the outbreak stations (and these only) belong to the forward trace. You seem to have found the source of the outbreak: The milk pasteurizer in the company <em>Dairy Products Ltd.</em> If only tracing was always this easy...</p></li>
+</ul>
+</body>
+</html>

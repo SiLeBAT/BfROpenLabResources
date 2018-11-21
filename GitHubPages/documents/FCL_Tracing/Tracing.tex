@@ -1,6 +1,8 @@
 \documentclass[10pt]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
+\hypersetup{colorlinks=true,linkbordercolor=blue,linkcolor=white,urlcolor=blue,pdfborderstyle={/S/U/W 1}}
+
 \usepackage[scaled]{helvet}
 \usepackage[T1]{fontenc}
 \usetheme{Berkeley}
@@ -9,7 +11,7 @@
 \setbeamersize{sidebar width left=1.5cm}
 \setbeamerfont{section in sidebar}{size=\fontsize{6}{6}\selectfont}
 \setbeamerfont{title in sidebar}{size=\fontsize{6}{6}\selectfont}
-\title{Tracing}
+\title{Tracing Backward Template}
 \date{}
 
 \begin{document}
@@ -30,7 +32,7 @@
   		\includegraphics[height=0.6\textheight]{1a.png}
 	\end{center}
 	\begin{itemize}
-		\item Import the Example Workflow from \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/workflows/FCL_Tracing_Tutorial.knwf}.
+		\item Import the  \textcolor{blue}{\underline{\href{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/workflows/FCL\_Tracing\_Tutorial.knwf}{``FCL\_Tracing\_Tutorial''}}} Example Workflow.
 		\item Open the \textbf{Tracing View} by double-clicking on it.
 	\end{itemize}
 \end{frame}
@@ -41,15 +43,15 @@
   		\includegraphics[height=0.6\textheight]{1b.png}
 	\end{center}
 	\begin{itemize}
-		\item In the delivery graph you can see 12 outbreak stations (red), six stations which are connected to outbreak stations and are thus a common link (yellow) and one station (the Bakersfield Bakery) which is both a common link (yellow) and in which also cross contamination is assumed (black).
+		\item In the delivery graph you can see 12 outbreak stations (red), six stations which are connected to outbreak stations and are thus a common link (yellow) and one station (the \textit{Bakersfield Bakery}) which is both a common link (yellow) and in which also cross contamination is assumed (black).
 	\end{itemize}
 \end{frame}
 
 \section{1c}
 \begin{frame}
 	\begin{itemize}
-		\item To show two properties, stations are striped. Here, the Bakersfield bakery is striped  black and yellow.
-		\item The size of each station is based on its ``Score'', which depends on the outbreak stations that are connected to each station.
+		\item To show two properties, stations are striped. Here, the \textit{Bakersfield Bakery} is striped  black and yellow.
+		\item The size of each station is based on its ``score'', which depends on the outbreak stations that are connected to each station.
 		\item In this scenario, the outbreak stations are people. They have bought a product which was contaminated and they became ill. We want to find out, where the source of the contamination is. But do we already know enough to solve the riddle \textit{in silico}?
 	\end{itemize}
 \end{frame}
@@ -123,10 +125,10 @@
 \section{5c}
 \begin{frame}
 	\begin{itemize}
-		\item But is All-Year-Fruits Plc the only possible source for contaminated products? Deselect “Observed” in this station and try one of the other common links.
-		\item Also other companies might be the source of the contamination. Thus, it is not yet proven that All-Year-Fruits Plc delivered contaminated products.
+		\item But is \textit{All-Year-Fruits Plc} the only possible source for contaminated products? Deselect “Observed” in this station and try one of the other common links.
+		\item Also other companies might be the source of the contamination. Thus, it is not yet proven that \textit{All-Year-Fruits Plc} delivered contaminated products.
 		\item Perhaps it is time to take samples in these companies…
-		\item Some days later you get the results from the laboratory. There was a high bacterial count in a milk pasteurizing machine from Dairy Products Ltd. as well as in milk cartons filled by this company with “pasteurized” milk. The outbreak strain and the strain found in the milk pasteurizer are identical.
+		\item Some days later you get the results from the laboratory. There was a high bacterial count in a milk pasteurizing machine from \textit{Dairy Products Ltd.} as well as in milk cartons filled by this company with “pasteurized” milk. The outbreak strain and the strain found in the milk pasteurizer are identical.
 	\end{itemize}
 \end{frame}
 
@@ -136,7 +138,7 @@
   		\includegraphics[height=0.6\textheight]{6.png}
 	\end{center}
 	\begin{itemize}
-		\item Uncheck “Observed” in the stations. The Tracing View should look like the screenshot above.
+		\item Uncheck “Observed” in the stations. The \textbf{Tracing View} should look like the screenshot above.
 		\item Double click the delivery arrow of the milk (see red oval).
 	\end{itemize}
 \end{frame}

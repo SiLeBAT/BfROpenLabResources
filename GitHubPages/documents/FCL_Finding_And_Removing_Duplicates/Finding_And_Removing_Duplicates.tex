@@ -21,7 +21,8 @@
 \begin{frame}
 \leftskip1em\textbf{Learn}
 	\begin{itemize}
-		\item to remove duplicates from the FoodChain-Lab database
+		\item how to find duplicates in the FoodChain-Lab database
+		\item how to remove these duplicates
 	\end{itemize}
 \vspace*{\fill}
 Note: You need data from the tutorials \textcolor{blue}{\underline{\href{https://foodrisklabs.bfr.bund.de/data-collection-and-import/}{``Data collection and import''}}} and \textcolor{blue}{\underline{\href{https://foodrisklabs.bfr.bund.de/templatebacktracing/}{``Tracing backward template''}}}. Please do these tutorials first.
@@ -34,26 +35,33 @@ Note: You need data from the tutorials \textcolor{blue}{\underline{\href{https:/
 	\end{center}
 	\begin{itemize}
 		\item Open the database and import \textcolor{blue}{\underline{\href{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL\_Finding\_And\_Removing\_Duplicates/FCL\_Backtrace\_Start\_tob\_en\_FDF\_DB\_clean.xlsx}{``FCL\_Backtrace\_Start\_tob\_en\_FDF\_DB\_clean.xlsx''}}}.
+	\end{itemize}
+\end{frame}
+
+\section{2}
+\begin{frame}
+	\begin{center}
+			\includegraphics[height=0.6\textheight]{2.png}
+	\end{center}
+	\begin{itemize}
+		\item Have a look at the network in the \textbf{Tracing View}. There is station \textit{Dry Stuff Inc} and another one called \textit{Dry Stuff Incs}. In the network it looks as if the the refined sugar was delivered to the \textit{Finest Dough Factory} by a completely different supplier. Because in reality both stations are identical this typo should be corrected. 
+	\end{itemize}
+\end{frame}
+
+\section{3}
+\begin{frame}
+	\begin{center}
+			\includegraphics[height=0.6\textheight]{3.png}
+	\end{center}
+	\begin{itemize}
 		\item Start the similarity search (see button in the red circle).
 	\end{itemize}
 \end{frame}
 
-\section{2}
+\section{4}
 \begin{frame}
 	\begin{center}
-			\includegraphics[scale=0.4]{2.png}
-	\end{center}
-	\begin{itemize}
-		\item To search for duplicates in station names and addresses tick the encircled radio button.
-		\item ``Name: 90'' means that the similarity between two or more station names must be 90 \% or greater in order to be displayed as duplicate.
-		\item Click ``OK''
-	\end{itemize}
-\end{frame}
-
-\section{2}
-\begin{frame}
-	\begin{center}
-			\includegraphics[scale=0.4]{2.png}
+			\includegraphics[scale=0.4]{4.png}
 			%\includegraphics[width=0.9\columnwidth]{2.png}
 	\end{center}
 	\begin{itemize}
@@ -63,6 +71,27 @@ Note: You need data from the tutorials \textcolor{blue}{\underline{\href{https:/
 	\end{itemize}
 \end{frame}
 
-Left click and hold the duplicate row and drop it onto the row that should be kept. It is like moving a file (or a selection of files) to a folder in a file browser. In this case
+\section{5}
+\begin{frame}
+	\begin{center}
+			\includegraphics[scale=0.4]{5.png}
+	\end{center}
+	\begin{itemize}
+		\item Left click the row with the typo to highlight it. Then drag and drop it onto the row that should be kept. It is like moving a file (or a selection of files) to a folder in a file browser.
+		\item Click ``OK''.
+		\item Because there are no more station names with 90 \% similarity the window closes.
+	\end{itemize}
+\end{frame}
+
+\section{6}
+\begin{frame}
+	\begin{center}
+			\includegraphics[height=0.6\textheight]{6.png}
+	\end{center}
+	\begin{itemize}
+		\item Reset the \textbf{Supply Chain Reader} and have a look at the \textbf{Tracing View}.
+		\item The entries have been merged. The refined sugar has been assigned to the correctly spelled company station \textit{Dry Stuff Inc}.
+	\end{itemize}
+\end{frame}
 
 \end{document}

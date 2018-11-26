@@ -1,0 +1,44 @@
+<h5 id="topics">Topics</h5>
+<strong>Learn</strong>
+<ul>
+<li>how to find duplicates in the FoodChain-Lab database</li>
+<li>how to remove these duplicates</li>
+</ul>
+Note: You need data from the tutorials <a href="https://foodrisklabs.bfr.bund.de/data-collection-and-import/">“Data collection and import”</a> and <a href="https://foodrisklabs.bfr.bund.de/templatebacktracing/">“Tracing backward template”</a>. Please do these tutorials first.
+<h5 id="section">1</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Finding_And_Removing_Duplicates/1.png" alt="image" />
+<ul>
+<li>Open the database and import <a href="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Finding_And_Removing_Duplicates/FCL_Backtrace_Start_tob_en_FDF_DB_clean.xlsx">“FCL_Backtrace_Start_tob_en_FDF_DB_clean.xlsx”</a>.</li>
+</ul>
+<h5 id="section-1">2</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Finding_And_Removing_Duplicates/2.png" alt="image" />
+<ul>
+<li>Have a look at the network in the <strong>Tracing View</strong>. There is station <em>Dry Stuff Inc</em> and another one called <em>Dry Stuff Incs</em>. In the network it looks as if the the refined sugar was delivered to the <em>Finest Dough Factory</em> by a completely different supplier. Because in reality both stations are identical this typo should be corrected.</li>
+</ul>
+<h5 id="section-2">3</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Finding_And_Removing_Duplicates/3.png" alt="image" />
+<ul>
+<li>Start the similarity search (see button in the red circle).</li>
+</ul>
+<h5 id="section-3">4</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Finding_And_Removing_Duplicates/4.png" alt="image" />
+<ul>
+<li>To search for duplicates in station names and addresses tick the encircled radio button.</li>
+<li>“Name: 90” means that the similarity between two or more station names must be 90 % or greater in order to be displayed as duplicate.</li>
+<li>Click “OK”</li>
+</ul>
+<h5 id="section-4">5</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Finding_And_Removing_Duplicates/5.png" alt="image" />
+<ul>
+<li>Left click the row with the typo to highlight it. Then drag and drop it onto the row that should be kept. It is like moving a file (or a selection of files) to a folder in a file browser.</li>
+<li>Click “OK”.</li>
+<li>Because there are no more station names with 90 % similarity the window closes.</li>
+</ul>
+<h5 id="section-5">6</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Finding_And_Removing_Duplicates/6.png" alt="image" />
+<ul>
+<li>Reset the <strong>Supply Chain Reader</strong> and have a look at the <strong>Tracing View</strong>.</li>
+<li>The entries have been merged. The refined sugar has been assigned to the correctly spelled company station <em>Dry Stuff Inc</em>.</li>
+</ul>
+
+

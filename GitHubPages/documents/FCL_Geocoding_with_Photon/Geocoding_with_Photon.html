@@ -1,0 +1,76 @@
+<h5 id="topics">Topics</h5>
+<strong>Learn</strong>
+<ul>
+<li>what geocoding is</li>
+<li>how to use the Photon geocoding service</li>
+</ul>
+<h5 id="section">1</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Geocoding_with_Photon/1.png" alt="image" />
+<ul>
+<li>Import the Geocoding workflow <a href="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/workflows/Geocoding_with_Photon.knwf">“Geocoding_with_Photon.knwf”</a>.</li>
+</ul>
+<h5 id="section-1">2</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Geocoding_with_Photon/2.png" alt="image" />
+<ul>
+<li>To perform geocoding we need to add the <strong>Geocoding</strong> node. If the <strong>Supply Chain Reader</strong> is selected, double-click on the <strong>Geocoding</strong> node in the Node Repository.</li>
+<li>Another way to attach the <strong>Geocoding</strong> node to the <strong>Supply Chain Reader</strong> is to drag it from the Node Repository into the workflow editor and to connect the top outport of the <strong>Supply Chain Reader</strong> with the inport of the <strong>Geocoding</strong> node.</li>
+</ul>
+<h5 id="section-2">3</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Geocoding_with_Photon/3.png" alt="image" />
+<ul>
+<li>The <strong>Geocoding</strong> node is connected to the <strong>SupplyChainReader</strong> and needs to be set up. Open its configuration by double clicking on it or by using its context menue (right click on the node, then choose “configure”).</li>
+</ul>
+<h5 id="section-3">4</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Geocoding_with_Photon/4.png" alt="image" />
+<ul>
+<li>Please choose the Service Provider “Photon”.</li>
+</ul>
+<h5 id="section-4">5</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Geocoding_with_Photon/5.png" alt="image" />
+<ul>
+<li>The address is properly set, automatically.</li>
+<li>You need to set the server address. Please copy the URL <a href="http://photon.komoot.de">http://photon.komoot.de</a> into the respective field. This is a publicly available service.</li>
+</ul>
+<h5 id="section-5">6</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Geocoding_with_Photon/6.png" alt="image" />
+<ul>
+<li>For many requests geocoding services return multiple results, for example, if there are two streets with identical names. In the dropdown menu “When muliple Results” you can decide how to deal with this.
+<ul>
+<li>“Do not use”: All multiple results will be discarded.</li>
+<li>“Use first”: The first entry of the multiple results list will be displayed for each address</li>
+<li>“Ask User”: All multiple results will be displayed. The user needs to go through all results and pick the favourite one menually. This is a lot of work for large data sets.</li>
+</ul></li>
+</ul>
+<h5 id="section-6">7</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Geocoding_with_Photon/7.png" alt="image" />
+<ul>
+<li>In this tutorial select “Use first” and click “OK”.</li>
+</ul>
+<h5 id="section-7">8</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Geocoding_with_Photon/8.png" alt="image" />
+<ul>
+<li>Right click on the <strong>Geocoding</strong> node and select “Execute”.</li>
+</ul>
+<h5 id="section-8">9</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Geocoding_with_Photon/9.png" alt="image" />
+<ul>
+<li>The execution might take a while.</li>
+<li>The progress bar under the node shows the percentage of data which has been processed.</li>
+</ul>
+<h5 id="section-9">10</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Geocoding_with_Photon/10.png" alt="image" />
+<ul>
+<li>When the execution is finished, we can look at the results.</li>
+<li>Right click on the <strong>Geocoding</strong> node and select “Coordinates”.</li>
+</ul>
+<h5 id="section-10">11</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Geocoding_with_Photon/11.png" alt="image" />
+<ul>
+<li>In the dialog that pops up, you can look at the whole data table.</li>
+</ul>
+<h5 id="section-11">12</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Geocoding_with_Photon/12.png" alt="image" />
+<ul>
+<li>Scroll to the right to look at the columns with latitude and longitude (the two rightmost columns).</li>
+<li>For 39 out of 40 addresses longitude and latitude could be found. One geocoding request was not successful.</li>
+</ul>

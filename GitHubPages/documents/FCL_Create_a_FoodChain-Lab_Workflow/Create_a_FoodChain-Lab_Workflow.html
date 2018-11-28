@@ -1,0 +1,186 @@
+<h5 id="topics">Topics</h5>
+<strong>Learn</strong>
+<ul>
+<li>to import a FoodChain-Lab template.</li>
+<li>to display and configure the delivery network.</li>
+<li>to visualize the backward and forward trace for a station.</li>
+</ul>
+<h5 id="section">1</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Create_a_FoodChain-Lab_Workflow/1.png" alt="image" />
+<ul>
+<li>Select <strong>Food-Lab</strong> and <strong>Open DB Gui...</strong> in the menu bar to open the database interface.</li>
+</ul>
+<h5 id="section-1">2</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Create_a_FoodChain-Lab_Workflow/2.png" alt="image" />
+<ul>
+<li>If you get a message saying the internal database has been created, click <strong>OK</strong>. If not, the database has obviously been created before.</li>
+</ul>
+<h5 id="section-2">3</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Create_a_FoodChain-Lab_Workflow/3.png" alt="image" />
+<ul>
+<li>Download the example file from <a href="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Create_a_FoodChain-Lab_Workflow/FCL_Examples.xlsx">“FCL_Examples.xlsx”</a>.</li>
+<li>In the database interface click the <strong>Table import</strong> button in the upper left corner.</li>
+</ul>
+<h5 id="section-3">4</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Create_a_FoodChain-Lab_Workflow/4.png" alt="image" />
+<ul>
+<li>Now, a file dialog will pop up. FoodChain-Lab data templates (*.xlsx files) can be selected here.</li>
+<li>Navigate to the folder with the file “FCL_Examples.xlsx” which you have downloaded. Select the file in the dialog and press <strong>Open</strong>.</li>
+</ul>
+<h5 id="section-4">5</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Create_a_FoodChain-Lab_Workflow/5.png" alt="image" />
+<ul>
+<li>If errors or warnings occurred during the import process you would see a dialog after the import is finished.</li>
+<li>As no errors ocurred, there is no such dialog and you can click <strong>OK</strong>.</li>
+</ul>
+<h5 id="section-5">6</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Create_a_FoodChain-Lab_Workflow/6.png" alt="image" />
+<ul>
+<li>In the database interface, you can now have a look at the data you have imported.</li>
+<li>Close the dialog.</li>
+</ul>
+<h5 id="section-6">7</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Create_a_FoodChain-Lab_Workflow/7.png" alt="image" />
+<ul>
+<li>Now we want to create a workflow, that uses the imported data.</li>
+<li>Right click on <strong>LOCAL</strong> in the <strong>KNIME Explorer</strong> and select <strong>New KNIME Workflow...</strong></li>
+</ul>
+<h5 id="section-7">8</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Create_a_FoodChain-Lab_Workflow/8.png" alt="image" />
+<ul>
+<li>In the dialog you need to give the workflow a name. How about “MyFirstWorkflow”?</li>
+<li>Click <strong>Finish</strong>.</li>
+</ul>
+<h5 id="section-8">9</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Create_a_FoodChain-Lab_Workflow/9.png" alt="image" />
+<ul>
+<li>The created empty workflow will be shown in the editor in the center. Here you can add nodes to build your workflow.</li>
+</ul>
+<h5 id="section-9">10</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Create_a_FoodChain-Lab_Workflow/10.png" alt="image" />
+<ul>
+<li>Now we need FoodChain-Lab nodes. You can find them in the <strong>Node Repository</strong> on the left. Click on the small arrow on the left of “FoodChain-Lab” to show all FoodChain-Lab nodes.</li>
+<li>Drag the <strong>Supply Chain Reader</strong> from the <strong>Node Repository</strong> into your empty workflow.</li>
+</ul>
+<h5 id="section-10">11</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Create_a_FoodChain-Lab_Workflow/11.png" alt="image" />
+<ul>
+<li>We do not need to configure the <strong>Supply Chain Reader</strong>.</li>
+<li>Right click on it and select <strong>Execute</strong>.</li>
+</ul>
+<h5 id="section-11">12</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Create_a_FoodChain-Lab_Workflow/12.png" alt="image" />
+<ul>
+<li>The <strong>Supply Chain Reader</strong> has now read all data from the internal database.</li>
+<li>Select the <strong>Supply Chain Reader</strong> in the workflow (so that a rectangle is drawn around it), then double click on the <strong>Tracing View</strong> node in the <strong>Node Repository</strong>.</li>
+</ul>
+<h5 id="section-12">13</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Create_a_FoodChain-Lab_Workflow/13.png" alt="image" />
+<ul>
+<li>The <strong>Tracing View</strong> node should show up in the workflow and its three input ports should be automatically connected to the <strong>Supply Chain Reader</strong>. This is the fastes way to attach one node to another.</li>
+</ul>
+<h5 id="section-13">14</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Create_a_FoodChain-Lab_Workflow/13.png" alt="image" />
+<ul>
+<li>Another option would be to drag the <strong>Tracing View</strong> node from the <strong>Node Repository</strong> into the editor. Then left click on the upper output port of the <strong>Supply Chain Reader</strong> (black arrow), keep pressing the left mouse button and drag a line to the first input port of the <strong>Tracing View</strong> (black arrow directing at the blue <strong>Tracing View</strong>). Repeat for the second and third connection.</li>
+</ul>
+<h5 id="section-14">15</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Create_a_FoodChain-Lab_Workflow/15.png" alt="image" />
+<ul>
+<li>Double click on the <strong>Tracing View</strong> node to configure it.</li>
+<li>You can see a network of stations (circles) and deliveries (arrows).</li>
+<li>In this network of a fictitious foodborne disease outbeak a contaminated product could be found in three supermarkets. We want to mark them as outbreak stations.</li>
+</ul>
+<h5 id="section-15">16</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Create_a_FoodChain-Lab_Workflow/16.png" alt="image" />
+<ul>
+<li>To do so, right click somewhere into the empty space and choose <strong>Set Selected Stations</strong>.</li>
+</ul>
+<h5 id="section-16">17</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Create_a_FoodChain-Lab_Workflow/17.png" alt="image" />
+<ul>
+<li>In this dialog you can specify which stations should be selected.</li>
+<li>Press the button in the red circle to set the <strong>Property</strong>.</li>
+</ul>
+<h5 id="section-17">18</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Create_a_FoodChain-Lab_Workflow/18.png" alt="image" />
+<ul>
+<li>Select “type of business”.</li>
+<li>Typical types of business are “primary producer”, “supplier” and “manufacturer”, for example.</li>
+</ul>
+<h5 id="section-18">19</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Create_a_FoodChain-Lab_Workflow/19.png" alt="image" />
+<ul>
+<li>We only want to select supermarkets, since this is where contaminated products were found.</li>
+<li>Set <strong>Value</strong> to “Supermarket” and press <strong>OK</strong>. You can either click the small dropdown button on the right of the value field and select an entry or you type “Supermarket” into the white value field.</li>
+<li>Click <strong>OK</strong>.</li>
+</ul>
+<h5 id="section-19">20</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Create_a_FoodChain-Lab_Workflow/20.png" alt="image" />
+<ul>
+<li>Now, three stations are selected (blue circles).</li>
+<li>Right click somewhere into the empty space and choose <strong>Station Selection</strong> and <strong>Show Properties</strong>.</li>
+</ul>
+2.
+Note: If you accidentally click with the left mouse button, you deselect all selected stations. Please go one step back to select the three supermarkets again.
+<h5 id="section-20">21</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Create_a_FoodChain-Lab_Workflow/21.png" alt="image" />
+<ul>
+<li>A window pops up and you see the properties of the three selected supermarkets.</li>
+<li>Click <strong>Set All Weight</strong>.</li>
+</ul>
+<h5 id="section-21">22</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Create_a_FoodChain-Lab_Workflow/22.png" alt="image" />
+<ul>
+<li>By setting the weight to “1” you mark all supermarkets as outbreak stations. Here, “1” is already selected and you simply need to click <strong>OK</strong>.</li>
+</ul>
+<h5 id="section-22">23</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Create_a_FoodChain-Lab_Workflow/23.png" alt="image" />
+<ul>
+<li>All three supermarkets have a weight of “1” now.</li>
+<li>Another way to set the weight would be to click directly into one of the cells of the weight column and to type in the weight for each station individually.</li>
+<li>Click <strong>OK</strong>.</li>
+</ul>
+<h5 id="section-23">24</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Create_a_FoodChain-Lab_Workflow/24.png" alt="image" />
+<ul>
+<li>Left click into the white network area to deselect highlighted stations (and deliveries) and you will see... nothing new.</li>
+<li>To get the image you see above, open the context menu (right click) and click <strong>Set default Highlighting</strong>.</li>
+</ul>
+<h5 id="section-24">25</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Create_a_FoodChain-Lab_Workflow/25.png" alt="image" />
+<ul>
+<li>Tick the box below <strong>Show Legend</strong> to display the legend. Here it is shown what the colours and symbols in the graph mean.</li>
+<li>So, the outbreak stations are red and the common link is yellow. The common link is a station which is connected (via identical ingredient lots or products thereof) with two or more outbreak stations in the same food chain.</li>
+</ul>
+<h5 id="section-25">26</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Create_a_FoodChain-Lab_Workflow/26.png" alt="image" />
+<ul>
+<li>To arrange the network in a better way right click in the graph and select <strong>Apply Layout</strong> and choose a layout, for example <strong>Fruchterman-Reingold</strong>.</li>
+</ul>
+<h5 id="section-26">27</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Create_a_FoodChain-Lab_Workflow/27.png" alt="image" />
+<ul>
+<li>This layout process is not deterministic. That means you will get a different result each time.</li>
+<li>You can apply the layout again, if you are not satisfied with the current result.</li>
+<li>You can also apply a layout for certain stations only: Therefore you have to select the stations you want to be layouted and apply the layout again.</li>
+</ul>
+<h5 id="section-27">28</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Create_a_FoodChain-Lab_Workflow/28.png" alt="image" />
+<ul>
+<li>You can activate <strong>Join Deliveries</strong> to simplify the graph. Deliveries with the same supplier and recipient are joined now.</li>
+<li>This option is especially useful in networks with many deliveries.</li>
+</ul>
+<h5 id="section-28">29</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Create_a_FoodChain-Lab_Workflow/29.png" alt="image" />
+<ul>
+<li>Double click on the station marked as “common link”.</li>
+<li>The dialog shown above will pop up, showing all attributes of the station.</li>
+<li>Select <strong>Observed</strong> and click <strong>OK</strong>.</li>
+</ul>
+<h5 id="section-29">30</h5>
+<img src="https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/documents/FCL_Create_a_FoodChain-Lab_Workflow/30.png" alt="image" />
+<ul>
+<li>All stations / deliveries of the forward trace are orange-colored and the ones of the backward trace are shown in purple.</li>
+<li>We will go into detail on this in the tutorial <a href="https://foodrisklabs.bfr.bund.de/en_tracing/">“Tracing”</a>.</li>
+</ul>

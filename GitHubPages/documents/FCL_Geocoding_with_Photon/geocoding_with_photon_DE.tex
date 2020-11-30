@@ -1,54 +1,56 @@
-\documentclass{beamer}
+\documentclass[10pt]{beamer}
 
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
+\hypersetup{colorlinks=true,linkbordercolor=blue,linkcolor=white,urlcolor=blue,pdfborderstyle={/S/U/W 1}}
 
+\usepackage[scaled]{helvet}
+\usepackage[T1]{fontenc}
 \usetheme{Berkeley}
 \beamertemplatenavigationsymbolsempty
 \setbeamertemplate{headline}{}
- 
+
+\setbeamersize{sidebar width left=1.5cm}
+\setbeamerfont{section in sidebar}{size=\fontsize{6}{6}\selectfont}
+\setbeamerfont{title in sidebar}{size=\fontsize{6}{6}\selectfont}
+
 \title{Geocoding mit Photon in FoodChain-Lab}
-%\subtitle{Geocoding with Photon}
 \date{}
  
 \begin{document}
 \maketitle
 
-\section{ }
-
-\subsection{Aufgaben}
+\section{Topics}
 \begin{frame}
+\leftskip1em\textbf{Lernen Sie}
 	\begin{itemize}
-		\item Führen Sie ein Geocoding auf Basis folgenden Workflows durch: \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/workflows/Geocoding_with_Photon.knwf}.
-		\item Fügen Sie den \textbf{FoodChain-Lab} \textbf{Geocoding} Knoten hinzu.
-		\item Verwenden Sie den Photon Geocoding Service.
+    \item was Geocoding ist
+    \item wie der Geocoding-Service (Photon) verwendet wird
 	\end{itemize}
 \end{frame}
  
-\subsection{1}
+\section{1}
 \begin{frame}
 	\begin{center}
   		\includegraphics[height=0.6\textheight]{1.png}
 	\end{center}
 	\begin{itemize}
-		\item Importieren Sie den Geocoding Workflow von \url{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/workflows/Geocoding_with_Photon.knwf}.
-		%\item In this tutorial we are using the Photon Geocoding service.
+		\item Importieren Sie den Geocoding Workflow von  \textcolor{blue}{\underline{\href{https://github.com/SiLeBAT/BfROpenLabResources/raw/master/GitHubPages/workflows/Geocoding\_with\_Photon.knwf}{``Geocoding\_with\_Photon.knwf''}}}.
 	\end{itemize}
 \end{frame}
 
-\subsection{2}
+\section{2}
 \begin{frame}
 	\begin{center}
   		\includegraphics[height=0.6\textheight]{2.png}
 	\end{center}
 	\begin{itemize}
-        \item Um den Geocoding Service zu nutzen muss der \textbf{FoodChain-Lab} \textbf{Geocoding} Knoten hinzugefügt werden.
-		\item Fügen Sie den \textbf{FoodChain-Lab} \textbf{Geocoding} Knoten hinzu durch einen Doppelklick darauf im \textbf{Node Repository}.
-		%\item In this tutorial we are using the Photon Geocoding service.
+        \item Um den Geocoding Service zu nutzen muss der \textbf{Geocoding} Knoten hinzugefügt werden. 
+        \item Falls der \textbf{Supply Chain Reader} ausgewählt ist, kann der Knoten durch einen Doppelklick auf den  \textbf{Geocoding} Knoten im \textbf{Node Repository} hinzugefügt werden. 
 	\end{itemize}
 \end{frame}
 
-\subsection{3}
+\section{3}
 \begin{frame}
 	\begin{center}
   		\includegraphics[height=0.6\textheight]{3.png}
@@ -61,7 +63,7 @@
 	\end{itemize}
 \end{frame}
 
-\subsection{4}
+\section{4}
 \begin{frame}
 	\begin{center}
   		\includegraphics[height=0.6\textheight]{4.png}
@@ -74,21 +76,21 @@
 	\end{itemize}
 \end{frame}
 
-\subsection{5}
+\section{5}
 \begin{frame}
 	\begin{center}
   		\includegraphics[height=0.6\textheight]{5.png}
 	\end{center}
 	\begin{itemize}
         \item Die \textbf{Address} ist passend gesetzt.
-		\item Sie müssen die \textbf{Server Address} eingeben. Dafür können Sie \textbf{http://photon.komoot.de} nutzen, einen öffentlich verfügbaren Dienst. 
+		\item Sie müssen die \textbf{Server Address} eingeben. Dafür können Sie \textbf{https://photon.komoot.de} nutzen, einen öffentlich verfügbaren Dienst. 
 		%\item The Geocoding-Node has to be configured (to use Photon)
 		%\item Open its configuration by double clicking on it or by using its context menue (right click on the node)
 		%\item In this tutorial we are using the Photon Geocoding service.
 	\end{itemize}
 \end{frame}
 
-\subsection{6}
+\section{6}
 \begin{frame}
 	\begin{center}
   		\includegraphics[height=0.5\textheight]{6.png}
@@ -100,20 +102,30 @@
 	\end{itemize}
 \end{frame}
 
-\subsection{7}
+\section{7}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[height=0.6\textheight]{7.png}
+  		\includegraphics[height=0.5\textheight]{7.png}
+	\end{center}
+	\begin{itemize}
+    \item In diesem tutorial wählen Sie bitte ``Use first'' und klicken ``OK''.
+	\end{itemize}
+\end{frame}
+
+\section{8}
+\begin{frame}
+	\begin{center}
+  		\includegraphics[height=0.6\textheight]{8.png}
 	\end{center}
 	\begin{itemize}
 		\item Machen Sie einen Rechtsklick auf den \textbf{Geocoding}-Knoten und wählen Sie \textbf{Execute}.
 	\end{itemize}
 \end{frame}
 
-\subsection{8}
+\section{9}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[height=0.6\textheight]{8.png}
+  		\includegraphics[height=0.6\textheight]{9.png}
 	\end{center}
 	\begin{itemize}
 		\item Die Ausführung kann eine Weile dauern.
@@ -121,10 +133,10 @@
 	\end{itemize}
 \end{frame}
 
-\subsection{9}
+\section{10}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[height=0.6\textheight]{9.png}
+  		\includegraphics[height=0.6\textheight]{10.png}
 	\end{center}
 	\begin{itemize}
 		\item Wenn die Ausführung beendet ist, können wir uns die Resultate anschauen.
@@ -132,24 +144,24 @@
 	\end{itemize}
 \end{frame}
 
-\subsection{10}
+\section{11}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[height=0.6\textheight]{10.png}
+  		\includegraphics[height=0.6\textheight]{11.png}
 	\end{center}
 	\begin{itemize}
 		\item In dem Dialog können Sie sich die gesamte Datentabelle anschauen.
 	\end{itemize}
 \end{frame}
 
-\subsection{11}
+\section{12}
 \begin{frame}
 	\begin{center}
-  		\includegraphics[height=0.6\textheight]{11.png}
+  		\includegraphics[height=0.6\textheight]{12.png}
 	\end{center}
 	\begin{itemize}
 		\item Scrollen Sie ganz nach rechts um sich die Spalten mit geographischer Breite und Länge anzuschauen (die zwei Spalten ganz rechts).
-		\item Eine Geocoding Anfragn lieferte keine Ergebnisse. 
+		\item Für 39 von 40 Addressen konnten die Breiten und Längen gefunden werden. Eine Geocoding Anfrage lieferte keine Ergebnisse. 
 	\end{itemize}
 \end{frame}
 
